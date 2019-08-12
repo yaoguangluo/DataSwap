@@ -11,4 +11,24 @@ This project mainly for the metadata exchanges of array, list, map, xml, dhml, u
 #### 备份记录： 这是3年前作者独立设计的代码文件备份（这5个函数使用权和研发权 2016年已转让给走四方公司），用来释疑，上面声明，绝不含有任何欺诈成分。
 https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 
+
+### 当前研发功能
+###### 1 股市网络数据分析转换文件
+###### 2 object 数据分析转换文件
+###### 3 xml 数据分析转换文件
+###### 4 json 数据分析转换文件
+###### 5 string 数据分析转换文件
+###### 6 list 数据分析转换文件
+###### 7 map 数据分析转换文件
+###### 8 pdf 数据分析转换文件
+###### 9 office 数据分析转换文件
+###### 10 图片 数据分析转换文件
+###### 11 tree 数据分析转换文件
+###### 12 gradle yml 数据分析转换文件
+###### 13 vector 数据分析转换文件
+###### 14 table 数据分析转换文件
+###### 15 sound 数据分析转换文件
+###### 16 matrix 数据分析转换文件
+###### 17 DNA 数据分析转换文件
+
 ###### 罗瑶光 20190812

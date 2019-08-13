@@ -1,7 +1,7 @@
 package org.deta.tinos.json;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.google.gson.Gson;
@@ -25,5 +25,9 @@ public class JsonSwap{
 			}
 		}
 		return list;	
+	}
+
+	public static String jsonObjectToString(JSONObject jSONObject){
+		return jSONObject.toString();
 	}
 }

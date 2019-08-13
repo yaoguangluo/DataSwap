@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 public class HttpUnicode{
+	//这个函数在作者去年开发股市分析软件的时候从雪球等网站采样抓数据，发现有GBK utf-8 gb2312 ascii 等格式数据比较混乱，于是进行统一格式处理。
 	public String getJson(String urlString, String jsonString) throws IOException{
 		String code= "";
 		URL url= new URL(urlString);

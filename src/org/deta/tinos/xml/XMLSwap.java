@@ -5,7 +5,7 @@ import org.json.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-public class Test{
+public class XMLSwap{
 	public static JSONObject XmlToJsonObject(String string){
 		return XML.toJSONObject(string);
 	}

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-public class httpUnicode{
+public class HttpUnicode{
 	public String getJson(String urlString, String jsonString) throws IOException{
 		String code= "";
 		URL url= new URL(urlString);

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-public class stockCode{
+public class StockCode{
 	public List<String> list;
 	public List<String> todayList;
 	public void readDBcodeTOList(String code) throws IOException {

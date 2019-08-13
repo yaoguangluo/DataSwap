@@ -3,7 +3,7 @@ import org.json.XML;
 import java.util.Map;
 import org.json.JSONObject;
 import com.google.gson.Gson;
-public class Test{
+public class MapSwap{
 	public static String MapToJsonString(Gson gson, Map<String, Object> map){
 		return gson.toJson(map);
 	}

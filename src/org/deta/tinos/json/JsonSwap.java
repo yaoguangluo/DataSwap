@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-public class Test{
+public class JsonSwap{
 	public static Map<String, Object> JsonObjectToMap(Gson gson, JSONObject jSONObject){
 		return gson.fromJson(jSONObject.toString()
 				, new TypeToken<Map<String, Object>>(){}.getType());

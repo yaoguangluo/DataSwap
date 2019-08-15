@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.XML;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 public class JsonSwap{
@@ -29,5 +31,9 @@ public class JsonSwap{
 
 	public static String jsonObjectToString(JSONObject jSONObject){
 		return jSONObject.toString();
+	}
+	
+	public static String jsonObjectToXml(JSONObject jSONObject){
+		return XML.toString(jSONObject);
 	}
 }

@@ -30,7 +30,7 @@ public class XMLSwap{
 		return list;	
 	}
 
-	public static Map<String, Object> xmlToMap(Gson gson,String string){
+	public static Map<String, Object> xmlToMap(Gson gson, String string){
 		return gson.fromJson(XML.toJSONObject(string).toString()
 				, new TypeToken<Map<String, Object>>(){}.getType());
 	}

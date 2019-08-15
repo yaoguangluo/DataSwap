@@ -52,11 +52,11 @@ public class StockCode{
 	}
 	
 	public String readStringTOFormatWithCode(String input) throws IOException {
-		String output = null;
-		Pattern p0 = Pattern.compile("r_(.*?)="); 
-		Matcher m0 = p0.matcher(input); 		
-		Pattern p = Pattern.compile("\"(.*?)\""); 
-		Matcher m = p.matcher(input); 		
+		String output= null;
+		Pattern p0= Pattern.compile("r_(.*?)="); 
+		Matcher m0= p0.matcher(input); 		
+		Pattern p= Pattern.compile("\"(.*?)\""); 
+		Matcher m= p.matcher(input); 		
 		if(m.find())
 			if(!m.group(0).equals("\"\"")) {
 				if(m0.find()) {

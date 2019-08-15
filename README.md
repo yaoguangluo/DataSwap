@@ -32,5 +32,9 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### 15 sound 数据分析转换文件
 ###### 16 matrix 数据分析转换文件
 ###### 17 DNA 数据分析转换文件
+###### 18 OBEX 数据分析转换文件
+###### 19 Vector 数据分析转换文件
+###### 20 Flips 数据分析转换文件
+###### 21 hash 数据分析转换文件
 
 ###### 罗瑶光 20190812

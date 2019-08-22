@@ -22,6 +22,40 @@ public class TXTSwap{
 		return object;
 	}
 
+	public static Object[][] txtFileToObjectMatrixWithRange(String filePath, String stopBy, int rangeBegin
+			, int rangeEnd) throws IOException {		
+		Object[][] object= new Object[rangeEnd- rangeBegin][];
+		InputStream in= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		String ctempString= null; 
+		int i= 0;
+		while ((ctempString= cReader.readLine())!= null) {  
+			i++;
+			if(i<=rangeEnd&& i>=rangeBegin) {
+				object[i++]=ctempString.split(stopBy);
+			}
+		}
+		cReader.close();
+		return object;
+	}
+
+	public static List<String> txtFileToListStringWithRange(String filePath, String stopBy, int rangeBegin
+			, int rangeEnd) throws IOException {		
+		List<String> list= new ArrayList<>();
+		InputStream in= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		String ctempString= null; 
+		int i= 0;
+		while ((ctempString= cReader.readLine())!= null) {  
+			i++;
+			if(i<=rangeEnd&& i>=rangeBegin) {
+				list.add(ctempString);
+			}
+		}
+		cReader.close();
+		return list;
+	}
+
 	public static List<String> txtFileToListString(String filePath) throws IOException {		
 		List<String> list= new ArrayList<>();
 		InputStream in= new FileInputStream(new File(filePath));

@@ -37,4 +37,6 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### 20 Flips 数据分析转换文件
 ###### 21 hash 数据分析转换文件
 
+## 预计155个函数，当前已经拥有38个函数 20190815
+
 ###### 罗瑶光 20190812

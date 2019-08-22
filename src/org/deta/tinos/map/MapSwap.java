@@ -12,4 +12,5 @@ public class MapSwap{
 		JSONObject jSONObject= new JSONObject(gson.toJson(map));
 		return XML.toString(jSONObject);	
 	}
+
 }

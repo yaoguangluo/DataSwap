@@ -1,16 +1,44 @@
 package org.deta.tinos.csv;
-import org.json.XML;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
-import org.json.JSONObject;
-import com.google.gson.Gson;
+import java.io.FileInputStream;
+import java.io.IOException;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 public class CSVSwap{
-//	public static Object[][] csvFileToObject(String file) {	
-//		
-//		
-//		return null;
-//	}
+	@SuppressWarnings("static-access")
+	public static Object[][] xlsOrCsvFileToObjectMartix(String filePath, int pageSheetindex) throws IOException {	
+		FileInputStream fileInputStream= new FileInputStream(filePath);
+		POIFSFileSystem pOIFSFileSystem= new POIFSFileSystem(fileInputStream);
+		HSSFWorkbook hSSFWorkbook= new HSSFWorkbook(pOIFSFileSystem);
+		HSSFSheet hSSFSheet= hSSFWorkbook.getSheetAt(Integer.valueOf(pageSheetindex)); 		 
+		HSSFRow hSSFRow= hSSFSheet.getRow(0);   
+		Object[][] output= new String[hSSFSheet.getPhysicalNumberOfRows()][hSSFRow.getLastCellNum()];
+		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows(); i++) {//ROW
+			if (null!= (hSSFRow= hSSFSheet.getRow(i))) {
+				for(int j= 0; j< hSSFRow.getLastCellNum(); j++){//CULUMN
+					HSSFCell hSSFCell= hSSFRow.getCell(j);
+					if(hSSFCell.CELL_TYPE_STRING== hSSFCell.getCellType()){
+						output[i][j]= hSSFCell.getStringCellValue();
+					}
+					if(hSSFCell.CELL_TYPE_BOOLEAN== hSSFCell.getCellType()){
+						output[i][j]= hSSFCell.getBooleanCellValue();
+					}
+					if(hSSFCell.CELL_TYPE_NUMERIC== hSSFCell.getCellType()){
+						if(HSSFDateUtil.isCellDateFormatted(hSSFCell)){
+							output[i][j]= hSSFCell.getDateCellValue();
+						}else{
+							output[i][j]= hSSFCell.getNumericCellValue();
+						}
+					}
+					if(hSSFCell.CELL_TYPE_ERROR== hSSFCell.getCellType()){
+						output[i][j]= hSSFCell.getErrorCellValue();
+					}
+				}
+			}
+		}		
+		return output;
+	}
 }

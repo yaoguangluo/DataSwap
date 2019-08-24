@@ -15,6 +15,10 @@ MapToXml
 #### 备份记录： 这是3年前作者独立设计的代码文件备份（这5个函数（14行代码）使用权和研发权 2016年已转让给走四方公司），用来释疑，上面声明，绝不含有任何欺诈成分。
 https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 
+
+20190824 今天能导入了，我导过来到国内的gitee上然后重新设置成闭源备份。
+https://gitee.com/DetaChina/data_format/blob/master/VtoV.java
+
 ###### 当时亚米，走四方公司开发的版本管理是github private， 代码编辑警方 CIA 全程可查，不存在任何隐患争议。
 
 

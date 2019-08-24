@@ -45,5 +45,5 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### 24 txt 数据分析转换文件
 
 ## 预计155个函数，当前已经拥有38个函数 20190815
-
+## 预计155个函数，当前已经拥有46个函数 20190824
 ###### 罗瑶光 20190812

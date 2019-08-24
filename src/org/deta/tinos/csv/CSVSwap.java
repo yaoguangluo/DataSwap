@@ -9,11 +9,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 public class CSVSwap{
 	@SuppressWarnings("static-access")
-	public static Object[][] xlsOrCsvFileToObjectMartix(String filePath, int pageSheetindex) throws IOException {	
+	public static Object[][] xlsOrCsvFileToObjectMartix(String filePath, int pageSheetIndex) throws IOException {	
 		FileInputStream fileInputStream= new FileInputStream(filePath);
 		POIFSFileSystem pOIFSFileSystem= new POIFSFileSystem(fileInputStream);
 		HSSFWorkbook hSSFWorkbook= new HSSFWorkbook(pOIFSFileSystem);
-		HSSFSheet hSSFSheet= hSSFWorkbook.getSheetAt(Integer.valueOf(pageSheetindex)); 		 
+		HSSFSheet hSSFSheet= hSSFWorkbook.getSheetAt(Integer.valueOf(pageSheetIndex)); 		 
 		HSSFRow hSSFRow= hSSFSheet.getRow(0);   
 		Object[][] output= new String[hSSFSheet.getPhysicalNumberOfRows()][hSSFRow.getLastCellNum()];
 		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows(); i++) {//ROW

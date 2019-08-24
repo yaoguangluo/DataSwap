@@ -19,7 +19,7 @@ public class ArraySwap{
 	public static Map<String, Object> arrayToMap(Gson gson, Object[] objects) {	
 		Map<String, Object> map= new HashMap<>();
 		int i= 0;
-		for(Object object:objects) {
+		for(Object object: objects) {
 			map.put(""+ i++, object);
 		}		
 		return map;

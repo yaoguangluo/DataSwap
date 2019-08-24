@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
+import com.google.gson.Gson;
 public class VectorSwap{
 	public static Map<String, Object> vectorToMap(Vector<Object> vector){
 		Map<String, Object> map= new HashMap<>();
@@ -26,12 +27,14 @@ public class VectorSwap{
 	}
 
 	public static Object[] vectorToArray(Vector<Object> vector){
-		Iterator<Object> iterator= vector.iterator();
-		Object[] objects= new Object[vector.size()];
-		int i= 0;
-		while(iterator.hasNext()) {
-			objects[i++]= iterator.next();
-		}
-		return objects;
+		return vector.toArray();
+	}
+
+	public static Iterator<Object> vectorToIterator(Vector<Object> vector){
+		return vector.iterator();
+	}
+
+	public static String vectorToJsonString(Gson gson,Vector<Object> vector){
+		return gson.toJson(vector);
 	}
 }

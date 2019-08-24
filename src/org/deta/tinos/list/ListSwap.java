@@ -27,13 +27,7 @@ public class ListSwap{
 	}
 
 	public static Object[] listToObjectArray(Gson gson, List<Object> list){
-		Object[] object= new Object[list.size()];
-		Iterator<Object> iterator= list.iterator();
-		int i=0;
-		while(iterator.hasNext()) {
-			object[i++]= iterator.next();
-		}
-		return object;
+		return list.toArray();
 	}
 
 	public static Iterator<Object> listToIterator(Gson gson, List<Object> list){

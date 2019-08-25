@@ -30,7 +30,7 @@ public class ArraySwap{
 
 	public static Vector<Object> arrayToVector(Gson gson, Object[] objects) {	
 		Vector<Object> vector= new Vector<>();
-		for(Object object:objects) {
+		for(Object object: objects) {
 			vector.add(object);
 		}		
 		return vector;
@@ -38,7 +38,7 @@ public class ArraySwap{
 
 	public static List<Object> arrayToList(Object[] objects) {	
 		List<Object> list= new ArrayList<>();
-		for(Object object:objects) {
+		for(Object object: objects) {
 			list.add(object);
 		}		
 		return list;
@@ -46,7 +46,7 @@ public class ArraySwap{
 
 	public static Iterator<Object> arrayToIterator(Object[] objects) {	
 		List<Object> list= new ArrayList<>();
-		for(Object object:objects) {
+		for(Object object: objects) {
 			list.add(object);
 		}		
 		return list.iterator();
@@ -54,7 +54,7 @@ public class ArraySwap{
 
 	public static Set<Object> arrayToSet(Object[] objects) {	
 		Set<Object> sets= new TreeSet<>();
-		for(Object object:objects) {
+		for(Object object: objects) {
 			sets.add(object);
 		}		
 		return sets;

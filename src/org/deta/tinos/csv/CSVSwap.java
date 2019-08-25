@@ -1,6 +1,9 @@
 package org.deta.tinos.csv;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -40,5 +43,41 @@ public class CSVSwap{
 			}
 		}		
 		return output;
+	}
+
+	@SuppressWarnings("static-access")
+	public static List<Object[]> xlsOrCsvFileToListObject(String filePath, int pageSheetIndex) throws IOException {	
+		FileInputStream fileInputStream= new FileInputStream(filePath);
+		POIFSFileSystem pOIFSFileSystem= new POIFSFileSystem(fileInputStream);
+		HSSFWorkbook hSSFWorkbook= new HSSFWorkbook(pOIFSFileSystem);
+		HSSFSheet hSSFSheet= hSSFWorkbook.getSheetAt(Integer.valueOf(pageSheetIndex)); 		 
+		HSSFRow hSSFRow= hSSFSheet.getRow(0); 
+		List<Object[]> list= new ArrayList<>();
+		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows(); i++) {//ROW
+			Object[] objectRow= new String[hSSFRow.getLastCellNum()];
+			if (null!= (hSSFRow= hSSFSheet.getRow(i))) {
+				for(int j= 0; j< hSSFRow.getLastCellNum(); j++){//CULUMN
+					HSSFCell hSSFCell= hSSFRow.getCell(j);
+					if(hSSFCell.CELL_TYPE_STRING== hSSFCell.getCellType()){
+						objectRow[j]= hSSFCell.getStringCellValue();
+					}
+					if(hSSFCell.CELL_TYPE_BOOLEAN== hSSFCell.getCellType()){
+						objectRow[j]= hSSFCell.getBooleanCellValue();
+					}
+					if(hSSFCell.CELL_TYPE_NUMERIC== hSSFCell.getCellType()){
+						if(HSSFDateUtil.isCellDateFormatted(hSSFCell)){
+							objectRow[j]= hSSFCell.getDateCellValue();
+						}else{
+							objectRow[j]= hSSFCell.getNumericCellValue();
+						}
+					}
+					if(hSSFCell.CELL_TYPE_ERROR== hSSFCell.getCellType()){
+						objectRow[j]= hSSFCell.getErrorCellValue();
+					}
+				}
+			}
+			list.add(objectRow);
+		}		
+		return list;
 	}
 }

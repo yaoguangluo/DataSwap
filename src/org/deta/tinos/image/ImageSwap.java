@@ -18,8 +18,8 @@ public class ImageSwap{
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
 	}
 
-	public static void pixRGBTableToFile(String pngOutputPath, int[][] pixRed, int[][] pixGreen
-			, int[][] pixBlue, String fileType) throws IOException{
+	public static void pixRGBTableToFile(String pngOutputPath, int[][] pixRed
+			, int[][] pixGreen, int[][] pixBlue, String fileType) throws IOException{
 		BufferedImage bufferedImage= new BufferedImage(pixRed[0].length, pixRed.length
 				, BufferedImage.TYPE_INT_RGB);
 		for (int i= 0; i< bufferedImage.getHeight(); ++i) {

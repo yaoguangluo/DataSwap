@@ -20,7 +20,7 @@ public class StringBuilderSwap{
 		return XML.toString(jSONObject);	
 	}
 	
-	public static String[] stringBuilderToArray(String stopBy, StringBuilder stringBuilder){
+	public static String[] stringBuilderToSplitArray(String stopBy, StringBuilder stringBuilder){
 		String[] strings= stringBuilder.toString().split(stopBy); 
 		return strings;	
 	}

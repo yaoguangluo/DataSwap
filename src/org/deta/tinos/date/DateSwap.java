@@ -29,7 +29,14 @@ public class DateSwap{
 		return new Timestamp(utc);
 	}
 	
-	public static long TimeStampToMiliSeconds(Timestamp timestamp) {
+	public static long timeStampToMiliSeconds(Timestamp timestamp) {
 		return timestamp.getTime();
 	}
+	
+	public static String dateStringToMiliSeconds(String string) {
+		return ""+ new Date(string).getTime();
+	}
+	
+	
+	
 }

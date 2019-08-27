@@ -2,6 +2,9 @@ package org.deta.tinos.list;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Vector;
 
 import org.json.JSONObject;
 import org.json.XML;
@@ -26,11 +29,29 @@ public class ListSwap{
 				, new TypeToken<Map<String, Object>>(){}.getType());
 	}
 
-	public static Object[] listToObjectArray(Gson gson, List<Object> list){
+	public static Object[] listToObjectArray(List<Object> list){
 		return list.toArray();
 	}
 
-	public static Iterator<Object> listToIterator(Gson gson, List<Object> list){
+	public static Iterator<Object> listToIterator(List<Object> list){
 		return list.iterator();
+	}
+
+	public static Vector<Object> listToVector(List<Object> list){
+		Vector<Object> vector= new Vector<>();
+		Iterator<Object> iterator= list.iterator();
+		while(iterator.hasNext()) {
+			vector.add(iterator.next());
+		}
+		return vector;
+	}
+
+	public static Set<Object> listToSet(List<Object> list){
+		Set<Object> sets= new TreeSet<>();
+		Iterator<Object> iterator= list.iterator();
+		while(iterator.hasNext()) {
+			sets.add(iterator.next());
+		}
+		return sets;
 	}
 }

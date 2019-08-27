@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.Vector;
 import com.google.gson.Gson;
 public class VectorSwap{
@@ -36,5 +38,14 @@ public class VectorSwap{
 
 	public static String vectorToJsonString(Gson gson,Vector<Object> vector){
 		return gson.toJson(vector);
+	}
+
+	public static Set<Object> vectorToSet(Vector<Object> vector){
+		Set<Object> sets= new TreeSet<>();
+		Iterator<Object> iterator= vector.iterator();
+		while(iterator.hasNext()) {
+			sets.add(iterator.next());
+		}
+		return sets;
 	}
 }

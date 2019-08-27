@@ -18,33 +18,35 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### 20190824 今天能导入了，我导过来到国内的gitee上然后重新设置成闭源备份。 https://gitee.com/DetaChina/data_format/blob/master/VtoV.java
 
 ###### 当前研发功能
-###### 1 股市网络数据分析转换文件
-###### 2 object 数据分析转换文件
-###### 3 xml 数据分析转换文件
-###### 4 json 数据分析转换文件
-###### 5 string 数据分析转换文件
-###### 6 list 数据分析转换文件
-###### 7 map 数据分析转换文件
-###### 8 pdf 数据分析转换文件
-###### 9 office 数据分析转换文件
-###### 10 图片 数据分析转换文件
-###### 11 tree 数据分析转换文件
-###### 12 gradle yml 数据分析转换文件
-###### 13 vector 数据分析转换文件
-###### 14 table 数据分析转换文件
-###### 15 sound 数据分析转换文件
-###### 16 matrix 数据分析转换文件
-###### 17 DNA 数据分析转换文件
-###### 18 OBEX 数据分析转换文件
-###### 19 Vector 数据分析转换文件
-###### 20 Flips 数据分析转换文件
-###### 21 hash 数据分析转换文件
-###### 22 xls 数据分析转换文件
-###### 23 csv 数据分析转换文件
-###### 24 txt 数据分析转换文件
-###### 25 Iterator 数据分析转换文件
-###### 26 String Builder 数据分析转换文件
-###### 27 date 数据分析转换文件
-###### 函数研发总数进度 100+/155
+###### ![实例](http://progressed.io/bar/100?title=completed)1 股市网络数据分析转换文件
+###### ![实例](http://progressed.io/bar/10?title=completed)2 object 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)3 xml 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)4 json 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)5 string 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)6 list 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)7 map 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)8 pdf 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)9 office 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)10 image 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)11 tree 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)12 gradle yml 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)13 vector 数据分析转换文件
+###### ![实例](http://progressed.io/bar/10?title=completed)14 table 数据分析转换文件
+###### ![实例](http://progressed.io/bar/10?title=completed)15 sound 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)16 matrix 数据分析转换文件
+###### ![实例](http://progressed.io/bar/10?title=completed)17 DNA 数据分析转换文件
+###### ![实例](http://progressed.io/bar/10?title=completed)18 OBEX 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)19 Vector 数据分析转换文件
+###### ![实例](http://progressed.io/bar/10?title=completed)20 Flips 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)21 hash 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)22 xls 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)23 csv 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)24 txt 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)25 Iterator 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)26 String Builder 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)27 date 数据分析转换文件
+###### ![实例](http://progressed.io/bar/100?title=completed)28 3D matrix 数据表变换文件
+
+###### 函数研发总数进度 105+/155
 
 罗瑶光 20190812- 20190828

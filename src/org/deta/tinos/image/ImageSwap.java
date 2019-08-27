@@ -40,4 +40,11 @@ public class ImageSwap{
 			throws IOException{
 		ImageIO.write((BufferedImage)image, fileType, new File(pngOutputPath));	
 	}	
+
+	public static void bufferedImageToScaleImageFile(String pngOutputPath, BufferedImage bufferedImage
+			, String fileType, int scale) throws IOException{
+		bufferedImage= (BufferedImage)bufferedImage.getScaledInstance(bufferedImage.getWidth()
+				, bufferedImage.getHeight(), scale);
+		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
+	}
 }

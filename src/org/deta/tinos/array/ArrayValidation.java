@@ -1,5 +1,6 @@
 package org.deta.tinos.array;
 public class ArrayValidation{
+	//以后 validation大体包括 check和fix， 2个部分。
 	public static boolean arrayIntCheck(int[] array, int min, int max) {	
 		for(int i= 0; i< array.length; i++) {
 			if(array[i]> max|| array[i]< min) {

@@ -15,7 +15,7 @@ public class TXTSwap{
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String ctempString= null; 
 		int i= 0;
-		while ((ctempString= cReader.readLine())!= null) {  
+		while (null!= (ctempString= cReader.readLine())) {  
 			object[i++]=ctempString.split(stopBy);
 		}
 		cReader.close();
@@ -29,7 +29,7 @@ public class TXTSwap{
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String ctempString= null; 
 		int i= 0;
-		while ((ctempString= cReader.readLine())!= null) {  
+		while (null!= (ctempString= cReader.readLine())) {  
 			i++;
 			if(i<=rangeEnd&& i>=rangeBegin) {
 				object[i++]=ctempString.split(stopBy);
@@ -46,7 +46,7 @@ public class TXTSwap{
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String ctempString= null; 
 		int i= 0;
-		while ((ctempString= cReader.readLine())!= null) {  
+		while (null!= (ctempString= cReader.readLine())) {  
 			i++;
 			if(i<=rangeEnd&& i>=rangeBegin) {
 				list.add(ctempString);
@@ -61,7 +61,7 @@ public class TXTSwap{
 		InputStream in= new FileInputStream(new File(filePath));
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String ctempString= null; 
-		while ((ctempString= cReader.readLine())!= null) {  
+		while (null!= (ctempString= cReader.readLine())) {  
 			list.add(ctempString);
 		}
 		cReader.close();
@@ -73,7 +73,7 @@ public class TXTSwap{
 		InputStream in= new FileInputStream(new File(filePath));
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
 		String ctempString= null; 
-		while ((ctempString= cReader.readLine())!= null) {  
+		while (null!= (ctempString= cReader.readLine())) {  
 			list.add(ctempString.split(stopBy));
 		}
 		cReader.close();

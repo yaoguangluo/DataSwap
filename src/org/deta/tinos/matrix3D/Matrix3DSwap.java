@@ -1,7 +1,8 @@
 package org.deta.tinos.matrix3D;
 public class Matrix3DSwap{
 	public static Object[][][] matrixShiftSwapXYZ(Object[][][] objects){
-		Object[][][] output= new Object[objects[0][0].length][objects.length][objects[0].length];
+		Object[][][] output
+		= new Object[objects[0][0].length][objects.length][objects[0].length];
 		for(int i= 0; i< objects.length; i++) {
 			for(int j= 0; j< objects[0].length; j++) {
 				for(int k= 0; k< objects[0][0].length; k++) {
@@ -13,7 +14,8 @@ public class Matrix3DSwap{
 	}
 
 	public static Object[][][] matrixInclineSwapXY(Object[][][] objects){
-		Object[][][] output= new Object[objects[0].length][objects.length][objects[0][0].length];
+		Object[][][] output
+		= new Object[objects[0].length][objects.length][objects[0][0].length];
 		for(int i= 0; i< objects.length; i++) {
 			for(int j= 0; j< objects[0].length; j++) {
 				for(int k= 0; k< objects[0][0].length; k++) {
@@ -25,7 +27,8 @@ public class Matrix3DSwap{
 	}
 
 	public static Object[][][] matrixInclineSwapXZ(Object[][][] objects){
-		Object[][][] output= new Object[objects[0][0].length][objects[0].length][objects.length];
+		Object[][][] output
+		= new Object[objects[0][0].length][objects[0].length][objects.length];
 		for(int i= 0; i< objects.length; i++) {
 			for(int j= 0; j< objects[0].length; j++) {
 				for(int k= 0; k< objects[0][0].length; k++) {
@@ -37,7 +40,8 @@ public class Matrix3DSwap{
 	}
 
 	public static Object[][][] matrixInclineSwapYZ(Object[][][] objects){
-		Object[][][] output= new Object[objects.length][objects[0][0].length][objects[0].length];
+		Object[][][] output
+		= new Object[objects.length][objects[0][0].length][objects[0].length];
 		for(int i= 0; i< objects.length; i++) {
 			for(int j= 0; j< objects[0].length; j++) {
 				for(int k= 0; k< objects[0][0].length; k++) {

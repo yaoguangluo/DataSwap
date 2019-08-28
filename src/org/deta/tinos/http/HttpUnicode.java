@@ -30,22 +30,22 @@ public class HttpUnicode{
 				String temp= connection.getHeaderField(i);
 				if(temp.contains("charset")) {
 					if(temp.contains("GBK")|| temp.contains("gbk")) {
-						code="GBK";
+						code= "GBK";
 					}	
 					if(temp.contains("UTF-8")|| temp.contains("utf-8")|| temp.contains("UTF8")|| temp.contains("utf8")) {
-						code="UTF-8";
+						code= "UTF-8";
 					}
 					if(temp.contains("GB2312")|| temp.contains("gb2312")) {
-						code="GB2312";
+						code= "GB2312";
 					}
 					if(temp.contains("ASCII")|| temp.contains("ascii")) {
-						code="ASCII";
+						code= "ASCII";
 					}
 					if(temp.contains("Unicode")|| temp.contains("UNICODE")|| temp.contains("unicode")) {
-						code="UNICODE";
+						code= "UNICODE";
 					}
 					if(temp.contains("ISO-8859-1")|| temp.contains("iso-8859-1")|| temp.contains("Iso-8859-1")) {
-						code="ISO-8859-1";
+						code= "ISO-8859-1";
 					}
 				}
 			}
@@ -216,27 +216,30 @@ public class HttpUnicode{
 		String code= "GB2312";
 		try {
 			InputStream inputStream= connection.getInputStream();
-			int caherset_size=connection.getHeaderFields().size();
-			for(int i=0;i<caherset_size;i++) {
-				String temp=connection.getHeaderField(i);
-				if(temp.contains("charset") ||temp.contains("type") ) {
-					if(temp.contains("GBK")||temp.contains("gbk")) {
-						code="GBK";
+			int caherset_size= connection.getHeaderFields().size();
+			for(int i= 0; i< caherset_size; i++) {
+				String temp= connection.getHeaderField(i);
+				if(temp.contains("charset")|| temp.contains("type") ) {
+					if(temp.contains("GBK")|| temp.contains("gbk")) {
+						code= "GBK";
 					}	
-					if(temp.contains("UTF-8")||temp.contains("utf-8")||temp.contains("UTF8")||temp.contains("utf8")) {
-						code="UTF-8";
+					if(temp.contains("UTF-8")|| temp.contains("utf-8")
+							|| temp.contains("UTF8")|| temp.contains("utf8")) {
+						code= "UTF-8";
 					}
-					if(temp.contains("GB2312")||temp.contains("gb2312")) {
-						code="GB2312";
+					if(temp.contains("GB2312")|| temp.contains("gb2312")) {
+						code= "GB2312";
 					}
-					if(temp.contains("ASCII")||temp.contains("ascii")) {
-						code="ASCII";
+					if(temp.contains("ASCII")|| temp.contains("ascii")) {
+						code= "ASCII";
 					}
-					if(temp.contains("Unicode")||temp.contains("UNICODE")||temp.contains("unicode")) {
-						code="UNICODE";
+					if(temp.contains("Unicode")|| temp.contains("UNICODE")
+							|| temp.contains("unicode")) {
+						code= "UNICODE";
 					}
-					if(temp.contains("ISO-8859-1")||temp.contains("iso-8859-1")||temp.contains("Iso-8859-1")) {
-						code="ISO-8859-1";
+					if(temp.contains("ISO-8859-1")|| temp.contains("iso-8859-1")
+							|| temp.contains("Iso-8859-1")) {
+						code= "ISO-8859-1";
 					}
 				}
 			}
@@ -260,7 +263,7 @@ public class HttpUnicode{
 				}
 			}
 		}
-		String out= new String(stringBuilder.toString().getBytes(),"UTF-8");
+		String out= new String(stringBuilder.toString().getBytes(), "UTF-8");
 		return out;	
 	}
 }

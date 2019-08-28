@@ -31,8 +31,8 @@ public class ImageSwap{
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
 	}
 
-	public static void bufferedImageToFile(String pngOutputPath, BufferedImage bufferedImage
-			, String fileType) throws IOException{
+	public static void bufferedImageToFile(String pngOutputPath
+			, BufferedImage bufferedImage, String fileType) throws IOException{
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
 	}
 
@@ -41,8 +41,8 @@ public class ImageSwap{
 		ImageIO.write((BufferedImage)image, fileType, new File(pngOutputPath));	
 	}	
 
-	public static void bufferedImageToScaleImageFile(String pngOutputPath, BufferedImage bufferedImage
-			, String fileType, int scale) throws IOException{
+	public static void bufferedImageToScaleImageFile(String pngOutputPath
+			, BufferedImage bufferedImage, String fileType, int scale) throws IOException{
 		bufferedImage= (BufferedImage)bufferedImage.getScaledInstance(bufferedImage.getWidth()
 				, bufferedImage.getHeight(), scale);
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	

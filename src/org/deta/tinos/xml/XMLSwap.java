@@ -20,7 +20,8 @@ public class XMLSwap{
 		for(int i= 0; i< jSONArray.length(); i++){		
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
-				list.add(JsonSwap.jsonObjectToMap(new Gson(), jSONArray.getJSONObject(i)));
+				list.add(JsonSwap.jsonObjectToMap(new Gson()
+						, jSONArray.getJSONObject(i)));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){

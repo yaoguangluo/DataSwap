@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 public class TXTSwap{
 	//注意字节编码的读写正确
-	public static Object[][] txtFileToObjectMatrix(String filePath, String stopBy) throws IOException {		
+	public static Object[][] txtFileToObjectMatrix(String filePath
+			, String stopBy) throws IOException {		
 		Object[][] object= new Object[65535][];
 		InputStream in= new FileInputStream(new File(filePath));
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
@@ -68,7 +69,8 @@ public class TXTSwap{
 		return list;
 	}
 
-	public static List<String[]> txtFileToListStringArray(String filePath, String stopBy) throws IOException {		
+	public static List<String[]> txtFileToListStringArray(String filePath
+			, String stopBy) throws IOException {		
 		List<String[]> list= new ArrayList<>();
 		InputStream in= new FileInputStream(new File(filePath));
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  

@@ -8,7 +8,8 @@ import org.json.XML;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 public class JsonSwap{
-	public static Map<String, Object> jsonObjectToMap(Gson gson, JSONObject jSONObject){
+	public static Map<String, Object> jsonObjectToMap(Gson gson
+			, JSONObject jSONObject){
 		return gson.fromJson(jSONObject.toString()
 				, new TypeToken<Map<String, Object>>(){}.getType());
 	}
@@ -18,7 +19,8 @@ public class JsonSwap{
 		for(int i= 0; i< jSONArray.length(); i++){		
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
-				list.add(jsonObjectToMap(new Gson(),jSONArray.getJSONObject(i)));
+				list.add(jsonObjectToMap(new Gson()
+						, jSONArray.getJSONObject(i)));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){

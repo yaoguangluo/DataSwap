@@ -1,4 +1,4 @@
-#### DataSwap
+#### DataSwap （因数据加密，安全检测等功能部分涉及国家网络安全法等内容，本作品不做研发方向。）
 ##### This project mainly for the metadata exchanges of array, list, map, xml, dhml, uml, xslt, json, hash, string, table, tree, forest, vector and other 155 fields etc.
 
 #### 声明：
@@ -8,6 +8,8 @@
 ###### MapToJsonString
 ###### XmlToMap
 ###### MapToXml
+
+##### 作者思考了很久，因为个人著作权对个人成就资历极为重要，作者确定剔除这5个函数做 国家个人软著申请。20190829 罗瑶光
 
 ###### 最近作者的数据公司长期和互联网数百种不同结构的字符串打交道，于是计划设计一套综合开源版本的数据转换API。全部采用VPCS的注册模式。
 ###### 作者将之前的6个函数全部修正和加速，同时支持并发注册机制运行，另外优化了 list object 的 嵌套对象辨别。
@@ -47,6 +49,6 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### ![实例](http://progressed.io/bar/100?title=completed)27 date 数据分析转换文件
 ###### ![实例](http://progressed.io/bar/100?title=completed)28 3D matrix 数据表变换文件
 
-###### 函数研发总数进度 125+/155
+###### 函数研发总数进度 136+/155
 
-罗瑶光 20190812- 20190828
+罗瑶光 20190812- 20190829

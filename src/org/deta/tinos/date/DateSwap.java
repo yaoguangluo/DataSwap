@@ -36,7 +36,4 @@ public class DateSwap{
 	public static String dateStringToMiliSeconds(String string) {
 		return ""+ new Date(string).getTime();
 	}
-	
-	
-	
 }

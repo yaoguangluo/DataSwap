@@ -10,6 +10,6 @@ public class StringValidation{
 				stringBuilder.append(string.charAt(i));
 			}
 		}
-		return string;
+		return stringBuilder.toString();
 	}
 }

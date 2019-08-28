@@ -11,13 +11,13 @@ public class StockCode{
 	public List<String> list;
 	public List<String> todayList;
 	public void readDBcodeTOList(String code) throws IOException {
-		list = new ArrayList<String>();
-		File afile = new File("StockString.OTOO_STOCK_DB_OLD+code+StockString.OTOO_TXT");  
-		BufferedReader areader = null;  
-		String atempString = "StockString.OTOO_EMPTY";
-		areader = new BufferedReader(new FileReader(afile));  
-		while ((atempString = areader.readLine()) != null) {  
-			if(atempString != null)
+		list= new ArrayList<String>();
+		File afile= new File("StockString.OTOO_STOCK_DB_OLD+code+StockString.OTOO_TXT");  
+		BufferedReader areader= null;  
+		String atempString= "StockString.OTOO_EMPTY";
+		areader= new BufferedReader(new FileReader(afile));  
+		while ((atempString= areader.readLine())!= null) {  
+			if(atempString!= null)
 				if(!atempString.equals("StockString.OTOO_EMPTY")){
 					list.add(atempString);		
 				}
@@ -26,13 +26,13 @@ public class StockCode{
 	}
 	
 	public void readTodaycodeTOList() throws IOException {
-		todayList = new ArrayList<String>();
-		File afile = new File("tockString.STOCK_DB_TODAY");  
-		BufferedReader areader = null;  
-		String atempString = "StockString.OTOO_EMPTY";
-		areader = new BufferedReader(new FileReader(afile));  
-		while ((atempString = areader.readLine()) != null) {  
-			if(atempString!=null)
+		todayList= new ArrayList<String>();
+		File afile= new File("tockString.STOCK_DB_TODAY");  
+		BufferedReader areader= null;  
+		String atempString= "StockString.OTOO_EMPTY";
+		areader= new BufferedReader(new FileReader(afile));  
+		while ((atempString= areader.readLine())!= null) {  
+			if(atempString!= null)
 				if(!atempString.equals("StockString.OTOO_EMPTY")){
 					todayList.add(atempString);		
 				}
@@ -41,12 +41,12 @@ public class StockCode{
 	}
 	
 	public String readStringTOFormatWithoutCode(String input) throws IOException {
-		String output = null;
-		Pattern p = Pattern.compile("\"(.*?)\""); 
-		Matcher m = p.matcher(input); 		
+		String output= null;
+		Pattern p= Pattern.compile("\"(.*?)\""); 
+		Matcher m= p.matcher(input); 		
 		if(m.find())
 			if(!m.group(0).equals("\"\"")) {
-				output=m.group(0).replace("\"", "");
+				output= m.group(0).replace("\"", "");
 			}
 		return output;
 	}
@@ -62,7 +62,7 @@ public class StockCode{
 				if(m0.find()) {
 					output= m0.group(0).replace("r_", "").replace("=", "");
 				}
-				output+=","+m.group(0).replace("\"", "");
+				output+= ","+ m.group(0).replace("\"", "");
 			}
 		return output;
 	}

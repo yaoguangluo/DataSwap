@@ -90,7 +90,7 @@ public class MatrixValidation{
 			for(int i= 0; i<objects.length; i++) {
 				for(int j= 0; j<objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Integer)) {
-						objects[i][j]= 0;
+						objects[i][j]= (int)0;
 					}
 				}
 			}
@@ -99,7 +99,7 @@ public class MatrixValidation{
 			for(int i=0;i<objects.length;i++) {
 				for(int j=0;j<objects[0].length;j++) {
 					if(!(objects[i][j] instanceof Long)) {
-						objects[i][j]= 0;
+						objects[i][j]= (long)0;
 					}
 				}
 			}
@@ -108,7 +108,7 @@ public class MatrixValidation{
 			for(int i=0;i<objects.length;i++) {
 				for(int j=0;j<objects[0].length;j++) {
 					if(!(objects[i][j] instanceof Double)) {
-						objects[i][j]= 0.0;
+						objects[i][j]= (double)0.0;
 					}
 				}
 			}
@@ -117,7 +117,7 @@ public class MatrixValidation{
 			for(int i=0;i<objects.length;i++) {
 				for(int j=0;j<objects[0].length;j++) {
 					if(!(objects[i][j] instanceof Float)) {
-						objects[i][j]= 0.0;
+						objects[i][j]= (float)0.0;
 					}
 				}
 			}
@@ -135,7 +135,7 @@ public class MatrixValidation{
 			for(int i=0;i<objects.length;i++) {
 				for(int j=0;j<objects[0].length;j++) {
 					if(!(objects[i][j] instanceof Short)) {
-						objects[i][j]= 0;
+						objects[i][j]= (short)0;
 					}
 				}
 			}
@@ -144,7 +144,7 @@ public class MatrixValidation{
 			for(int i=0;i<objects.length;i++) {
 				for(int j=0;j<objects[0].length;j++) {
 					if(!(objects[i][j] instanceof Byte)) {
-						objects[i][j]= 0;
+						objects[i][j]= (byte)0;
 					}
 				}
 			}

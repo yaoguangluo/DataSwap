@@ -1,7 +1,7 @@
 package org.deta.tinos.vector;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Vector;
 import com.google.gson.Gson;
 public class VectorSwap{
 	public static Map<String, Object> vectorToMap(Vector<Object> vector){
-		Map<String, Object> map= new HashMap<>();
+		Map<String, Object> map= new LinkedHashMap<>();
 		Iterator<Object> iterator= vector.iterator();
 		int i= 0;
 		while(iterator.hasNext()) {

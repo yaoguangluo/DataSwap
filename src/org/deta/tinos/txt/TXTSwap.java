@@ -22,8 +22,8 @@ public class TXTSwap{
 		return object;
 	}
 
-	public static Object[][] txtFileToObjectMatrixWithRange(String filePath, String stopBy, int rangeBegin
-			, int rangeEnd) throws IOException {		
+	public static Object[][] txtFileToObjectMatrixWithRange(String filePath
+			, String stopBy, int rangeBegin, int rangeEnd) throws IOException {		
 		Object[][] object= new Object[rangeEnd- rangeBegin][];
 		InputStream in= new FileInputStream(new File(filePath));
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
@@ -31,7 +31,7 @@ public class TXTSwap{
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
 			i++;
-			if(i<=rangeEnd&& i>=rangeBegin) {
+			if(i<=rangeEnd&& i>= rangeBegin) {
 				object[i++]=ctempString.split(stopBy);
 			}
 		}
@@ -39,8 +39,8 @@ public class TXTSwap{
 		return object;
 	}
 
-	public static List<String> txtFileToListStringWithRange(String filePath, String stopBy, int rangeBegin
-			, int rangeEnd) throws IOException {		
+	public static List<String> txtFileToListStringWithRange(String filePath
+			, String stopBy, int rangeBegin, int rangeEnd) throws IOException {		
 		List<String> list= new ArrayList<>();
 		InputStream in= new FileInputStream(new File(filePath));
 		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  

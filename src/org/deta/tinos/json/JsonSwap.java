@@ -8,19 +8,20 @@ import org.json.XML;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 public class JsonSwap{
-	public static Map<String, Object> jsonObjectToMap(Gson gson
-			, JSONObject jSONObject){
-		return gson.fromJson(jSONObject.toString()
-				, new TypeToken<Map<String, Object>>(){}.getType());
-	}
+	//  ÌÞ³ý¸öÈËÖø×÷È¨ ÉêÇë·¶Î§	
+	//	public static Map<String, Object> jsonObjectToMap(Gson gson
+	//			, JSONObject jSONObject){
+	//		return gson.fromJson(jSONObject.toString()
+	//				, new TypeToken<Map<String, Object>>(){}.getType());
+	//	}
 
 	public static List<Object> jsonArrayToList(JSONArray jSONArray) {
 		List<Object> list= new ArrayList<>();
 		for(int i= 0; i< jSONArray.length(); i++){		
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
-				list.add(jsonObjectToMap(new Gson()
-						, jSONArray.getJSONObject(i)));
+				list.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
+						, new TypeToken<Map<String, Object>>(){}.getType()));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){
@@ -33,7 +34,7 @@ public class JsonSwap{
 	public static String jsonObjectToString(JSONObject jSONObject){
 		return jSONObject.toString();
 	}
-	
+
 	public static String jsonObjectToXml(JSONObject jSONObject){
 		return XML.toString(jSONObject);
 	}

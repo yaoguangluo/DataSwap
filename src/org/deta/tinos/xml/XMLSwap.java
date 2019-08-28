@@ -10,9 +10,10 @@ import org.deta.tinos.json.JsonSwap;
 import com.google.gson.reflect.TypeToken;
 
 public class XMLSwap{
-	public static JSONObject xmlToJsonObject(String string){
-		return XML.toJSONObject(string);
-	}
+	//  剔除个人著作权 申请范围
+	//	public static JSONObject xmlToJsonObject(String string){
+	//		return XML.toJSONObject(string);
+	//	}
 
 	public static List<Object> xmlToList(String string, String key) {
 		JSONArray jSONArray= XML.toJSONObject(string).getJSONArray(key);
@@ -20,8 +21,8 @@ public class XMLSwap{
 		for(int i= 0; i< jSONArray.length(); i++){		
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
-				list.add(JsonSwap.jsonObjectToMap(new Gson()
-						, jSONArray.getJSONObject(i)));
+				list.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
+						, new TypeToken<Map<String, Object>>(){}.getType()));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){
@@ -30,9 +31,10 @@ public class XMLSwap{
 		}
 		return list;	
 	}
-
-	public static Map<String, Object> xmlToMap(Gson gson, String string){
-		return gson.fromJson(XML.toJSONObject(string).toString()
-				, new TypeToken<Map<String, Object>>(){}.getType());
-	}
+	
+	//  剔除个人著作权 申请范围
+	//	public static Map<String, Object> xmlToMap(Gson gson, String string){
+	//		return gson.fromJson(XML.toJSONObject(string).toString()
+	//				, new TypeToken<Map<String, Object>>(){}.getType());
+	//	}
 }

@@ -30,7 +30,8 @@ public class StringSwap{
 		for(int i= 0; i< jSONArray.length(); i++){		
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
-				list.add(JsonSwap.jsonObjectToMap(new Gson(), jSONArray.getJSONObject(i)));
+				list.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
+						, new TypeToken<Map<String, Object>>(){}.getType()));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){
@@ -45,11 +46,11 @@ public class StringSwap{
 		return gson.fromJson(jSONObject.toString()
 				, new TypeToken<Map<String, Object>>(){}.getType());
 	}
-	
+
 	public static String stringToURIencode(String string){
 		return java.net.URLEncoder.encode(string);
 	}
-	
+
 	public static String URIencodeToURIdecode(String string){
 		return java.net.URLDecoder.decode(string);
 	}

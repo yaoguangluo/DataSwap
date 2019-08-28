@@ -1,4 +1,4 @@
-#### DataSwap
+#### DataSwap （因数据加密，安全检测等功能部分涉及国家网络安全法等内容，本作品不做研发方向。）
 ##### This project mainly for the metadata exchanges of array, list, map, xml, dhml, uml, xslt, json, hash, string, table, tree, forest, vector and other 155 fields etc.
 
 #### 声明：

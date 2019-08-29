@@ -51,7 +51,8 @@ public class ListValidation{
 		return true;	
 	}
 
-	public static List<Object> ListSetsFix(List<Object> list, String setsType) {
+	public static List<Object> ListSetsFix(List<Object> list
+			, String setsType) {
 		List<Object> output= new ArrayList<>();
 		Iterator<Object> iterator= list.iterator();
 		while(iterator.hasNext()) {

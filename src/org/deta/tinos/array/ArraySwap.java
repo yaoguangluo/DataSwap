@@ -19,7 +19,8 @@ public class ArraySwap{
 		return XML.toString(new JSONObject(gson.toJson(object)));
 	}
 
-	public static Map<String, Object> arrayToMap(Gson gson, Object[] objects) {	
+	public static Map<String, Object> arrayToMap(Gson gson
+			, Object[] objects) {	
 		Map<String, Object> map= new HashMap<>();
 		int i= 0;
 		for(Object object: objects) {
@@ -28,7 +29,8 @@ public class ArraySwap{
 		return map;
 	}
 
-	public static Vector<Object> arrayToVector(Gson gson, Object[] objects) {	
+	public static Vector<Object> arrayToVector(Gson gson
+			, Object[] objects) {	
 		Vector<Object> vector= new Vector<>();
 		for(Object object: objects) {
 			vector.add(object);

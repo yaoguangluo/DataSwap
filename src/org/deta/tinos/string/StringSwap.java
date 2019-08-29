@@ -24,14 +24,16 @@ public class StringSwap{
 		return strings;	
 	}
 
-	public static List<Object> stringToList(Gson gson, String string, String key){
+	public static List<Object> stringToList(Gson gson, String string
+			, String key){
 		JSONArray jSONArray= XML.toJSONObject(string).getJSONArray(key);
 		List<Object> list= new ArrayList<>();
 		for(int i= 0; i< jSONArray.length(); i++){		
 			Object object= jSONArray.get(i);
 			if(object instanceof JSONObject){
-				list.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
-						, new TypeToken<Map<String, Object>>(){}.getType()));
+				list.add(new Gson().fromJson(jSONArray
+						.getJSONObject(i).toString(), new TypeToken<Map<String
+						, Object>>(){}.getType()));
 			}else if(object instanceof String){
 				list.add(String.valueOf(object));
 			}else if(object instanceof JSONArray){

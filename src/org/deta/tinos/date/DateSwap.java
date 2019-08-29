@@ -8,11 +8,13 @@ public class DateSwap{
 	}
 
 	public static String dateToYYYYMMDD(Date date) {	
-		return ""+ date.getYear()+ ":"+ date.getMonth()+ ":"+ date.getDay();
+		return ""+ date.getYear()+ ":"+ date.getMonth()
+		+ ":"+ date.getDay();
 	}
 
 	public static String dateToHHMMSS(Date date) {	
-		return ""+ date.getHours()+ ":"+ date.getMinutes()+ ":"+ date.getSeconds();
+		return ""+ date.getHours()+ ":"+ date.getMinutes()
+		+ ":"+ date.getSeconds();
 	}
 
 	public static String dateToMiliSeconds(Date date) {	

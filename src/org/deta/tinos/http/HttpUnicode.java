@@ -7,7 +7,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 public class HttpUnicode{
-	//这个函数在作者去年开发股市分析软件的时候从雪球等网站采样抓数据，发现有GBK utf-8 gb2312 ascii 等格式数据比较混乱，于是进行统一格式处理。
+	//这个函数在作者去年开发股市分析软件的时候从雪球等网站采样抓数据，发现有GBK 
+	//utf-8 gb2312 ascii 等格式数据比较混乱，于是进行统一格式处理。
 	public String getJson(String urlString, String jsonString) throws IOException{
 		String code= "";
 		URL url= new URL(urlString);
@@ -32,7 +33,8 @@ public class HttpUnicode{
 					if(temp.contains("GBK")|| temp.contains("gbk")) {
 						code= "GBK";
 					}	
-					if(temp.contains("UTF-8")|| temp.contains("utf-8")|| temp.contains("UTF8")|| temp.contains("utf8")) {
+					if(temp.contains("UTF-8")|| temp.contains("utf-8")
+							|| temp.contains("UTF8")|| temp.contains("utf8")) {
 						code= "UTF-8";
 					}
 					if(temp.contains("GB2312")|| temp.contains("gb2312")) {
@@ -41,10 +43,12 @@ public class HttpUnicode{
 					if(temp.contains("ASCII")|| temp.contains("ascii")) {
 						code= "ASCII";
 					}
-					if(temp.contains("Unicode")|| temp.contains("UNICODE")|| temp.contains("unicode")) {
+					if(temp.contains("Unicode")|| temp.contains("UNICODE")
+							|| temp.contains("unicode")) {
 						code= "UNICODE";
 					}
-					if(temp.contains("ISO-8859-1")|| temp.contains("iso-8859-1")|| temp.contains("Iso-8859-1")) {
+					if(temp.contains("ISO-8859-1")|| temp.contains("iso-8859-1")
+							|| temp.contains("Iso-8859-1")) {
 						code= "ISO-8859-1";
 					}
 				}
@@ -114,7 +118,8 @@ public class HttpUnicode{
 		return requestBody;
 	}
 
-	public String postJsonWithSercurity(String urlString,String jsonString) throws IOException{
+	public String postJsonWithSercurity(String urlString
+			, String jsonString) throws IOException{
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("POST");
@@ -156,7 +161,8 @@ public class HttpUnicode{
 		return requestBody;
 	}
 
-	public String postXMLWithSercurity(String urlString, String XMLString) throws IOException{
+	public String postXMLWithSercurity(String urlString, String XMLString)
+			throws IOException{
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("POST");
@@ -174,7 +180,8 @@ public class HttpUnicode{
 		try {
 			InputStream inputStream= connection.getInputStream();
 			if (null!= inputStream) {
-				bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+				bufferedReader= new BufferedReader
+						(new InputStreamReader(inputStream));
 				char[] charBuffer= new char[128];
 				int bytesRead= -1;
 				while ((bytesRead= bufferedReader.read(charBuffer)) > 0) {

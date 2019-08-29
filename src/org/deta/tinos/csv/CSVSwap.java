@@ -83,18 +83,21 @@ public class CSVSwap{
 		return list;
 	}
 	
-	public static List<Object[]> xlsOrCsvFileToRangedListObject(String filePath, int pageSheetIndex
-			, Map<Integer, Boolean> rows, Map<Integer, Boolean> culumns) throws IOException {	
+	public static List<Object[]> xlsOrCsvFileToRangedListObject(String filePath
+			, int pageSheetIndex, Map<Integer, Boolean> rows
+			, Map<Integer, Boolean> culumns) throws IOException {	
 		FileInputStream fileInputStream= new FileInputStream(filePath);
 		POIFSFileSystem pOIFSFileSystem= new POIFSFileSystem(fileInputStream);
 		HSSFWorkbook hSSFWorkbook= new HSSFWorkbook(pOIFSFileSystem);
 		HSSFSheet hSSFSheet= hSSFWorkbook.getSheetAt(Integer.valueOf(pageSheetIndex)); 		 
 		HSSFRow hSSFRow= hSSFSheet.getRow(0); 
 		List<Object[]> list= new ArrayList<>();
-		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows()&& rows.containsKey(i); i++) {//ROW
+		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows()
+				&& rows.containsKey(i); i++) {//ROW
 			Object[] objectRow= new String[hSSFRow.getLastCellNum()];
 			if (null!= (hSSFRow= hSSFSheet.getRow(i))) {
-				for(int j= 0; j< hSSFRow.getLastCellNum()&& culumns.containsKey(j); j++){//CULUMN
+				for(int j= 0; j< hSSFRow.getLastCellNum()
+						&& culumns.containsKey(j); j++){//CULUMN
 					HSSFCell hSSFCell= hSSFRow.getCell(j);
 					if(hSSFCell.CELL_TYPE_STRING== hSSFCell.getCellType()){
 						objectRow[j]= hSSFCell.getStringCellValue();
@@ -119,17 +122,21 @@ public class CSVSwap{
 		return list;
 	}
 	
-	public static Object[][] xlsOrCsvFileToRangedObjectMartix(String filePath, int pageSheetIndex
-			, Map<Integer, Boolean> rows, Map<Integer, Boolean> culumns) throws IOException {	
+	public static Object[][] xlsOrCsvFileToRangedObjectMartix(String filePath
+			, int pageSheetIndex, Map<Integer, Boolean> rows
+			, Map<Integer, Boolean> culumns) throws IOException {	
 		FileInputStream fileInputStream= new FileInputStream(filePath);
 		POIFSFileSystem pOIFSFileSystem= new POIFSFileSystem(fileInputStream);
 		HSSFWorkbook hSSFWorkbook= new HSSFWorkbook(pOIFSFileSystem);
 		HSSFSheet hSSFSheet= hSSFWorkbook.getSheetAt(Integer.valueOf(pageSheetIndex)); 		 
 		HSSFRow hSSFRow= hSSFSheet.getRow(0);   
-		Object[][] output= new String[hSSFSheet.getPhysicalNumberOfRows()][hSSFRow.getLastCellNum()];
-		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows()&& rows.containsKey(i); i++) {//ROW
+		Object[][] output= new String[hSSFSheet.getPhysicalNumberOfRows()]
+				[hSSFRow.getLastCellNum()];
+		for (int i= 0; i< hSSFSheet.getPhysicalNumberOfRows()
+				&& rows.containsKey(i); i++) {//ROW
 			if (null!= (hSSFRow= hSSFSheet.getRow(i))) {
-				for(int j= 0; j< hSSFRow.getLastCellNum()&& culumns.containsKey(j); j++){//CULUMN
+				for(int j= 0; j< hSSFRow.getLastCellNum()
+						&& culumns.containsKey(j); j++){//CULUMN
 					HSSFCell hSSFCell= hSSFRow.getCell(j);
 					if(hSSFCell.CELL_TYPE_STRING== hSSFCell.getCellType()){
 						output[i][j]= hSSFCell.getStringCellValue();

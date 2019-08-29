@@ -1,6 +1,7 @@
 package org.deta.tinos.matrix;
 public class MatrixValidation{
-	public static boolean matrixCheck(Object[][] objects, String attribute){
+	public static boolean matrixCheck(Object[][] objects
+			, String attribute){
 		if(attribute.equalsIgnoreCase("boolean")) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
@@ -76,7 +77,8 @@ public class MatrixValidation{
 		return true;
 	}
 
-	public static Object[][] matrixFix(Object[][] objects, String attribute){
+	public static Object[][] matrixFix(Object[][] objects
+			, String attribute){
 		if(attribute.equalsIgnoreCase("boolean")) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {

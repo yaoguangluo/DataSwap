@@ -19,9 +19,10 @@ public class ImageSwap{
 	}
 
 	public static void pixRGBTableToFile(String pngOutputPath, int[][] pixRed
-			, int[][] pixGreen, int[][] pixBlue, String fileType) throws IOException{
-		BufferedImage bufferedImage= new BufferedImage(pixRed[0].length, pixRed.length
-				, BufferedImage.TYPE_INT_RGB);
+			, int[][] pixGreen, int[][] pixBlue, String fileType)
+					throws IOException{
+		BufferedImage bufferedImage= new BufferedImage(pixRed[0].length
+				, pixRed.length, BufferedImage.TYPE_INT_RGB);
 		for (int i= 0; i< bufferedImage.getHeight(); ++i) {
 			for (int j= 0; j< bufferedImage.getWidth(); ++j) {
 				bufferedImage.setRGB(j, i, (pixRed[i][j]<< 16)
@@ -36,14 +37,16 @@ public class ImageSwap{
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
 	}
 
-	public static void ImageToFile(String pngOutputPath, Image image, String fileType)
-			throws IOException{
+	public static void ImageToFile(String pngOutputPath, Image image
+			, String fileType)throws IOException{
 		ImageIO.write((BufferedImage)image, fileType, new File(pngOutputPath));	
 	}	
 
 	public static void bufferedImageToScaleImageFile(String pngOutputPath
-			, BufferedImage bufferedImage, String fileType, int scale) throws IOException{
-		bufferedImage= (BufferedImage)bufferedImage.getScaledInstance(bufferedImage.getWidth()
+			, BufferedImage bufferedImage, String fileType
+			, int scale) throws IOException{
+		bufferedImage= (BufferedImage)bufferedImage
+				.getScaledInstance(bufferedImage.getWidth()
 				, bufferedImage.getHeight(), scale);
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
 	}

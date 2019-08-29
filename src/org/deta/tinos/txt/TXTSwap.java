@@ -12,8 +12,8 @@ public class TXTSwap{
 	public static Object[][] txtFileToObjectMatrix(String filePath
 			, String stopBy) throws IOException {		
 		Object[][] object= new Object[65535][];
-		InputStream in= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		InputStream inputStream= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
@@ -26,8 +26,8 @@ public class TXTSwap{
 	public static Object[][] txtFileToObjectMatrixWithRange(String filePath
 			, String stopBy, int rangeBegin, int rangeEnd) throws IOException {		
 		Object[][] object= new Object[rangeEnd- rangeBegin][];
-		InputStream in= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		InputStream inputStream= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
@@ -43,8 +43,8 @@ public class TXTSwap{
 	public static List<String> txtFileToListStringWithRange(String filePath
 			, String stopBy, int rangeBegin, int rangeEnd) throws IOException {		
 		List<String> list= new ArrayList<>();
-		InputStream in= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		InputStream inputStream= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
@@ -59,8 +59,8 @@ public class TXTSwap{
 
 	public static List<String> txtFileToListString(String filePath) throws IOException {		
 		List<String> list= new ArrayList<>();
-		InputStream in= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		InputStream inputStream= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		while (null!= (ctempString= cReader.readLine())) {  
 			list.add(ctempString);
@@ -72,8 +72,8 @@ public class TXTSwap{
 	public static List<String[]> txtFileToListStringArray(String filePath
 			, String stopBy) throws IOException {		
 		List<String[]> list= new ArrayList<>();
-		InputStream in= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(in));  
+		InputStream inputStream= new FileInputStream(new File(filePath));
+		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		while (null!= (ctempString= cReader.readLine())) {  
 			list.add(ctempString.split(stopBy));

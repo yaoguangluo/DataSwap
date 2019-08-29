@@ -8,11 +8,13 @@ import org.json.XML;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 public class IteratorSwap{
-	public static String iteratorToJsonString(Gson gson, Iterator<Object> iterator){
+	public static String iteratorToJsonString(Gson gson
+			, Iterator<Object> iterator){
 		return gson.toJson(iterator);
 	}
 
-	public static Object stringIteratorToJsonString(Gson gson, Iterator<String> iterator) {
+	public static Object stringIteratorToJsonString(Gson gson
+			, Iterator<String> iterator) {
 		return gson.toJson(iterator);
 	}
 
@@ -25,7 +27,8 @@ public class IteratorSwap{
 				, new TypeToken<Map<String, Object>>(){}.getType());
 	}
 
-	public static Object[] iteratorToObjectArray(Gson gson, Iterator<Object> iterator){
+	public static Object[] iteratorToObjectArray(Gson gson
+			, Iterator<Object> iterator){
 		List<Object> list= new ArrayList<>();
 		while(iterator.hasNext()) {
 			list.add(iterator.next());
@@ -33,7 +36,8 @@ public class IteratorSwap{
 		return list.toArray();
 	}
 
-	public static List<Object> iteratorToList(Gson gson, Iterator<Object> iterator){
+	public static List<Object> iteratorToList(Gson gson
+			, Iterator<Object> iterator){
 		List<Object> list= new ArrayList<>();
 		while(iterator.hasNext()) {
 			list.add(iterator.next());

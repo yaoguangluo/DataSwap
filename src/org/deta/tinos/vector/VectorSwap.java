@@ -9,7 +9,8 @@ import java.util.TreeSet;
 import java.util.Vector;
 import com.google.gson.Gson;
 public class VectorSwap{
-	public static Map<String, Object> vectorToMap(Vector<Object> vector){
+	public static Map<String, Object> vectorToMap(
+			Vector<Object> vector){
 		Map<String, Object> map= new LinkedHashMap<>();
 		Iterator<Object> iterator= vector.iterator();
 		int i= 0;
@@ -32,11 +33,13 @@ public class VectorSwap{
 		return vector.toArray();
 	}
 
-	public static Iterator<Object> vectorToIterator(Vector<Object> vector){
+	public static Iterator<Object> vectorToIterator(
+			Vector<Object> vector){
 		return vector.iterator();
 	}
 
-	public static String vectorToJsonString(Gson gson,Vector<Object> vector){
+	public static String vectorToJsonString(Gson gson
+			,Vector<Object> vector){
 		return gson.toJson(vector);
 	}
 

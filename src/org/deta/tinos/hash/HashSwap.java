@@ -7,16 +7,19 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.XML;
 public class HashSwap{
-	public static String hashTableToJson(Gson gson, Hashtable<String, Object> hashtable) {	
+	public static String hashTableToJson(Gson gson
+			, Hashtable<String, Object> hashtable) {	
 		return gson.toJson(hashtable);
 	}
 
-	public static String hashTableToXml(Gson gson, Hashtable<String, Object> hashtable){
+	public static String hashTableToXml(Gson gson
+			, Hashtable<String, Object> hashtable){
 		JSONObject jSONObject= new JSONObject(gson.toJson(hashtable));
 		return XML.toString(jSONObject);	
 	}
 
-	public static List<Object> hashTableToList(Gson gson, Hashtable<String, Object> hashtable){
+	public static List<Object> hashTableToList(Gson gson
+			, Hashtable<String, Object> hashtable){
 		List<Object> list= new ArrayList<>();
 		Iterator<String> iterator= hashtable.keySet().iterator();	
 		while(iterator.hasNext()) {
@@ -25,7 +28,8 @@ public class HashSwap{
 		return list;
 	}
 
-	public static Object[] hashTableToObjectArray(Gson gson, Hashtable<String, Object> hashtable){
+	public static Object[] hashTableToObjectArray(Gson gson
+			, Hashtable<String, Object> hashtable){
 		List<Object> list= new ArrayList<>();
 		Iterator<String> iterator= hashtable.keySet().iterator();	
 		while(iterator.hasNext()) {

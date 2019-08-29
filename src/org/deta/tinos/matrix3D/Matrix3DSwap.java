@@ -57,8 +57,8 @@ public class Matrix3DSwap{
 		for(int i= 0; i< objects.length; i++) {
 			for(int j= 0; j< objects[0].length; j++) {
 				for(int k= 0; k< objects[0][0].length; k++) {
-					output[objects.length- i][objects[0].length- j][objects[0][0].length- k]
-							= objects[i][j][k];
+					output[objects.length- i][objects[0].length- j]
+							[objects[0][0].length- k]= objects[i][j][k];
 				}
 			}
 		}

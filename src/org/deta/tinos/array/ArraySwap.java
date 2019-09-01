@@ -61,4 +61,14 @@ public class ArraySwap{
 		}		
 		return sets;
 	}
+	
+	public static Object[][] arrayToMatrix(Object[] objects, int widthRange){
+		Object[][] output= new Object[widthRange][objects.length/ widthRange];
+		for(int i= 0; i< widthRange; i++) {
+			for(int j= 0; j< objects.length/ widthRange; j++) {
+				output[i][j]= objects[i* widthRange+ j];
+			}
+		}
+		return output;
+	}
 }

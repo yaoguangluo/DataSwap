@@ -39,4 +39,14 @@ public class MatrixSwap{
 		}
 		return output;
 	}	
+	
+	public static Object[] matrixToArray(Object[][] objects){
+		Object[] output= new Object[objects.length* objects[0].length];
+		for(int i= 0; i< objects.length; i++) {
+			for(int j= 0; j< objects[0].length; j++) {
+				output[i* objects.length+ j]= objects[i][j];
+			}
+		}
+		return output;
+	}
 }

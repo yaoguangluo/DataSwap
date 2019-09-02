@@ -76,7 +76,7 @@ public class ArraySwap{
 		Object[][][] output= new Object[widthRange][heightRange][objects.length/ widthRange/ heightRange];
 		for(int i= 0; i< widthRange; i++) {
 			for(int j= 0; j< heightRange; j++) {
-				for(int k= 0; j< objects.length/ widthRange/ heightRange; j++) {
+				for(int k= 0; k< objects.length/ widthRange/ heightRange; k++) {
 					output[i][j][k]= objects[i* widthRange* heightRange+ j* heightRange+ k];
 				}
 			}

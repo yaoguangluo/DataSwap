@@ -71,4 +71,16 @@ public class ArraySwap{
 		}
 		return output;
 	}
+	
+	public static Object[][][] arrayToMatrix3D(Object[] objects, int widthRange, int heightRange){
+		Object[][][] output= new Object[widthRange][heightRange][objects.length/ widthRange/ heightRange];
+		for(int i= 0; i< widthRange; i++) {
+			for(int j= 0; j< heightRange; j++) {
+				for(int k= 0; j< objects.length/ widthRange/ heightRange; j++) {
+					output[i][j][k]= objects[i* widthRange* heightRange+ j* heightRange+ k];
+				}
+			}
+		}
+		return output;
+	}
 }

@@ -103,4 +103,16 @@ public class Matrix3DSwap{
 		}
 		return output;
 	}	
+	
+	public static Object[] matrixToArray(Object[][][] objects){
+		Object[] output= new Object[objects.length* objects[0].length* objects[0][0].length];
+		for(int i= 0; i< objects.length; i++) {
+			for(int j= 0; j< objects[0].length; j++) {
+				for(int k= 0; k< objects[0][0].length; k++) {
+					output[i* objects.length* objects[0].length+ j* objects[0].length+ k]= objects[i][j][k];
+				}
+			}
+		}
+		return output;
+	}	
 }

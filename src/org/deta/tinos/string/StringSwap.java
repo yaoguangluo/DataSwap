@@ -4,10 +4,6 @@ import java.util.List;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import com.google.gson.Gson;
@@ -68,14 +64,14 @@ public class StringSwap{
 		String output= new String(string.getBytes(inputCharset), outputCharset); 
 		return output;
 	}
-	//DEMO
-	public static void main(String[] argv) throws UnsupportedEncodingException {
-		String testValue= "ยÞัþนโ";//GBK
-		testValue= new String(testValue.getBytes(), "unicode");//ENCODE
-		System.out.println(testValue);
-		testValue= charsetSwap(testValue,"unicode" , "GBK");//DECODE
-		System.out.println(testValue);
-		testValue= charsetSwap(testValue,"UTF8" , "UTF8");//SWAP CODE
-		System.out.println(testValue);
-	}
+//	//DEMO
+//	public static void main(String[] argv) throws UnsupportedEncodingException {
+//		String testValue= "ยÞัþนโ";//GBK
+//		testValue= new String(testValue.getBytes(), "unicode");//ENCODE
+//		System.out.println(testValue);
+//		testValue= charsetSwap(testValue,"unicode" , "GBK");//DECODE
+//		System.out.println(testValue);
+//		testValue= charsetSwap(testValue,"UTF8" , "UTF8");//SWAP CODE
+//		System.out.println(testValue);
+//	}
 }

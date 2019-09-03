@@ -64,6 +64,20 @@ public class StringSwap{
 		String output= new String(string.getBytes(inputCharset), outputCharset); 
 		return output;
 	}
+	
+	public static double stringDoubleToDouble(String stringDouble) {
+		double output= Double.valueOf(stringDouble);
+		return output;
+	}
+	
+//	//DEMO
+//	public static void main(String[] argv) throws UnsupportedEncodingException {
+//		double v= 0.000000001/1000000000;
+//		double v1= 1000000000/0.000000001/1000000000;
+//		System.out.println(v);
+//		System.out.println(stringDoubleToDouble(""+v));
+//	}
+	
 //	//DEMO
 //	public static void main(String[] argv) throws UnsupportedEncodingException {
 //		String testValue= "ยÞัþนโ";//GBK

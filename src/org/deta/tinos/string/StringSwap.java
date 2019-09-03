@@ -9,8 +9,10 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import org.deta.tinos.json.JsonSwap;
+import org.deta.tinos.stable.Stable;
+
 import com.google.gson.reflect.TypeToken;
-@SuppressWarnings("deprecation")
+@SuppressWarnings(Stable.SUPPRESS_WARNINGS_DEPRECATION)
 public class StringSwap{
 	public static String stringToJsonObject(Gson gson, String string){
 		return gson.toJson(string);
@@ -67,9 +69,9 @@ public class StringSwap{
 	}
 
 	public static double stringDoubleToDouble(String stringDouble) throws Exception {
-		if(stringDouble.contains("null")|| stringDouble.contains("Null")
-				|| stringDouble.contains("NULL")|| stringDouble.contains("tive")) {
-			throw new Exception("Invalid double format");
+		if(stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_NULL)
+				|| stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_TIVE)) {
+			throw new Exception(Stable.INVALID_DOUBLE_FORMAT);
 		}
 		double output= Double.valueOf(stringDouble);
 		return output;
@@ -77,21 +79,21 @@ public class StringSwap{
 
 	public static String stringDoubleToBigDecimalRemainder(String stringDouble
 			, int newScale) throws Exception {
-		if(stringDouble.contains("null")|| stringDouble.contains("Null")
-				|| stringDouble.contains("NULL")|| stringDouble.contains("tive")) {
-			throw new Exception("Invalid double format");
+		if(stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_NULL)
+				|| stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_TIVE)) {
+			throw new Exception(Stable.INVALID_DOUBLE_FORMAT);
 		}
 		BigDecimal output= new BigDecimal(Double.valueOf(stringDouble))
 				.setScale(newScale, BigDecimal.ROUND_HALF_UP);
 		return output.toString();
 	}
 
-	//	//DEMO
-	//	public static void main(String[] argv) throws UnsupportedEncodingException {
-	//		double v= 0.55555555;
-	//		System.out.println(v);
-	//		System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
-	//	}
+//		//DEMO
+//		public static void main(String[] argv) throws Exception {
+//			double v= 0.55555555;
+//			System.out.println(v);
+//			System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
+//		}
 	//	//DEMO
 	//	public static void main(String[] argv) throws UnsupportedEncodingException {
 	//		double v= 0.000000001/1000000000;

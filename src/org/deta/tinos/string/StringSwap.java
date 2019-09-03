@@ -5,6 +5,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import org.deta.tinos.json.JsonSwap;
@@ -70,6 +71,19 @@ public class StringSwap{
 		return output;
 	}
 	
+	public static String stringDoubleToBigDecimalRemainder(String stringDouble, int newScale) {
+		BigDecimal output= new BigDecimal(Double.valueOf(stringDouble))
+				.setScale(newScale, BigDecimal.ROUND_HALF_UP);
+		return output.toString();
+	}
+	
+//	//DEMO
+//	public static void main(String[] argv) throws UnsupportedEncodingException {
+//		double v= 0.55555555;
+//		System.out.println(v);
+//		System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
+//	}
+	
 //	//DEMO
 //	public static void main(String[] argv) throws UnsupportedEncodingException {
 //		double v= 0.000000001/1000000000;
@@ -77,7 +91,7 @@ public class StringSwap{
 //		System.out.println(v);
 //		System.out.println(stringDoubleToDouble(""+v));
 //	}
-	
+//	
 //	//DEMO
 //	public static void main(String[] argv) throws UnsupportedEncodingException {
 //		String testValue= "ยÞัþนโ";//GBK

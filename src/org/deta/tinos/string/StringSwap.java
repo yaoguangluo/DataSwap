@@ -58,48 +58,56 @@ public class StringSwap{
 	public static String URIencodeToURIdecode(String string){
 		return java.net.URLDecoder.decode(string);
 	}
-	
+
 	public static String charsetSwap(String string,String inputCharset
 			, String outputCharset)
-			throws UnsupportedEncodingException{
+					throws UnsupportedEncodingException{
 		String output= new String(string.getBytes(inputCharset), outputCharset); 
 		return output;
 	}
-	
-	public static double stringDoubleToDouble(String stringDouble) {
+
+	public static double stringDoubleToDouble(String stringDouble) throws Exception {
+		if(stringDouble.contains("null")|| stringDouble.contains("Null")
+				|| stringDouble.contains("NULL")|| stringDouble.contains("tive")) {
+			throw new Exception("Invalid double format");
+		}
 		double output= Double.valueOf(stringDouble);
 		return output;
 	}
-	
-	public static String stringDoubleToBigDecimalRemainder(String stringDouble, int newScale) {
+
+	public static String stringDoubleToBigDecimalRemainder(String stringDouble
+			, int newScale) throws Exception {
+		if(stringDouble.contains("null")|| stringDouble.contains("Null")
+				|| stringDouble.contains("NULL")|| stringDouble.contains("tive")) {
+			throw new Exception("Invalid double format");
+		}
 		BigDecimal output= new BigDecimal(Double.valueOf(stringDouble))
 				.setScale(newScale, BigDecimal.ROUND_HALF_UP);
 		return output.toString();
 	}
-	
-//	//DEMO
-//	public static void main(String[] argv) throws UnsupportedEncodingException {
-//		double v= 0.55555555;
-//		System.out.println(v);
-//		System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
-//	}
-	
-//	//DEMO
-//	public static void main(String[] argv) throws UnsupportedEncodingException {
-//		double v= 0.000000001/1000000000;
-//		double v1= 1000000000/0.000000001/1000000000;
-//		System.out.println(v);
-//		System.out.println(stringDoubleToDouble(""+v));
-//	}
-//	
-//	//DEMO
-//	public static void main(String[] argv) throws UnsupportedEncodingException {
-//		String testValue= "ยÞัþนโ";//GBK
-//		testValue= new String(testValue.getBytes(), "unicode");//ENCODE
-//		System.out.println(testValue);
-//		testValue= charsetSwap(testValue,"unicode" , "GBK");//DECODE
-//		System.out.println(testValue);
-//		testValue= charsetSwap(testValue,"UTF8" , "UTF8");//SWAP CODE
-//		System.out.println(testValue);
-//	}
+
+	//	//DEMO
+	//	public static void main(String[] argv) throws UnsupportedEncodingException {
+	//		double v= 0.55555555;
+	//		System.out.println(v);
+	//		System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
+	//	}
+	//	//DEMO
+	//	public static void main(String[] argv) throws UnsupportedEncodingException {
+	//		double v= 0.000000001/1000000000;
+	//		double v1= 1000000000/0.000000001/1000000000;
+	//		System.out.println(v);
+	//		System.out.println(stringDoubleToDouble(""+v));
+	//	}
+	//	
+	//	//DEMO
+	//	public static void main(String[] argv) throws UnsupportedEncodingException {
+	//		String testValue= "ยÞัþนโ";//GBK
+	//		testValue= new String(testValue.getBytes(), "unicode");//ENCODE
+	//		System.out.println(testValue);
+	//		testValue= charsetSwap(testValue,"unicode" , "GBK");//DECODE
+	//		System.out.println(testValue);
+	//		testValue= charsetSwap(testValue,"UTF8" , "UTF8");//SWAP CODE
+	//		System.out.println(testValue);
+	//	}
 }

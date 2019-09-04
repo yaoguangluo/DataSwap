@@ -1,8 +1,11 @@
 package org.deta.tinos.matrix;
+
+import org.deta.tinos.stable.Stable;
+
 public class MatrixValidation{
 	public static boolean matrixCheck(Object[][] objects
 			, String attribute){
-		if(attribute.equalsIgnoreCase("boolean")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_BOOLEAN)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Boolean)) {
@@ -11,7 +14,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("int")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_INT)) {
 			for(int i= 0; i<objects.length; i++) {
 				for(int j= 0; j<objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Integer)) {
@@ -20,7 +23,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("long")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_LONG)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Long)) {
@@ -29,7 +32,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("double")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_DOUBLE)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Double)) {
@@ -38,7 +41,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("float")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_FLOAT)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Float)) {
@@ -47,7 +50,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("string")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_STRING)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof String)) {
@@ -56,7 +59,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("short")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_SHORT)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Short)) {
@@ -65,7 +68,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("byte")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_BYTE)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Byte)) {
@@ -79,7 +82,7 @@ public class MatrixValidation{
 
 	public static Object[][] matrixFix(Object[][] objects
 			, String attribute){
-		if(attribute.equalsIgnoreCase("boolean")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_BOOLEAN)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Boolean)) {
@@ -88,7 +91,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("int")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_INT)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Integer)) {
@@ -97,7 +100,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("long")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_LONG)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Long)) {
@@ -106,7 +109,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("double")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_DOUBLE)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Double)) {
@@ -115,7 +118,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("float")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_FLOAT)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Float)) {
@@ -124,7 +127,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("string")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_STRING)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof String)) {
@@ -133,7 +136,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("short")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_SHORT)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Short)) {
@@ -142,7 +145,7 @@ public class MatrixValidation{
 				}
 			}
 		}
-		if(attribute.equalsIgnoreCase("byte")) {
+		if(attribute.equalsIgnoreCase(Stable.STRING_BYTE)) {
 			for(int i= 0; i< objects.length; i++) {
 				for(int j= 0; j< objects[0].length; j++) {
 					if(!(objects[i][j] instanceof Byte)) {

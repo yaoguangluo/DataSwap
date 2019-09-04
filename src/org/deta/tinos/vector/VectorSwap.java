@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.Vector;
+
+import org.deta.tinos.stable.Stable;
+
 import com.google.gson.Gson;
 public class VectorSwap{
 	public static Map<String, Object> vectorToMap(
@@ -15,7 +18,7 @@ public class VectorSwap{
 		Iterator<Object> iterator= vector.iterator();
 		int i= 0;
 		while(iterator.hasNext()) {
-			map.put(""+ i++, iterator.next());
+			map.put(Stable.STRING_EMPTY+ i++, iterator.next());
 		}
 		return map;
 	}

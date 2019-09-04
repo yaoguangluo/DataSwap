@@ -1,28 +1,33 @@
 package org.deta.tinos.date;
 import java.sql.Timestamp;
 import java.util.Date;
-@SuppressWarnings({"deprecation", "static-access"})
+
+import org.deta.tinos.stable.Stable;
+@SuppressWarnings({Stable.SUPPRESS_WARNINGS_DEPRECATION
+	, Stable.SUPPRESS_WARNINGS_STATIC_ACCESS})
 public class DateSwap{
 	public static String dateToGMTString(Date date) {	
 		return date.toGMTString();
 	}
 
 	public static String dateToYYYYMMDD(Date date) {	
-		return ""+ date.getYear()+ ":"+ date.getMonth()
-		+ ":"+ date.getDay();
+		return Stable.STRING_EMPTY+ date.getYear()
+		+ Stable.STRING_PER+ date.getMonth()
+		+ Stable.STRING_PER+ date.getDay();
 	}
 
 	public static String dateToHHMMSS(Date date) {	
-		return ""+ date.getHours()+ ":"+ date.getMinutes()
-		+ ":"+ date.getSeconds();
+		return Stable.STRING_EMPTY+ date.getHours()
+		+ Stable.STRING_PER+ date.getMinutes()
+		+ Stable.STRING_PER+ date.getSeconds();
 	}
 
 	public static String dateToMiliSeconds(Date date) {	
-		return ""+ date.getTime();
+		return Stable.STRING_EMPTY+ date.getTime();
 	}
 
 	public static String getCurrentMiliSeconds(Date date) {	
-		return ""+ new Date().getTime();
+		return Stable.STRING_EMPTY+ new Date().getTime();
 	}
 
 	public static Timestamp dateToTimeStamp(Date date) {
@@ -36,6 +41,6 @@ public class DateSwap{
 	}
 	
 	public static String dateStringToMiliSeconds(String string) {
-		return ""+ new Date(string).getTime();
+		return Stable.STRING_EMPTY+ new Date(string).getTime();
 	}
 }

@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.Vector;
+
+import org.deta.tinos.stable.Stable;
 import org.json.JSONObject;
 import com.google.gson.Gson;
 public class ArraySwap{
@@ -24,7 +26,7 @@ public class ArraySwap{
 		Map<String, Object> map= new HashMap<>();
 		int i= 0;
 		for(Object object: objects) {
-			map.put(""+ i++, object);
+			map.put(Stable.STRING_EMPTY+ i++, object);
 		}		
 		return map;
 	}

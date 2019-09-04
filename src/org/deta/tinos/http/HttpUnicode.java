@@ -6,11 +6,13 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import org.deta.tinos.stable.Stable;
 public class HttpUnicode{
 	//这个函数在作者去年开发股市分析软件的时候从雪球等网站采样抓数据，发现有GBK 
 	//utf-8 gb2312 ascii 等格式数据比较混乱，于是进行统一格式处理。
 	public String getJson(String urlString, String jsonString) throws IOException{
-		String code= "";
+		String code= Stable.STRING_EMPTY;
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("GET");
@@ -88,7 +90,7 @@ public class HttpUnicode{
 		OutputStream os= connection.getOutputStream();
 		os.write(sbuffer.toString().getBytes());
 		os.flush();
-		String requestBody= "";
+		String requestBody= Stable.STRING_EMPTY;
 		StringBuilder stringBuilder= new StringBuilder();
 		BufferedReader bufferedReader= null;
 		try {
@@ -101,7 +103,7 @@ public class HttpUnicode{
 					stringBuilder.append(charBuffer, 0, bytesRead);
 				}
 			} else {
-				stringBuilder.append("");
+				stringBuilder.append(Stable.STRING_EMPTY);
 			}
 		} catch (IOException ex) {
 			throw ex;
@@ -131,7 +133,7 @@ public class HttpUnicode{
 		OutputStream os= connection.getOutputStream();
 		os.write(sbuffer.toString().getBytes());
 		os.flush();
-		String requestBody= "";
+		String requestBody= Stable.STRING_EMPTY;
 		StringBuilder stringBuilder= new StringBuilder();
 		BufferedReader bufferedReader= null;
 		try {
@@ -144,7 +146,7 @@ public class HttpUnicode{
 					stringBuilder.append(charBuffer, 0, bytesRead);
 				}
 			} else {
-				stringBuilder.append("");
+				stringBuilder.append(Stable.STRING_EMPTY);
 			}
 		} catch (IOException ex) {
 			throw ex;
@@ -174,7 +176,7 @@ public class HttpUnicode{
 		OutputStream os= connection.getOutputStream();
 		os.write(sbuffer.toString().getBytes());
 		os.flush();
-		String requestBody= "";
+		String requestBody= Stable.STRING_EMPTY;
 		StringBuilder stringBuilder= new StringBuilder();
 		BufferedReader bufferedReader= null;
 		try {
@@ -188,7 +190,7 @@ public class HttpUnicode{
 					stringBuilder.append(charBuffer, 0, bytesRead);
 				}
 			} else {
-				stringBuilder.append("");
+				stringBuilder.append(Stable.STRING_EMPTY);
 			}
 		} catch (IOException ex) {
 			throw ex;
@@ -258,7 +260,7 @@ public class HttpUnicode{
 					stringBuilder.append(charBuffer, 0, bytesRead);
 				}
 			} else {
-				stringBuilder.append("");
+				stringBuilder.append(Stable.STRING_EMPTY);
 			}
 
 		} catch (IOException ex) {

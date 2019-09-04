@@ -21,6 +21,11 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 
 ###### 当前研发功能
 ###### ![实例](http://progressed.io/bar/100?title=completed)1 股市网络数据分析转换文件
+readDBcodeTOList
+readTodaycodeTOList
+readStringTOFormatWithoutCode
+readStringTOFormatWithCode
+
 ###### ![实例](http://progressed.io/bar/10?title=completed)2 object 数据分析转换文件
 ###### ![实例](http://progressed.io/bar/100?title=completed)3 xml 数据分析转换文件
 ###### ![实例](http://progressed.io/bar/100?title=completed)4 json 数据分析转换文件

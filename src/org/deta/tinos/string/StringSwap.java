@@ -57,7 +57,7 @@ public class StringSwap{
 		return java.net.URLEncoder.encode(string);
 	}
 
-	public static String URIencodeToURIdecode(String string){
+	public static String uRIencodeToURIdecode(String string){
 		return java.net.URLDecoder.decode(string);
 	}
 

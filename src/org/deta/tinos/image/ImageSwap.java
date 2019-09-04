@@ -37,7 +37,7 @@ public class ImageSwap{
 		ImageIO.write(bufferedImage, fileType, new File(pngOutputPath));	
 	}
 
-	public static void ImageToFile(String pngOutputPath, Image image
+	public static void imageToFile(String pngOutputPath, Image image
 			, String fileType)throws IOException{
 		ImageIO.write((BufferedImage)image, fileType, new File(pngOutputPath));	
 	}	

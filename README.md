@@ -80,6 +80,12 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### treeToVector
 ##### ![实例](http://progressed.io/bar/100?title=completed)12 gradle yml 数据分析转换文件
 ##### ![实例](http://progressed.io/bar/100?title=completed)13 vector 数据分析转换文件
+###### vectorToMap
+###### vectorToList
+###### vectorToArray
+###### vectorToIterator
+###### vectorToJsonString
+###### vectorToSet
 ##### ![实例](http://progressed.io/bar/10?title=completed)14 array 数据分析转换文件
 ###### arrayToMatrix
 ###### arrayToSet 

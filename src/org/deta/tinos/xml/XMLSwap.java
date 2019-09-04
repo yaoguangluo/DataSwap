@@ -5,7 +5,10 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.Vector;
 import java.util.List;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Hashtable;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.google.gson.Gson;
@@ -73,5 +76,12 @@ public class XMLSwap{
 			}
 		}
 		return sets;	
+	}
+
+	public Hashtable<String, Object> xmlToHashtable(String xmlString, Gson gson){
+		JSONObject jSONObject= XML.toJSONObject(xmlString);
+		Hashtable<String, Object> hashTable= gson.fromJson(jSONObject.toString()
+				, (Type) new Hashtable<String, Object>());
+		return hashTable;		
 	}
 }

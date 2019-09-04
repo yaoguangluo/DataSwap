@@ -1,7 +1,10 @@
 package org.deta.tinos.stringBuilder;
+import java.util.Map;
+
 import org.json.JSONObject;
 import org.json.XML;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 public class StringBuilderSwap{
 	public static char[] stringBuilderToCharArray(StringBuilder stringBuilder) {	
 		return stringBuilder.toString().toCharArray();
@@ -24,5 +27,12 @@ public class StringBuilderSwap{
 			, StringBuilder stringBuilder){
 		String[] strings= stringBuilder.toString().split(stopBy); 
 		return strings;	
+	}
+	
+	public static Map<String, Object> stringBuilderToMap(Gson gson
+			, StringBuilder stringBuilder){
+		JSONObject jSONObject= new JSONObject(gson.toJson(stringBuilder.toString()));
+		return gson.fromJson(jSONObject.toString()
+				, new TypeToken<Map<String, Object>>(){}.getType());
 	}
 }

@@ -1,6 +1,9 @@
 package org.deta.tinos.xml;
 import org.json.XML;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Vector;
 import java.util.List;
 import java.util.ArrayList;
 import org.json.JSONArray;
@@ -31,10 +34,44 @@ public class XMLSwap{
 		}
 		return list;	
 	}
-	
+
 	//  ÌÞ³ý¸öÈËÖø×÷È¨ ÉêÇë·¶Î§
 	//	public static Map<String, Object> xmlToMap(Gson gson, String string){
 	//		return gson.fromJson(XML.toJSONObject(string).toString()
 	//				, new TypeToken<Map<String, Object>>(){}.getType());
 	//	}
+
+	public static Vector<Object> xmlToVector(String string, String key) {
+		JSONArray jSONArray= XML.toJSONObject(string).getJSONArray(key);
+		Vector<Object> vector= new Vector<>();
+		for(int i= 0; i< jSONArray.length(); i++){		
+			Object object= jSONArray.get(i);
+			if(object instanceof JSONObject){
+				vector.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
+						, new TypeToken<Map<String, Object>>(){}.getType()));
+			}else if(object instanceof String){
+				vector.add(String.valueOf(object));
+			}else if(object instanceof JSONArray){
+				vector.add(JsonSwap.jsonArrayToList(jSONArray.getJSONArray(i)));
+			}
+		}
+		return vector;	
+	}
+
+	public static Set<Object> xmlToSets(String string, String key) {
+		JSONArray jSONArray= XML.toJSONObject(string).getJSONArray(key);
+		Set<Object> sets= new TreeSet<>();
+		for(int i= 0; i< jSONArray.length(); i++){		
+			Object object= jSONArray.get(i);
+			if(object instanceof JSONObject){
+				sets.add(new Gson().fromJson(jSONArray.getJSONObject(i).toString()
+						, new TypeToken<Map<String, Object>>(){}.getType()));
+			}else if(object instanceof String){
+				sets.add(String.valueOf(object));
+			}else if(object instanceof JSONArray){
+				sets.add(JsonSwap.jsonArrayToList(jSONArray.getJSONArray(i)));
+			}
+		}
+		return sets;	
+	}
 }

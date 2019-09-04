@@ -20,35 +20,159 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### 20190824 今天能导入了，我导过来到国内的gitee上然后重新设置成闭源备份。 https://gitee.com/DetaChina/data_format/blob/master/VtoV.java
 
 ###### 当前研发功能
-###### ![实例](http://progressed.io/bar/100?title=completed)1 股市网络数据分析转换文件
-###### ![实例](http://progressed.io/bar/10?title=completed)2 object 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)3 xml 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)4 json 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)5 string 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)6 list 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)7 map 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)8 pdf 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)9 office 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)10 image 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)11 tree 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)12 gradle yml 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)13 vector 数据分析转换文件
-###### ![实例](http://progressed.io/bar/10?title=completed)14 table 数据分析转换文件
-###### ![实例](http://progressed.io/bar/10?title=completed)15 sound 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)16 matrix 数据分析转换文件
-###### ![实例](http://progressed.io/bar/10?title=completed)17 DNA 数据分析转换文件
-###### ![实例](http://progressed.io/bar/10?title=completed)18 OBEX 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)19 Vector 数据分析转换文件
-###### ![实例](http://progressed.io/bar/10?title=completed)20 Flips 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)21 hash 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)22 xls 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)23 csv 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)24 txt 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)25 Iterator 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)26 String Builder 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)27 date 数据分析转换文件
-###### ![实例](http://progressed.io/bar/100?title=completed)28 3D matrix 数据表变换文件
-
-###### 函数研发总数进度 150+/155
+##### ![实例](http://progressed.io/bar/100?title=completed)1 股市网络数据分析转换文件
+###### readDBcodeTOList
+###### readTodaycodeTOList
+###### readStringTOFormatWithoutCode
+###### readStringTOFormatWithCode
+##### ![实例](http://progressed.io/bar/10?title=completed)2 object 数据分析转换文件
+###### objectToJsonString
+##### ![实例](http://progressed.io/bar/100?title=completed)3 xml 数据分析转换文件
+###### xmlToList
+###### xmlToVector
+###### xmlToSets
+###### xmlToHashtable
+##### ![实例](http://progressed.io/bar/100?title=completed)4 json 数据分析转换文件
+###### jsonArrayToList
+###### jsonObjectToString
+###### jsonObjectToXml
+##### ![实例](http://progressed.io/bar/100?title=completed)5 string 数据分析转换文件
+###### stringToJsonObject
+###### stringToXml
+###### stringToArray
+###### stringToList
+###### stringToMap
+###### stringToURIencode
+###### uRIencodeToURIdecode
+###### charsetSwap
+###### stringDoubleToDouble
+###### stringDoubleToBigDecimalRemainder
+###### stringCodeFilter
+##### ![实例](http://progressed.io/bar/100?title=completed)6 list 数据分析转换文件
+###### listToJsonString
+###### stringListToJsonString
+###### listToXml
+###### listToMap
+###### listToObjectArray
+###### listToIterator
+###### listToVector
+###### listToSet
+###### ListSetsCheck
+###### ListSetsFix
+##### ![实例](http://progressed.io/bar/100?title=completed)7 map 数据分析转换文件
+###### mapToList
+###### mapToHash
+##### ![实例](http://progressed.io/bar/100?title=completed)8 pdf 数据分析转换文件
+##### ![实例](http://progressed.io/bar/100?title=completed)9 office 数据分析转换文件
+##### ![实例](http://progressed.io/bar/100?title=completed)10 image 数据分析转换文件
+###### pixTableToFile
+###### pixRGBTableToFile
+###### bufferedImageToFile
+###### imageToFile
+###### bufferedImageToScaleImageFile
+##### ![实例](http://progressed.io/bar/100?title=completed)11 tree 数据分析转换文件
+###### treeToJsonString
+###### stringTreeToJsonString
+###### treeToXml
+###### treeToMap
+###### treeToObjectArray
+###### treeToIterator
+###### treeToVector
+##### ![实例](http://progressed.io/bar/100?title=completed)12 gradle yml 数据分析转换文件
+##### ![实例](http://progressed.io/bar/100?title=completed)13 vector 数据分析转换文件
+##### ![实例](http://progressed.io/bar/10?title=completed)14 array 数据分析转换文件
+###### arrayToMatrix
+###### arrayToSet 
+###### arrayToXml
+###### arrayToJson
+###### arrayToMatrix3D
+###### arrayToIterator
+###### arrayToList 
+###### arrayToVector 
+###### arrayToMap
+###### arrayIntCheck
+###### arrayIntFix
+###### arrayLongCheck
+###### arrayLongFix
+###### arrayDoubleCheck
+###### arrayDoubleFix
+###### arrayFloatCheck
+###### arrayFloatFix
+##### ![实例](http://progressed.io/bar/10?title=completed)15 sound 数据分析转换文件
+##### ![实例](http://progressed.io/bar/100?title=completed)16 matrix 数据分析转换文件
+###### matrixInclineSwap
+###### matrixPostSwap
+###### matrixInSwap
+###### matrixReverseSwap
+###### matrixToArray
+##### ![实例](http://progressed.io/bar/10?title=completed)17 DNA 数据分析转换文件
+##### ![实例](http://progressed.io/bar/10?title=completed)18 OBEX 数据分析转换文件
+##### ![实例](http://progressed.io/bar/100?title=completed)19 Vector 数据分析转换文件
+###### vectorToMap
+###### vectorToList
+###### vectorToArray
+###### vectorToIterator
+###### vectorToJsonString
+###### vectorToSet
+##### ![实例](http://progressed.io/bar/10?title=completed)20 Flips 数据分析转换文件
+##### ![实例](http://progressed.io/bar/100?title=completed)21 hash 数据分析转换文件
+###### hashTableToJson 
+###### hashTableToXml
+###### hashTableToList
+###### hashTableToObjectArray
+##### ![实例](http://progressed.io/bar/100?title=completed)22 xls 数据分析转换文
+##### ![实例](http://progressed.io/bar/100?title=completed)23 csv 数据分析转换文件
+###### xlsOrCsvFileToObjectMartix
+###### xlsOrCsvFileToListObject
+###### xlsOrCsvFileToRangedListObject
+###### xlsOrCsvFileToRangedObjectMartix
+##### ![实例](http://progressed.io/bar/100?title=completed)24 txt 数据分析转换文件
+###### txtFileToObjectMatrix
+###### txtFileToObjectMatrixWithRange
+###### txtFileToListStringWithRange
+###### txtFileToListString
+###### txtFileToListStringArray
+##### ![实例](http://progressed.io/bar/100?title=completed)25 Iterator 数据分析转换文件
+###### iteratorToJsonString
+###### stringIteratorToJsonString
+###### iteratorToXml
+###### iteratorToMap
+###### iteratorToObjectArray
+###### iteratorToList
+##### ![实例](http://progressed.io/bar/100?title=completed)26 String Builder 数据分析转换文件
+###### stringBuilderToCharArray
+###### stringBuilderToString
+###### stringBuilderToJson
+###### stringBuilderToXml
+###### stringBuilderToSplitArray
+###### stringBuilderToMap
+##### ![实例](http://progressed.io/bar/100?title=completed)27 date 数据分析转换文件
+###### dateToGMTString
+###### dateToYYYYMMDD
+###### dateToHHMMSS
+###### dateToMiliSeconds
+###### getCurrentMiliSeconds
+###### dateToTimeStamp
+###### timeStampToMiliSeconds
+###### dateStringToMiliSeconds
+###### currentSystemTimeCheck
+###### currentSystemTimeToUTC
+##### ![实例](http://progressed.io/bar/100?title=completed)28 3D matrix 数据表变换文件
+###### matrixShiftSwapXYZ
+###### matrixInclineSwapXY
+###### matrixInclineSwapXZ
+###### matrixInclineSwapYZ
+###### matrixReverseSwap
+###### matrixReverseSwapXY
+###### matrixReverseSwapXZ
+###### matrixReverseSwapYZ
+###### matrixToArray
+##### ![实例](http://progressed.io/bar/100?title=completed)29 HTTP 数据表变换文件
+###### getJson
+###### postXML
+###### postJsonWithSercurity
+###### postXMLWithSercurity
+###### getHTML
+###### 函数研发总数进度 160+/155
 
 罗瑶光 20190812- 20190829

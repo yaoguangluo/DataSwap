@@ -61,6 +61,14 @@ public class StringSwap{
 		return java.net.URLDecoder.decode(string);
 	}
 
+	public static int[] stringToCharASCII(String string){
+		int[] charASCII= new int[string.length()];
+		for(int i= 0; i< string.length(); i++){
+			charASCII[i]= string.charAt(i);
+		}
+		return charASCII;
+	}
+	
 	public static String charsetSwap(String string,String inputCharset
 			, String outputCharset)
 					throws UnsupportedEncodingException{

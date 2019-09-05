@@ -1,6 +1,20 @@
 package org.deta.tinos.string;
 public class StringSequency{
-	public static String[] stringToSequency(String[] string, int scale){
+	public static String stringToSequency(String string){
+		char[] chars= string.toCharArray();
+		for(int i= 0; i< chars.length; i++) {
+			for(int j= 0; j< chars.length; j++) {
+				if(chars[i]< chars[j]) {
+					char temp= chars[i];
+					chars[i]= chars[j];
+					chars[j]= temp;
+				}
+			}
+		}	
+		return String.valueOf(chars);	
+	}
+	
+	public static String[] stringToSequencyArray(String[] string, int scale){
 		//±È½ÏÍ·
 		for(int i= 0; i< string.length; i++) {
 			for(int j= 0; j< string.length; j++) {
@@ -38,17 +52,21 @@ public class StringSequency{
 		}
 		return string;
 	}
-	//		//DEMO
-	//		public static void main(String[] argv) throws UnsupportedEncodingException {
-	//			String testValue[]= new String[4];
-	//			testValue[0]= "bacded";
-	//			testValue[2]= "Abcd";
-	//			testValue[1]= "aBcedd";
-	//			testValue[3]= "bCaef";
-	//			testValue= stringToSequency(testValue, 6);	
-	//			System.out.println(testValue[0]);
-	//			System.out.println(testValue[1]);
-	//			System.out.println(testValue[2]);
-	//			System.out.println(testValue[3]);	
-	//		}
+//			//DEMO
+//			public static void main(String[] argv) {
+//1
+////				String testValue[]= new String[4];
+////				testValue[0]= "bacded";
+////				testValue[2]= "Abcd";
+////				testValue[1]= "aBcedd";
+////				testValue[3]= "bCaef";
+////				testValue= stringToSequency(testValue, 6);	
+////				System.out.println(testValue[0]);
+////				System.out.println(testValue[1]);
+////				System.out.println(testValue[2]);
+////				System.out.println(testValue[3]);	
+//2			
+////				String value= "AabusahudBDHDbuHgfUiGgfj";
+////				System.out.println(stringToSequency(value));
+//			}
 }

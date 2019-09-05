@@ -18,11 +18,10 @@ public class StringSequency{
 		//±È½ÏÍ·
 		for(int i= 0; i< string.length; i++) {
 			for(int j= 0; j< string.length; j++) {
-				if(string[i].toLowerCase().charAt(0)
-						< string[j].toLowerCase().charAt(0)) {
-					String temp= string[i].toString();
-					string[i]= string[j].toString();
-					string[j]= temp.toString();
+				if(string[i].charAt(0)< string[j].charAt(0)) {
+						String temp= string[i].toString();
+						string[i]= string[j].toString();
+						string[j]= temp.toString();
 				}
 			}
 		}	
@@ -31,19 +30,17 @@ public class StringSequency{
 			for(int i= 0; i< string.length; i++) {
 				for(int j= 0; j< string.length; j++) {
 					if(string[i].length()> k&& string[j].length()> k) {
-						if(string[i].toLowerCase().charAt(k)
-								< string[j].toLowerCase().charAt(k)) {
+						if(string[i].charAt(k)< string[j].charAt(k)) {
 							boolean find= true;
 							for(int p= 0; p< k; p++) {
-								if(string[i].toLowerCase().charAt(p)
-										!= string[j].toLowerCase().charAt(p)) {
+								if(string[i].charAt(p)!= string[j].charAt(p)) {
 									find= false;
 								}
 							}
 							if(find) {
-								String temp= string[i].toString();
-								string[i]= string[j].toString();
-								string[j]= temp.toString();
+									String temp= string[i].toString();
+									string[i]= string[j].toString();
+									string[j]= temp.toString();
 							}
 						}	
 					}
@@ -52,21 +49,23 @@ public class StringSequency{
 		}
 		return string;
 	}
-//			//DEMO
-//			public static void main(String[] argv) {
-//1
-////				String testValue[]= new String[4];
-////				testValue[0]= "bacded";
-////				testValue[2]= "Abcd";
-////				testValue[1]= "aBcedd";
-////				testValue[3]= "bCaef";
-////				testValue= stringToSequency(testValue, 6);	
-////				System.out.println(testValue[0]);
-////				System.out.println(testValue[1]);
-////				System.out.println(testValue[2]);
-////				System.out.println(testValue[3]);	
-//2			
-////				String value= "AabusahudBDHDbuHgfUiGgfj";
-////				System.out.println(stringToSequency(value));
-//			}
+	//			//DEMO
+	public static void main(String[] argv) {
+		//1
+		String testValue[]= new String[5];
+		testValue[0]= "baÂÞcded";
+		testValue[1]= "ÑþaBcedd";
+		testValue[2]= "ÑþAbÂÞcd";
+		testValue[3]= "bCaef";
+		testValue[4]= "BCaef";
+		testValue= stringToSequencyArray(testValue, 6);	
+		System.out.println(testValue[0]);
+		System.out.println(testValue[1]);
+		System.out.println(testValue[2]);
+		System.out.println(testValue[3]);	
+		System.out.println(testValue[4]);
+		//2			
+		////				String value= "AabusahudBDHDbuHgfUiGgfj";
+		////				System.out.println(stringToSequency(value));
+	}
 }

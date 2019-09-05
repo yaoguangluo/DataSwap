@@ -1,7 +1,10 @@
 package org.deta.tinos.json;
 import java.util.Map;
 import java.util.List;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Hashtable;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
@@ -33,6 +36,12 @@ public class JsonSwap{
 
 	public static String jsonObjectToString(JSONObject jSONObject){
 		return jSONObject.toString();
+	}
+
+	public static Hashtable<String, Object> jsonObjectToHashtable(Gson gson
+			,JSONObject jSONObject){
+		return gson.fromJson(jSONObject.toString()
+				, (Type) new Hashtable<String, Object>());
 	}
 
 	public static String jsonObjectToXml(JSONObject jSONObject){

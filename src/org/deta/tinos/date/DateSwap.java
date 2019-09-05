@@ -40,6 +40,11 @@ public class DateSwap{
 		return timestamp.getTime();
 	}
 	
+	public static String timeStampToMiliSecondsWithSize(Timestamp timestamp, int size) {
+		String time= Stable.STRING_EMPTY+ timestamp.getTime();
+		return time.substring(0, size);
+	}
+	
 	public static String dateStringToMiliSeconds(String string) {
 		return Stable.STRING_EMPTY+ new Date(string).getTime();
 	}

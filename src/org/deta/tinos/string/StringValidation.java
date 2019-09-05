@@ -1,6 +1,5 @@
 package org.deta.tinos.string;
 import java.util.Map;
-
 import org.deta.tinos.stable.Stable;
 public class StringValidation{
 	public static String stringCodeFilter(String string, String swapSymbol

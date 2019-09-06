@@ -48,6 +48,9 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### stringDoubleToDouble
 ###### stringDoubleToBigDecimalRemainder
 ###### stringCodeFilter
+###### stringToSequency
+###### stringToSequencyArrayIncrement
+###### stringToSequencyArrayDecrement 
 ##### ![实例](http://progressed.io/bar/100?title=completed)6 list 数据分析转换文件
 ###### listToJsonString
 ###### stringListToJsonString
@@ -181,4 +184,4 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### getHTML
 ###### 函数研发总数进度 160+/155
 
-罗瑶光 20190812- 20190906
+罗瑶光 20190812- 20190907

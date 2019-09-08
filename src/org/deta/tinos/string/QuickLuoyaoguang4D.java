@@ -18,7 +18,8 @@ public class QuickLuoyaoguang4D{
 					j= i;
 					while(j>= 1+ lp){
 						if(a[j].length()> scale&& a[j-1].length()> scale) {
-							if(a[j].toLowerCase().charAt(scale)< a[j-1].toLowerCase().charAt(scale)){
+							if(a[j].toLowerCase().charAt(scale)
+									< a[j-1].toLowerCase().charAt(scale)){
 								boolean find= true;
 								for(int p= 0; p< scale; p++) {
 									if(a[j].charAt(p)!= a[j-1].charAt(p)) {
@@ -30,7 +31,8 @@ public class QuickLuoyaoguang4D{
 									a[j]= a[j-1];
 									a[j-1]= temp;
 								}
-							}else if(a[j].toLowerCase().charAt(scale)== a[j-1].toLowerCase().charAt(scale)) {
+							}else if(a[j].toLowerCase().charAt(scale)
+									== a[j-1].toLowerCase().charAt(scale)) {
 								if(a[j].charAt(scale)< a[j-1].charAt(scale)) {
 									boolean find= true;
 									for(int p= 0; p< scale; p++) {
@@ -60,7 +62,8 @@ public class QuickLuoyaoguang4D{
 	private int partitionString(String[] a, int lp, int rp, int scale) {
 		String x= a[lp];
 		if(a[lp].length()> scale&& a[rp].length()> scale){
-			x= a[lp].toLowerCase().charAt(scale)< a[rp].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
+			x= a[lp].toLowerCase().charAt(scale)
+					< a[rp].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
 		}
 		int lp1= lp;
 		while(lp1< rp){
@@ -92,14 +95,16 @@ public class QuickLuoyaoguang4D{
 		return rp;	
 	}
 
-	private boolean innerConditionUp(String[] a, int scale, String x, int lp1, int rp) {
+	private boolean innerConditionUp(String[] a, int scale
+			, String x, int lp1, int rp) {
 		if(lp1>= a.length) {
 			return false;
 		}
 		if(a[lp1].length()<= scale|| x.length()<= scale) {
 			return true;	
 		}
-		if(a[lp1].toLowerCase().charAt(scale)<= x.toLowerCase().charAt(scale)&& lp1< rp) {
+		if(a[lp1].toLowerCase().charAt(scale)
+				<= x.toLowerCase().charAt(scale)&& lp1< rp) {
 			return true;
 		}
 		return false;	
@@ -115,7 +120,8 @@ public class QuickLuoyaoguang4D{
 		if(a[rp].length()<= scale|| x.length()<= scale) {
 			return true;	
 		}
-		if(a[rp].toLowerCase().charAt(scale)> x.toLowerCase().charAt(scale)) {
+		if(a[rp].toLowerCase().charAt(scale)
+				> x.toLowerCase().charAt(scale)) {
 			return true;
 		}
 		return false;	

@@ -124,11 +124,11 @@ public class StringSequency{
 		String testValue[]= new String[7];
 		testValue[0]= "caÂÞcded";
 		testValue[1]= "baÂÞcded";
-		testValue[2]= "ÑþaBcedd";
+		testValue[2]= "ÑþBcedd";
 		testValue[3]= "CaÂÞcded";
-		testValue[4]= "ÑþAbÂÞcd";
+		testValue[4]= "ÑþAb";
 		testValue[5]= "bCaef";
-		testValue[6]= "BCAef";
+		testValue[6]= "BCAe";
 		//testValue= stringToSequencyArrayIncrement(testValue, 0);	
 		testValue= stringToSequencyArrayDecrement(testValue, 6);
 		System.out.println(testValue[0]);
@@ -145,7 +145,7 @@ public class StringSequency{
 		testValue[4]= "ÑþAb";
 		testValue[5]= "bCaef";
 		testValue[6]= "BCAe";
-		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0, testValue.length-1,4);	
+		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0, testValue.length-1,5);	
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);

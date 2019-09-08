@@ -103,8 +103,8 @@ public class QuickLuoyaoguang4D{
 		if(a[lp1].length()<= scale|| x.length()<= scale) {
 			return true;	
 		}
-		if(a[lp1].toLowerCase().charAt(scale)
-				<= x.toLowerCase().charAt(scale)&& lp1< rp) {
+		if(!(a[lp1].toLowerCase().charAt(scale)
+				> x.toLowerCase().charAt(scale)|| lp1>= rp)) {
 			return true;
 		}
 		return false;	

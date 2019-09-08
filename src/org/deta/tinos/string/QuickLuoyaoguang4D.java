@@ -19,8 +19,10 @@ public class QuickLuoyaoguang4D{
 	}
 
 	private int partitionString(String[] a, int lp, int rp, int scale) {
-		String x= a[lp].toLowerCase().charAt(scale)
-				< a[rp].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
+		String x= a[lp];
+		if(a[lp].length()> scale&& a[rp].length()> scale){
+			 x= a[lp].toLowerCase().charAt(scale)< a[rp].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
+		}
 		int lp1= lp;
 		while(lp1< rp){
 			while(innerConditionUp(a, scale, x, lp1, rp)){
@@ -40,6 +42,8 @@ public class QuickLuoyaoguang4D{
 					String temp= a[rp];
 					a[rp]= a[lp1];
 					a[lp1]= temp;
+				}else {
+					lp1++;
 				}
 			}
 		}
@@ -63,7 +67,10 @@ public class QuickLuoyaoguang4D{
 	}
 
 	private boolean innerConditionDown(String[] a, int scale, String x, int rp) {
-		if(rp>= a.length) {
+		if(rp>= a.length){
+			return false;
+		}
+		if(rp< 0) {
 			return false;
 		}
 		if(a[rp].length()<= scale|| x.length()<= scale) {

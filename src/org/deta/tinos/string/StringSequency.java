@@ -142,10 +142,10 @@ public class StringSequency{
 		testValue[1]= "baÂÞcded";
 		testValue[2]= "ÑþBcedd";
 		testValue[3]= "CaÂÞcded";
-		testValue[4]= "ÑþAbÂÞcd";
+		testValue[4]= "ÑþAb";
 		testValue[5]= "bCaef";
-		testValue[6]= "BCAef";
-		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0, testValue.length-1,1);	
+		testValue[6]= "BCAe";
+		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0, testValue.length-1,4);	
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);

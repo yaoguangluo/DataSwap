@@ -53,7 +53,7 @@ public class StringSequency{
 		}
 		return string;
 	}
-	
+
 	public static String[] stringToSequencyArrayDecrement(String[] string, int scale){
 		//±È½ÏÍ·
 		for(int i= 0; i< string.length; i++) {
@@ -117,7 +117,7 @@ public class StringSequency{
 		}
 		return string;
 	}
-	
+
 	//			//DEMO
 	public static void main(String[] argv) {
 		//1
@@ -129,7 +129,9 @@ public class StringSequency{
 		testValue[4]= "ÑþAbÂÞcd";
 		testValue[5]= "bCaef";
 		testValue[6]= "BCAef";
-		testValue= stringToSequencyArrayDecrement(testValue, 6);	
+		//testValue= stringToSequencyArrayIncrement(testValue, 0);	
+		//testValue= stringToSequencyArrayDecrement(testValue, 1);	
+		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0, testValue.length-1, 0);	
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);

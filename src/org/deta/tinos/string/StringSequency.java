@@ -14,7 +14,7 @@ public class StringSequency{
 		return String.valueOf(chars);	
 	}
 
-	public static String[] stringToSequencyArrayIncrement(String[] string, int scale){
+	public static String[] stringArrayToSequencyArrayIncrement(String[] string, int scale){
 		//比较头
 		for(int i= 0; i< string.length; i++) {
 			for(int j= 0; j< string.length; j++) {
@@ -54,7 +54,7 @@ public class StringSequency{
 		return string;
 	}
 
-	public static String[] stringToSequencyArrayDecrement(String[] string, int scale){
+	public static String[] stringArrayToSequencyArrayDecrement(String[] string, int scale){
 		//比较头
 		for(int i= 0; i< string.length; i++) {
 			for(int j= 0; j< string.length; j++) {
@@ -130,7 +130,7 @@ public class StringSequency{
 		testValue[5]= "bCaef";
 		testValue[6]= "BCAe";
 		//testValue= stringToSequencyArrayIncrement(testValue, 0);	
-		testValue= stringToSequencyArrayDecrement(testValue, 6);
+		testValue= stringArrayToSequencyArrayDecrement(testValue, 6);
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);

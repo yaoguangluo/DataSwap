@@ -13,7 +13,7 @@
 
 ###### 最近作者的数据公司长期和互联网数百种不同结构的字符串打交道，于是计划设计一套综合开源版本的数据转换API。全部采用VPCS的注册模式。
 ###### 作者将之前的6个函数全部修正和加速，同时支持并发注册机制运行，另外优化了 list object 的 嵌套对象辨别。
-###### 作者以前和亚米走四方上班的时候签订了2年的保密协议，和工作技术转让协议，这6（改为5，没有用到亚米的那个List<String[]> to jsonString, 这个工程我统一用OBJECT）个函数 以后作者申请著作权的时候会以合作研发的方式申请非个人著作权。
+<!--###### 作者以前和亚米走四方上班的时候签订了2年的保密协议，和工作技术转让协议，这6（改为5，没有用到亚米的那个List<String[]> to jsonString, 这个工程我统一用OBJECT）个函数 以后作者申请著作权的时候会以合作研发的方式申请非个人著作权。-->
 ###### 备份记录： 这是3年前作者独立设计的代码文件备份（这5个函数（14行代码）使用权和研发权 2016年已转让给走四方公司），用来释疑，上面声明，绝不含有任何欺诈成分。
 https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 
@@ -48,6 +48,9 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### stringDoubleToDouble
 ###### stringDoubleToBigDecimalRemainder
 ###### stringCodeFilter
+###### stringToSequency
+###### stringToSequencyArrayIncrement
+###### stringToSequencyArrayDecrement 
 ##### ![实例](http://progressed.io/bar/100?title=completed)6 list 数据分析转换文件
 ###### listToJsonString
 ###### stringListToJsonString
@@ -181,4 +184,4 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### getHTML
 ###### 函数研发总数进度 160+/155
 
-罗瑶光 20190812- 20190906
+罗瑶光 20190812- 20190907

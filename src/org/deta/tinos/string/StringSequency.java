@@ -14,7 +14,8 @@ public class StringSequency{
 		return String.valueOf(chars);	
 	}
 
-	public static String[] stringArrayToSequencyArrayIncrement(String[] string, int scale){
+	public static String[] stringArrayToSequencyArrayIncrement(String[] string
+			, int scale){
 		//比较头
 		for(int i= 0; i< string.length; i++) {
 			for(int j= 0; j< string.length; j++) {
@@ -54,7 +55,8 @@ public class StringSequency{
 		return string;
 	}
 
-	public static String[] stringArrayToSequencyArrayDecrement(String[] string, int scale){
+	public static String[] stringArrayToSequencyArrayDecrement(String[] string
+			, int scale){
 		//比较头
 		for(int i= 0; i< string.length; i++) {
 			for(int j= 0; j< string.length; j++) {
@@ -149,7 +151,8 @@ public class StringSequency{
 		for(int i=7;i<2500;i++) {
 			testValue[i]=""+ Math.random();
 		}
-		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0, testValue.length-1,15);	
+		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
+				,testValue.length-1,15);	
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);

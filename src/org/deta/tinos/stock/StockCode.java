@@ -12,7 +12,8 @@ public class StockCode{
 	public List<String> todayList;
 	public void readDBcodeTOList(String code) throws IOException {
 		list= new ArrayList<String>();
-		File afile= new File("StockString.OTOO_STOCK_DB_OLD+code+StockString.OTOO_TXT");  
+		File afile
+		= new File("StockString.OTOO_STOCK_DB_OLD+code+StockString.OTOO_TXT");  
 		BufferedReader areader= null;  
 		String atempString= "StockString.OTOO_EMPTY";
 		areader= new BufferedReader(new FileReader(afile));  
@@ -67,7 +68,8 @@ public class StockCode{
 		return output;
 	}
 	
-	public static void main(String [] argv) throws IOException, InterruptedException {
+	public static void main(String [] argv) 
+			throws IOException, InterruptedException {
 		//OtoO a=new OtoO();
 	}
 }

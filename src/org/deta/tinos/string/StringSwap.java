@@ -68,7 +68,7 @@ public class StringSwap{
 		}
 		return charASCII;
 	}
-	
+
 	public static String charsetSwap(String string,String inputCharset
 			, String outputCharset)
 					throws UnsupportedEncodingException{
@@ -76,9 +76,11 @@ public class StringSwap{
 		return output;
 	}
 
-	public static double stringDoubleToDouble(String stringDouble) throws Exception {
+	public static double stringDoubleToDouble(String stringDouble) 
+			throws Exception {
 		if(stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_NULL)
-				|| stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_TIVE)) {
+				|| stringDouble.toUpperCase().contains(Stable
+						.DOUBLE_INDICATION_TIVE)) {
 			throw new Exception(Stable.INVALID_DOUBLE_FORMAT);
 		}
 		double output= Double.valueOf(stringDouble);
@@ -88,7 +90,8 @@ public class StringSwap{
 	public static String stringDoubleToBigDecimalRemainder(String stringDouble
 			, int newScale) throws Exception {
 		if(stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_NULL)
-				|| stringDouble.toUpperCase().contains(Stable.DOUBLE_INDICATION_TIVE)) {
+				|| stringDouble.toUpperCase().contains(Stable
+						.DOUBLE_INDICATION_TIVE)) {
 			throw new Exception(Stable.INVALID_DOUBLE_FORMAT);
 		}
 		BigDecimal output= new BigDecimal(Double.valueOf(stringDouble))
@@ -96,14 +99,15 @@ public class StringSwap{
 		return output.toString();
 	}
 
-//		//DEMO
-//		public static void main(String[] argv) throws Exception {
-//			double v= 0.55555555;
-//			System.out.println(v);
-//			System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
-//		}
+	//		//DEMO
+	//		public static void main(String[] argv) throws Exception {
+	//			double v= 0.55555555;
+	//			System.out.println(v);
+	//			System.out.println(stringDoubleToBigDecimalRemainder(""+v, 2));
+	//		}
 	//	//DEMO
-	//	public static void main(String[] argv) throws UnsupportedEncodingException {
+	//	public static void main(String[] argv) 
+	//				throws UnsupportedEncodingException {
 	//		double v= 0.000000001/1000000000;
 	//		double v1= 1000000000/0.000000001/1000000000;
 	//		System.out.println(v);
@@ -111,7 +115,8 @@ public class StringSwap{
 	//	}
 	//	
 	//	//DEMO
-	//	public static void main(String[] argv) throws UnsupportedEncodingException {
+	//	public static void main(String[] argv) 
+	//			throws UnsupportedEncodingException {
 	//		String testValue= "ยÞัþนโ";//GBK
 	//		testValue= new String(testValue.getBytes(), "unicode");//ENCODE
 	//		System.out.println(testValue);

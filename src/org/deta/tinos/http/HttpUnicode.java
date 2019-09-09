@@ -11,12 +11,14 @@ import org.deta.tinos.stable.Stable;
 public class HttpUnicode{
 	//这个函数在作者去年开发股市分析软件的时候从雪球等网站采样抓数据，发现有GBK 
 	//utf-8 gb2312 ascii 等格式数据比较混乱，于是进行统一格式处理。
-	public String getJson(String urlString, String jsonString) throws IOException{
+	public String getJson(String urlString, String jsonString) 
+			throws IOException{
 		String code= Stable.STRING_EMPTY;
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("GET");
-		connection.setRequestProperty("Content-type", "application/json;charset=UTF-8"); 
+		connection
+		.setRequestProperty("Content-type", "application/json;charset=UTF-8"); 
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
 		StringBuffer sbuffer= new StringBuffer();
@@ -56,7 +58,8 @@ public class HttpUnicode{
 				}
 			}
 			if (null!= inputStream) {
-				bufferedReader=  new BufferedReader(new InputStreamReader(inputStream, code));   
+				bufferedReader
+				=  new BufferedReader(new InputStreamReader(inputStream, code));   
 				String lines;
 				while ((lines= bufferedReader.readLine()) != null) {
 					stringBuilder.append(lines); 	
@@ -96,7 +99,8 @@ public class HttpUnicode{
 		try {
 			InputStream inputStream= connection.getInputStream();
 			if (null!= inputStream) {
-				bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+				bufferedReader
+				= new BufferedReader(new InputStreamReader(inputStream));
 				char[] charBuffer= new char[128];
 				int bytesRead= -1;
 				while ((bytesRead= bufferedReader.read(charBuffer)) > 0) {
@@ -139,7 +143,8 @@ public class HttpUnicode{
 		try {
 			InputStream inputStream= connection.getInputStream();
 			if (null!= inputStream) {
-				bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+				bufferedReader
+				= new BufferedReader(new InputStreamReader(inputStream));
 				char[] charBuffer= new char[128];
 				int bytesRead= -1;
 				while ((bytesRead= bufferedReader.read(charBuffer)) > 0) {

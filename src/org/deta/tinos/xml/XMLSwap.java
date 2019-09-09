@@ -8,7 +8,6 @@ import java.util.List;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Hashtable;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.google.gson.Gson;

@@ -13,7 +13,8 @@ public class TXTSwap{
 			, String stopBy) throws IOException {		
 		Object[][] object= new Object[65535][];
 		InputStream inputStream= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
+		BufferedReader cReader= new BufferedReader(
+				new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
@@ -27,7 +28,8 @@ public class TXTSwap{
 			, String stopBy, int rangeBegin, int rangeEnd) throws IOException {		
 		Object[][] object= new Object[rangeEnd- rangeBegin][];
 		InputStream inputStream= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
+		BufferedReader cReader= new BufferedReader(
+				new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
@@ -44,7 +46,8 @@ public class TXTSwap{
 			, String stopBy, int rangeBegin, int rangeEnd) throws IOException {		
 		List<String> list= new ArrayList<>();
 		InputStream inputStream= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
+		BufferedReader cReader= new BufferedReader(
+				new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		int i= 0;
 		while (null!= (ctempString= cReader.readLine())) {  
@@ -57,10 +60,12 @@ public class TXTSwap{
 		return list;
 	}
 
-	public static List<String> txtFileToListString(String filePath) throws IOException {		
+	public static List<String> txtFileToListString(String filePath)
+			throws IOException {		
 		List<String> list= new ArrayList<>();
 		InputStream inputStream= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
+		BufferedReader cReader= new BufferedReader(
+				new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		while (null!= (ctempString= cReader.readLine())) {  
 			list.add(ctempString);
@@ -73,7 +78,8 @@ public class TXTSwap{
 			, String stopBy) throws IOException {		
 		List<String[]> list= new ArrayList<>();
 		InputStream inputStream= new FileInputStream(new File(filePath));
-		BufferedReader cReader= new BufferedReader(new InputStreamReader(inputStream));  
+		BufferedReader cReader= new BufferedReader(
+				new InputStreamReader(inputStream));  
 		String ctempString= null; 
 		while (null!= (ctempString= cReader.readLine())) {  
 			list.add(ctempString.split(stopBy));

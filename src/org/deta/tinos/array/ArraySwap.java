@@ -63,7 +63,7 @@ public class ArraySwap{
 		}		
 		return sets;
 	}
-	
+
 	public static Object[][] arrayToMatrix(Object[] objects, int widthRange){
 		Object[][] output= new Object[widthRange][objects.length/ widthRange];
 		for(int i= 0; i< widthRange; i++) {
@@ -73,15 +73,17 @@ public class ArraySwap{
 		}
 		return output;
 	}
-	
+
 	public static Object[][][] arrayToMatrix3D(Object[] objects, int widthRange
 			, int heightRange){
 		Object[][][] output
-		= new Object[widthRange][heightRange][objects.length/ widthRange/ heightRange];
+		= new Object[widthRange][heightRange][objects.length/ widthRange
+		                                      / heightRange];
 		for(int i= 0; i< widthRange; i++) {
 			for(int j= 0; j< heightRange; j++) {
 				for(int k= 0; k< objects.length/ widthRange/ heightRange; k++) {
-					output[i][j][k]= objects[i* widthRange* heightRange+ j* heightRange+ k];
+					output[i][j][k]= objects[i* widthRange* heightRange
+					                         + j* heightRange+ k];
 				}
 			}
 		}

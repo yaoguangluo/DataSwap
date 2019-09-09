@@ -16,9 +16,9 @@ public class HttpUnicode{
 		String code= Stable.STRING_EMPTY;
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
-		connection.setRequestMethod("GET");
+		connection.setRequestMethod(Stable.HTTP_GET);
 		connection
-		.setRequestProperty("Content-type", "application/json;charset=UTF-8"); 
+		.setRequestProperty(Stable.CONTENT_TYPE, Stable.APPLICATION_JSON_UTF8); 
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
 		StringBuffer sbuffer= new StringBuffer();
@@ -31,29 +31,27 @@ public class HttpUnicode{
 		try {
 			InputStream inputStream= connection.getInputStream();
 			int caherset_size= connection.getHeaderFields().size();
-			for(int i= 0;i< caherset_size;i++) {
+			for(int i= 0; i< caherset_size; i++) {
 				String temp= connection.getHeaderField(i);
-				if(temp.contains("charset")) {
-					if(temp.contains("GBK")|| temp.contains("gbk")) {
-						code= "GBK";
+				if(temp.contains(Stable.CHARSET)) {
+					if(temp.toUpperCase().contains(Stable.CHARSET_GBK)) {
+						code= Stable.CHARSET_GBK;
 					}	
-					if(temp.contains("UTF-8")|| temp.contains("utf-8")
-							|| temp.contains("UTF8")|| temp.contains("utf8")) {
-						code= "UTF-8";
+					if(temp.toUpperCase().contains(Stable.CHARSET_UTF_8)
+							|| temp.toUpperCase().contains(Stable.CHARSET_UTF8)) {
+						code= Stable.CHARSET_UTF_8;
 					}
-					if(temp.contains("GB2312")|| temp.contains("gb2312")) {
-						code= "GB2312";
+					if(temp.toUpperCase().contains(Stable.CHARSET_GB2312)) {
+						code= Stable.CHARSET_GB2312;
 					}
-					if(temp.contains("ASCII")|| temp.contains("ascii")) {
-						code= "ASCII";
+					if(temp.toUpperCase().contains(Stable.CHARSET_ASCII)) {
+						code= Stable.CHARSET_ASCII;
 					}
-					if(temp.contains("Unicode")|| temp.contains("UNICODE")
-							|| temp.contains("unicode")) {
-						code= "UNICODE";
+					if(temp.toUpperCase().contains(Stable.CHARSET_UNICODE)) {
+						code= Stable.CHARSET_UNICODE;
 					}
-					if(temp.contains("ISO-8859-1")|| temp.contains("iso-8859-1")
-							|| temp.contains("Iso-8859-1")) {
-						code= "ISO-8859-1";
+					if(temp.toUpperCase().contains(Stable.CHARSET_ISO_8859_1)) {
+						code= Stable.CHARSET_ISO_8859_1;
 					}
 				}
 			}
@@ -65,7 +63,7 @@ public class HttpUnicode{
 					stringBuilder.append(lines); 	
 				}
 			} else {
-				stringBuilder.append("");
+				stringBuilder.append(Stable.STRING_EMPTY);
 			}
 		} catch (IOException ex) {
 			//throw ex;
@@ -78,21 +76,21 @@ public class HttpUnicode{
 				}
 			}
 		}
-		return new String(stringBuilder.toString().getBytes(),"UTF-8");	
+		return new String(stringBuilder.toString().getBytes(), Stable.CHARSET_UTF_8);	
 	}
 
 	public String postXML(String urlString,String XMLString) throws IOException{
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
-		connection.setRequestMethod("POST");
-		connection.setRequestProperty("Content-Type", "application/xml");
+		connection.setRequestMethod(Stable.HTTP_POST);
+		connection.setRequestProperty(Stable.CONTENT_TYPE, Stable.APPLICATION_XML);
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
-		StringBuffer sbuffer= new StringBuffer();
-		sbuffer.append(XMLString);
-		OutputStream os= connection.getOutputStream();
-		os.write(sbuffer.toString().getBytes());
-		os.flush();
+		StringBuffer stringBuffer= new StringBuffer();
+		stringBuffer.append(XMLString);
+		OutputStream outputStream= connection.getOutputStream();
+		outputStream.write(stringBuffer.toString().getBytes());
+		outputStream.flush();
 		String requestBody= Stable.STRING_EMPTY;
 		StringBuilder stringBuilder= new StringBuilder();
 		BufferedReader bufferedReader= null;
@@ -128,8 +126,8 @@ public class HttpUnicode{
 			, String jsonString) throws IOException{
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
-		connection.setRequestMethod("POST");
-		connection.setRequestProperty("Content-Type", "application/json");
+		connection.setRequestMethod(Stable.HTTP_POST);
+		connection.setRequestProperty(Stable.CONTENT_TYPE, Stable.APPLICATION_JSON);
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
 		StringBuffer sbuffer= new StringBuffer();
@@ -172,8 +170,8 @@ public class HttpUnicode{
 			throws IOException{
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
-		connection.setRequestMethod("POST");
-		connection.setRequestProperty("Content-Type", "application/xml");
+		connection.setRequestMethod(Stable.HTTP_POST);
+		connection.setRequestProperty(Stable.CONTENT_TYPE, Stable.APPLICATION_XML);
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
 		StringBuffer sbuffer= new StringBuffer();
@@ -222,38 +220,36 @@ public class HttpUnicode{
 	public String getHTML(String urlString, Object object) throws IOException {
 		URL url= new URL(urlString);
 		HttpURLConnection connection= (HttpURLConnection)url.openConnection();
-		connection.setRequestMethod("GET");
+		connection.setRequestMethod(Stable.HTTP_GET);
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
 		StringBuilder stringBuilder= new StringBuilder();
 		BufferedReader bufferedReader= null;
-		String code= "GB2312";
+		String code= Stable.CHARSET_GB2312;
 		try {
 			InputStream inputStream= connection.getInputStream();
 			int caherset_size= connection.getHeaderFields().size();
 			for(int i= 0; i< caherset_size; i++) {
 				String temp= connection.getHeaderField(i);
-				if(temp.contains("charset")|| temp.contains("type") ) {
-					if(temp.contains("GBK")|| temp.contains("gbk")) {
-						code= "GBK";
+				if(temp.contains(Stable.CHARSET)|| temp.contains(Stable.TYPE) ) {
+					if(temp.toUpperCase().contains(Stable.CHARSET_GBK)) {
+						code= Stable.CHARSET_GBK;
 					}	
-					if(temp.contains("UTF-8")|| temp.contains("utf-8")
-							|| temp.contains("UTF8")|| temp.contains("utf8")) {
-						code= "UTF-8";
+					if(temp.toUpperCase().contains(Stable.CHARSET_UTF_8)
+							|| temp.toUpperCase().contains(Stable.CHARSET_UTF8)) {
+						code= Stable.CHARSET_UTF_8;
 					}
-					if(temp.contains("GB2312")|| temp.contains("gb2312")) {
-						code= "GB2312";
+					if(temp.toUpperCase().contains(Stable.CHARSET_GB2312)) {
+						code= Stable.CHARSET_GB2312;
 					}
-					if(temp.contains("ASCII")|| temp.contains("ascii")) {
-						code= "ASCII";
+					if(temp.toUpperCase().contains(Stable.CHARSET_ASCII)) {
+						code= Stable.CHARSET_ASCII;
 					}
-					if(temp.contains("Unicode")|| temp.contains("UNICODE")
-							|| temp.contains("unicode")) {
-						code= "UNICODE";
+					if(temp.toUpperCase().contains(Stable.CHARSET_UNICODE)) {
+						code= Stable.CHARSET_UNICODE;
 					}
-					if(temp.contains("ISO-8859-1")|| temp.contains("iso-8859-1")
-							|| temp.contains("Iso-8859-1")) {
-						code= "ISO-8859-1";
+					if(temp.toUpperCase().contains(Stable.CHARSET_ISO_8859_1)) {
+						code= Stable.CHARSET_ISO_8859_1;
 					}
 				}
 			}
@@ -277,7 +273,7 @@ public class HttpUnicode{
 				}
 			}
 		}
-		String out= new String(stringBuilder.toString().getBytes(), "UTF-8");
+		String out= new String(stringBuilder.toString().getBytes(), Stable.CHARSET_UTF_8);
 		return out;	
 	}
 }

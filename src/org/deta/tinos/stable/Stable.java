@@ -16,4 +16,19 @@ public interface Stable {
 	public static final String STRING_LONG= "long";
 	public static final String STRING_SHORT= "short";
 	public static final String STRING_BJTIME= "http://www.bjtime.cn";
+	public static final String CHARSET_GBK= "GBK";
+	public static final String CHARSET= "charset";
+	public static final String TYPE= "type";
+	public static final String CHARSET_UTF8= "UTF8";
+	public static final String CHARSET_UTF_8= "UTF-8";
+	public static final String CHARSET_GB2312= "GB2312";
+	public static final String CHARSET_ASCII= "ASCII";
+	public static final String CHARSET_UNICODE= "UNICODE";
+	public static final String CHARSET_ISO_8859_1= "ISO-8859-1";
+	public static final String CONTENT_TYPE= "Content-Type";
+	public static final String APPLICATION_XML= "application/xml";
+	public static final String APPLICATION_JSON= "application/json";
+	public static final String APPLICATION_JSON_UTF8= "application/json;charset=UTF-8";
+	public static final String HTTP_POST= "POST";
+	public static final String HTTP_GET= "GET";
 }

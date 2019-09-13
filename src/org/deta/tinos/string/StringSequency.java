@@ -131,8 +131,10 @@ public class StringSequency{
 		testValue[4]= "ÑþAb";
 		testValue[5]= "bCaef";
 		testValue[6]= "BCAe";
+		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
+				,testValue.length-1,16);
 		//testValue= stringToSequencyArrayIncrement(testValue, 0);	
-		testValue= stringArrayToSequencyArrayDecrement(testValue, 6);
+	//	testValue= stringArrayToSequencyArrayDecrement(testValue, 16);
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);
@@ -152,7 +154,8 @@ public class StringSequency{
 			testValue[i]=""+ Math.random();
 		}
 		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
-				,testValue.length-1,15);	
+				,testValue.length-1,16);
+//		testValue= stringArrayToSequencyArrayDecrement(testValue, 16);
 		System.out.println(testValue[0]);
 		System.out.println(testValue[1]);
 		System.out.println(testValue[2]);

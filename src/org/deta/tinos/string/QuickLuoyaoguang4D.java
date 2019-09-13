@@ -17,34 +17,14 @@ public class QuickLuoyaoguang4D{
 				for(int i= 1+ lp; i<= lp+ c; i++){
 					j= i;
 					while(j>= 1+ lp){
-						if(a[j].length()> scale&& a[j-1].length()> scale) {
+						if(a[j].length()> scale&& a[j- 1].length()> scale) {
 							if(a[j].toLowerCase().charAt(scale)
-									< a[j-1].toLowerCase().charAt(scale)){
-								boolean find= true;
-								for(int p= 0; p< scale; p++) {
-									if(a[j].charAt(p)!= a[j-1].charAt(p)) {
-										find= false;
-									}
-								}
-								if(find) {
-									String temp= a[j];
-									a[j]= a[j-1];
-									a[j-1]= temp;
-								}
+									< a[j- 1].toLowerCase().charAt(scale)){
+								conditionSwap(a, scale, j);
 							}else if(a[j].toLowerCase().charAt(scale)
 									== a[j-1].toLowerCase().charAt(scale)) {
-								if(a[j].charAt(scale)< a[j-1].charAt(scale)) {
-									boolean find= true;
-									for(int p= 0; p< scale; p++) {
-										if(a[j].charAt(p)!= a[j-1].charAt(p)) {
-											find= false;
-										}
-									}
-									if(find) {
-										String temp= a[j];
-										a[j]= a[j-1];
-										a[j-1]= temp;
-									}
+								if(a[j].charAt(scale)< a[j- 1].charAt(scale)) {
+									conditionSwap(a, scale, j);
 								}
 							}	
 						}
@@ -59,9 +39,23 @@ public class QuickLuoyaoguang4D{
 		}
 	}
 
+	private void conditionSwap(String[] a, int scale, int j) {
+		boolean find= true;
+		for(int p= 0; p< scale; p++) {
+			if(a[j].charAt(p)!= a[j- 1].charAt(p)) {
+				find= false;
+			}
+		}
+		if(find) {
+			String temp= a[j];
+			a[j]= a[j-1];
+			a[j-1]= temp;
+		}
+	} 
+	
 	private int partitionString(String[] a, int lp, int rp, int scale) {
 		String x= a[lp];
-		if(a[lp].length()> scale&& a[rp].length()> scale){
+		if(!(a[lp].length()<= scale|| a[rp].length()<= scale)){
 			x= a[lp].toLowerCase().charAt(scale)
 					< a[rp].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
 		}

@@ -213,7 +213,6 @@ public class HttpUnicode{
 	public String getStatusFromString(String response) {
 		for(int i=0;i<response.length();i++){
 		}
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -263,7 +262,6 @@ public class HttpUnicode{
 			} else {
 				stringBuilder.append(Stable.STRING_EMPTY);
 			}
-
 		} catch (IOException ex) {
 		} finally {
 			if (null!= bufferedReader) {

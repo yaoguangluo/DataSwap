@@ -1,49 +1,6 @@
 package org.deta.tinos.tree;
-
-import org.deta.tinos.string.QuickLuoyaoguang4D;
-
-import timeProcessor.TimeCheck;
-
 public class TreeLuoyaoguang4D{
-	public static void main(String[] argv) {
-		String[] testValue= new String[2500];
-		testValue[0]= "caÂÞcded";
-		testValue[1]= "baÂÞcded";
-		testValue[2]= "ÑþBcedd";
-		testValue[3]= "CaÂÞcded";
-		testValue[4]= "ÑþAb";
-		testValue[5]= "bCaef";
-		testValue[6]= "BCAe";
-		for(int i= 7; i< 2500; i++) {
-			testValue[i]= ""+ Math.random();
-		}
-		TimeCheck imeCheck2= new TimeCheck();
-		imeCheck2.begin();
-		Node head= new Node();
-		TreeLuoyaoguang4D.sort(head, testValue, 3);
-		imeCheck2.end();
-		imeCheck2.duration();
-
-		testValue= new String[2500];
-		testValue[0]= "caÂÞcded";
-		testValue[1]= "baÂÞcded";
-		testValue[2]= "ÑþBcedd";
-		testValue[3]= "CaÂÞcded";
-		testValue[4]= "ÑþAb";
-		testValue[5]= "bCaef";
-		testValue[6]= "BCAe";
-		for(int i= 7; i< 2500; i++) {
-			testValue[i]= ""+ Math.random();
-		}
-		imeCheck2= new TimeCheck();
-		imeCheck2.begin();
-		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
-				,testValue.length- 1, 3);
-		imeCheck2.end();
-		imeCheck2.duration();
-		
-	}
-
+	@SuppressWarnings("unused")
 	private static void sort(Node head, String[] testValue, int scale) {
 		for(int i= 0; i< testValue.length; i++) {
 			addNode(head, testValue[i], scale);	

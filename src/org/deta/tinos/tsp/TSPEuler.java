@@ -149,8 +149,8 @@ public class TSPEuler{
 				first_copy.next= next;
 				next.prev= first_copy;
 				first_copy= first_copy.next;
-				int find1= find1(first_copy, x, y);
-				if(find1== 1){
+				int findSmall= findSmall(first_copy, x, y);
+				if(findSmall== 1){
 					nodes.add(first_copy);
 				}
 				int cc= 0;
@@ -237,7 +237,7 @@ public class TSPEuler{
 		}
 		return 0;
 	}
-	public static int find1(node first,int []x,int []y){
+	public static int findSmall(node first,int []x,int []y){
 		while(first.next!= null) {
 			first= first.next;
 		}
@@ -290,8 +290,8 @@ public class TSPEuler{
 				first_copy.next= next;
 				next.prev= first_copy;
 				first_copy= first_copy.next;
-				int find1= find1(first_copy,x,y);
-				if(find1== 1){
+				int findSmall= findSmall(first_copy,x,y);
+				if(findSmall== 1){
 					nodes.add(first_copy);
 				}
 				int cc=0;

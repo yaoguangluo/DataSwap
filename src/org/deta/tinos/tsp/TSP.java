@@ -83,7 +83,7 @@ public class TSP{
 		}
 		return 0;
 	}
-	public static int find1(node first,int []x,int []y){
+	public static int findSmall(node first,int []x,int []y){
 		while(first.next!=null) {
 			first= first.next;
 		}
@@ -108,9 +108,9 @@ public class TSP{
 			first_copy.next=first.next;
 			first_copy.prev=first.prev;
 			int find= find(first_copy,i,x,y);
-			// int find1= find1(first_copy,i,x,y);
+			// int findSmall= findSmall(first_copy,i,x,y);
 			if(find== 0){
-				int find1=find1(first_copy,x,y);
+				int findSmall=findSmall(first_copy,x,y);
 				//if(temp.used>=x.length-2)
 				//{
 				//}
@@ -124,8 +124,8 @@ public class TSP{
 				first_copy.next= next;
 				next.prev= first_copy;
 				first_copy= first_copy.next;
-				find1= find1(first_copy,x,y);
-				if(find1==1){
+				findSmall= findSmall(first_copy,x,y);
+				if(findSmall==1){
 					// small= temp.total_dis;
 					// nodes.clear();
 					nodes.add(first_copy);

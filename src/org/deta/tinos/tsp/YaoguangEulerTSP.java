@@ -235,8 +235,8 @@ public class YaoguangEulerTSP{
 				first_copy.next= next;
 				next.prev= first_copy;
 				first_copy= first_copy.next;
-				int find1= find1(first_copy,x,y);
-				if(find1== 1){
+				int findSmall= findSmall(first_copy,x,y);
+				if(findSmall== 1){
 					nodes.add(first_copy);
 				}
 				int cc= 0;
@@ -254,11 +254,11 @@ public class YaoguangEulerTSP{
 	}
 
 	public static void sort( List<node> nodes,int x, int y,int N){
-		if(N>41){
-			for(int i=0;i<nodes.size();i++){
-				System.out.println(nodes.get(i).prev.x+":"+nodes.get(i).prev.y+
-						"<-"+nodes.get(i).x+":"+ nodes.get(i).y+"->"
-						+nodes.get(i).next.x+":"+nodes.get(i).next.y);
+		if(N> 41){
+			for(int i= 0; i< nodes.size(); i++){
+				System.out.println(nodes.get(i).prev.x+ ":"+nodes.get(i).prev.y+
+						"<-"+nodes.get(i).x+ ":"+ nodes.get(i).y+ "->"
+						+ nodes.get(i).next.x+ ":"+nodes.get(i).next.y);
 			}
 			return;
 		}
@@ -330,7 +330,7 @@ public class YaoguangEulerTSP{
 		}
 		return 0;
 	}
-	public static int find1(node first, int []x, int []y){
+	public static int findSmall(node first, int []x, int []y){
 		while(first.next!=null) {
 			first= first.next;
 		}
@@ -384,8 +384,8 @@ public class YaoguangEulerTSP{
 				first_copy.next= next;
 				next.prev= first_copy;
 				first_copy= first_copy.next;
-				int find1= find1(first_copy, x, y);
-				if(find1== 1){
+				int findSmall= findSmall(first_copy, x, y);
+				if(findSmall== 1){
 					nodes.add(first_copy);
 				}
 				int cc= 0;

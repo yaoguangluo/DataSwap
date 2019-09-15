@@ -295,12 +295,12 @@ public class TSPEuler{
 					nodes.add(first_copy);
 				}
 				int cc=0;
-				if(first_copy.total_dis >= big*1){
-					cc+=1;
+				if(first_copy.total_dis>= big*1){
+					cc+= 1;
 					//big=first_copy.total_dis;
 				}else
 					if(first_copy.total_dis <= min*1){
-						cc+=1;
+						cc+= 1;
 						//min=first_copy.total_dis;
 					}
 				if(cc>0) {

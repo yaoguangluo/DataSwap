@@ -136,19 +136,19 @@ public class YaoguangEulerTSP{
 				dis[j]= Math.abs(x[j] - x[i]) 
 						+ Math.abs(y[j] - y[i]);
 			}
-			int small=9999999;
-			int f=0;
-			int s=0;
-			int t=0;
-			for(int j= 0;j<dis.length;j++){
-				if(dis[j]<small){
-					small=dis[j];
-					f=j;
+			int small= 9999999;
+			int f= 0;
+			int s= 0;
+			int t= 0;
+			for(int j= 0; j< dis.length; j++){
+				if(dis[j]< small){
+					small= dis[j];
+					f= j;
 				}
 			}
-			small=9999999;
-			for(int j= 0;j<dis.length;j++){
-				if(dis[j]<small && j != f){
+			small= 9999999;
+			for(int j= 0; j< dis.length; j++){
+				if(dis[j]< small&& j!= f){
 					//int find=0;
 					//for(int k=0;k<nodes.size();k++)
 					//{

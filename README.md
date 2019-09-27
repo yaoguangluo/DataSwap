@@ -1,4 +1,8 @@
 #### DataSwap （因数据加密，安全检测等功能部分涉及国家网络安全法等内容，本作品不做研发方向。）
+
+##### 国家知委最新补正：要求个人软著全名去掉公司名‘德塔’ 和 ‘Deta’ 关键字，
+##### 作者在此申明。 罗瑶光 2090927
+
 ##### This project mainly for the metadata exchanges of array, list, map, xml, dhml, uml, xslt, json, hash, string, table, tree, forest, vector and other 155 fields etc.
 
 #### 声明：

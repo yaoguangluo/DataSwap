@@ -25,17 +25,17 @@ public class QuickLuoyaoguang4DWithChinese{
 								continue Here;
 							}
 							if(this.map.containsKey(""+ a[j].charAt(scale))&& this.map.containsKey(""+ a[j-1].charAt(scale))){
-								conditionSwapChinese(a, scale, j);
+								conditionSwapChinese(a, scale, j, j-1);
 							}else if(!this.map.containsKey(""+ a[j].charAt(scale))&& this.map.containsKey(""+ a[j-1].charAt(scale))) {
-								conditionSwap(a, scale, j);
+								conditionSwap(a, scale, j, j-1);
 							}else{
 								if(a[j].toLowerCase().charAt(scale)
 										< a[j- 1].toLowerCase().charAt(scale)){
-									conditionSwap(a, scale, j);
+									conditionSwap(a, scale, j, j-1);
 								}else if(a[j].toLowerCase().charAt(scale)
-										== a[j-1].toLowerCase().charAt(scale)) {
+										== a[j- 1].toLowerCase().charAt(scale)) {
 									if(a[j].charAt(scale)> a[j- 1].charAt(scale)) {
-										conditionSwap(a, scale, j);
+										conditionSwap(a, scale, j, j-1);
 									}
 								}		
 							}
@@ -51,29 +51,29 @@ public class QuickLuoyaoguang4DWithChinese{
 		}
 	}
 
-	private void conditionSwapChinese(String[] a, int scale, int j) {
+	private void conditionSwapChinese(String[] a, int scale, int rp, int lp1) {
 		String[] js= new String[2];
-		js[0]= this.map.get(""+ a[j].charAt(scale));
-		js[1]= this.map.get(""+ a[j- 1].charAt(scale));
+		js[0]= this.map.get(""+ a[rp].charAt(scale));
+		js[1]= this.map.get(""+ a[lp1].charAt(scale));
 		for(int k= 0; k< 6; k++) {
 			quick4DString(js, 0, 1, k);
 		}
-		if(!js[0].equalsIgnoreCase(this.map.get(""+ a[j].charAt(scale)))) {
-			conditionSwap(a, scale, j);
+		if(!js[0].equalsIgnoreCase(this.map.get(""+ a[rp].charAt(scale)))) {
+			conditionSwap(a, scale, rp, lp1);
 		}
 	}
 
-	private void conditionSwap(String[] a, int scale, int j) {
+	private void conditionSwap(String[] a, int scale, int rp, int lp1) {
 		boolean find= true;
 		for(int p= 0; p< scale; p++) {
-			if(a[j].charAt(p)!= a[j- 1].charAt(p)) {
+			if(a[rp].charAt(p)!= a[lp1].charAt(p)) {
 				find= false;
 			}
 		}
 		if(find) {
-			String temp= a[j];
-			a[j]= a[j-1];
-			a[j-1]= temp;
+			String temp= a[rp];
+			a[rp]= a[lp1];
+			a[lp1]= temp;
 		}
 	} 
 	
@@ -91,19 +91,69 @@ public class QuickLuoyaoguang4DWithChinese{
 			while(innerConditionDown(a, scale, x, rp)){
 				rp--;
 			}
-			if(lp1< rp){
-				boolean find= true;
-				for(int p= 0; p< scale; p++) {
-					if(a[rp].charAt(p)!= a[lp1].charAt(p)) {
-						find= false;
-					}
-				}
-				if(find) {
-					String temp= a[rp];
-					a[rp]= a[lp1];
-					a[lp1]= temp;
-				}else {
+			if(lp1< rp){	
+				if(a[lp1].charAt(scale)==a[rp].charAt(scale)) {
 					lp1++;
+				}else if(this.map.containsKey(""+ a[rp].charAt(scale))&& this.map.containsKey(""+ a[lp1].charAt(scale))){
+					String[] js= new String[2];
+					js[0]= this.map.get(""+ a[rp].charAt(scale));
+					js[1]= this.map.get(""+ a[lp1].charAt(scale));
+					for(int k= 0; k< 6; k++) {
+						quick4DString(js, 0, 1, k);
+					}
+					if(!js[0].equalsIgnoreCase(this.map.get(""+ a[rp].charAt(scale)))) {
+						conditionSwap(a, scale, rp, lp1);
+					}else {
+						lp1++;
+					}
+				}else if(!this.map.containsKey(""+ a[rp].charAt(scale))&& this.map.containsKey(""+ a[lp1].charAt(scale))) {
+					boolean find= true;
+					for(int p= 0; p< scale; p++) {
+						if(a[rp].charAt(p)!= a[lp1].charAt(p)) {
+							find= false;
+						}
+					}
+					if(find) {
+						String temp= a[rp];
+						a[rp]= a[lp1];
+						a[lp1]= temp;
+					}else {
+						lp1++;
+					}
+				}else{
+					if(a[rp].toLowerCase().charAt(scale)
+							< a[lp1].toLowerCase().charAt(scale)){
+						boolean find= true;
+						for(int p= 0; p< scale; p++) {
+							if(a[rp].charAt(p)!= a[lp1].charAt(p)) {
+								find= false;
+							}
+						}
+						if(find) {
+							String temp= a[rp];
+							a[rp]= a[lp1];
+							a[lp1]= temp;
+						}else {
+							lp1++;
+						}
+					}else if(a[rp].toLowerCase().charAt(scale)
+							== a[lp1].toLowerCase().charAt(scale)) {
+						if(a[rp].charAt(scale)> a[lp1].charAt(scale)) {
+							boolean find= true;
+							for(int p= 0; p< scale; p++) {
+								if(a[rp].charAt(p)!= a[lp1].charAt(p)) {
+									find= false;
+								}
+							}
+							if(find) {
+								String temp= a[rp];
+								a[rp]= a[lp1];
+								a[lp1]= temp;
+							}else {
+								lp1++;
+							}
+						}
+					}	
 				}
 			}
 		}

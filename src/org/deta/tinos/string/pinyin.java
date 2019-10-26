@@ -31,7 +31,13 @@ public class pinyin{
 				}
 			}
 		}
-
+//		String testValue[]= new String[4];
+//		testValue[0]= "胡";//lyg
+//		testValue[1]= "护";//lyg
+//		testValue[2]= "胡";//lyg
+//		testValue[3]= "护";//lyg
+		
+		
 		String testValue[]= new String[11];
 		testValue[0]= "罗瑶光a";//lyg
 		testValue[2]= "罗瑶光A";//lyl
@@ -44,7 +50,7 @@ public class pinyin{
 		testValue[8]= "罗正A才";//lzc
 		testValue[9]= "罗C正A才";//lzc
 		testValue[10]= "罗正西";//lzx
-		new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 4, map);
+		new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,4, map);
 		for(int i=testValue.length-1;i>=0;i--) {
 			System.out.println(testValue[i]);
 		}

@@ -286,7 +286,7 @@ public class TSPEuler{
 				int dis= Math.abs(x[i]- first.x)
 						+ Math.abs(y[i]- first.y);
 				next.total_dis= first_copy.total_dis+ dis;
-				next.used=first_copy.used+1;
+				next.used= first_copy.used+ 1;
 				first_copy.next= next;
 				next.prev= first_copy;
 				first_copy= first_copy.next;

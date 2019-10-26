@@ -123,6 +123,7 @@ public class StringSequency{
 	//			//DEMO
 	public static void main(String[] argv) {
 		//1
+		
 		String testValue[]= new String[2500];
 		testValue[0]= "ca罗cded";
 		testValue[1]= "ba罗cded";
@@ -135,38 +136,59 @@ public class StringSequency{
 			testValue[i]=""+ Math.random();
 		}
 		
+//		String testValue[]= new String[11];
+//		testValue[0]= "罗瑶光";
+//		testValue[1]= "罗瑶林";
+//		testValue[2]= "罗韵律";
+//		testValue[3]= "Ca罗cded";
+//		testValue[4]= "瑶Ab";
+//		testValue[5]= "bCaef";
+//		testValue[6]= "BCAe";
+//		testValue[7]= "罗瑶光";
+//		testValue[8]= "罗瑶林";
+//		testValue[9]= "罗韵律";
+//		testValue[10]= "Ca罗cded";
+//		testValue[0]= "罗瑶光a";//lyg
+//		testValue[2]= "罗瑶光A";//lyl
+//		testValue[1]= "罗瑶林a";//lyg
+//		testValue[3]= "罗正兴";//lzx
+//		testValue[4]= "罗正兴";//lzx
+//		testValue[5]= "罗甜甜";//ltt
+//		testValue[6]= "罗正强";//lzq
+//		testValue[7]= "罗瑶林A";//lyg
+//		testValue[8]= "罗正A才";//lzc
+//		testValue[9]= "罗C正A才";//lzc
+//		testValue[10]= "罗正西";//lzx
+		
 //		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
-//				,testValue.length-1,16);
+//				, testValue.length- 1, 16);
 		//testValue= stringToSequencyArrayIncrement(testValue, 0);	
 	//	testValue= stringArrayToSequencyArrayDecrement(testValue, 16);
-		System.out.println(testValue[0]);
-		System.out.println(testValue[1]);
-		System.out.println(testValue[2]);
-		System.out.println(testValue[3]);	
-		System.out.println(testValue[4]);
-		System.out.println(testValue[5]);
-		System.out.println(testValue[6]);
-		testValue= new String[2500];
-		testValue[0]= "ca罗cded";
-		testValue[1]= "ba罗cded";
-		testValue[2]= "瑶Bcedd";
-		testValue[3]= "Ca罗cded";
-		testValue[4]= "瑶Ab";
-		testValue[5]= "bCaef";
-		testValue[6]= "BCAe";
-		for(int i=7;i<2500;i++) {
-			testValue[i]=""+ Math.random();
-		}
+//		System.out.println(testValue[0]);
+//		System.out.println(testValue[1]);
+//		System.out.println(testValue[2]);
+//		System.out.println(testValue[3]);	
+//		System.out.println(testValue[4]);
+//		System.out.println(testValue[5]);
+//		System.out.println(testValue[6]);
+//		testValue= new String[2500];
+//		testValue[0]= "罗瑶光";
+//		testValue[1]= "罗瑶林";
+//		testValue[2]= "罗韵律";
+//		testValue[3]= "Ca罗cded";
+//		testValue[4]= "瑶Ab";
+//		testValue[5]= "bCaef";
+//		testValue[6]= "BCAe";
+//		for(int i=7; i<2500; i++) {
+//			testValue[i]= ""+ Math.random();
+//		}
+		
 		new QuickLuoyaoguang4D().quick4DStringArray(testValue, 0
 				,testValue.length-1,16);
 //		testValue= stringArrayToSequencyArrayDecrement(testValue, 16);
-		System.out.println(testValue[0]);
-		System.out.println(testValue[1]);
-		System.out.println(testValue[2]);
-		System.out.println(testValue[3]);	
-		System.out.println(testValue[4]);
-		System.out.println(testValue[5]);
-		System.out.println(testValue[6]);
+		for(int i= 0; i< testValue.length; i++) {
+			System.out.println(testValue[i]);
+		}
 		//2			
 		////				String value= "AabusahudBDHDbuHgfUiGgfj";
 		////				System.out.println(stringToSequency(value));

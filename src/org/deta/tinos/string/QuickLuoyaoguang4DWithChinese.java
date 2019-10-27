@@ -42,7 +42,7 @@ public class QuickLuoyaoguang4DWithChinese{
 
 	public void quick4DString(String[][] js, int lp, int rp, int scale) {
 		if(lp< rp){
-			int c= rp- lp; if(c<44){ 
+			int c= rp- lp; if(c<47){ 
 				int j;
 				for(int i= 1+ lp; i<= lp+ c; i++){
 					j= i;
@@ -154,17 +154,28 @@ public class QuickLuoyaoguang4DWithChinese{
 			return true;	
 		}
 		if(this.map.containsKey(""+ a[lp1][0].charAt(scale))&& this.map.containsKey(""+ x[0].charAt(scale))){
+			if(a[lp1][0].charAt(scale)== x[0].charAt(scale)) {
+				return true;
+			}
+			
 			String[][] js= new String[2][2];
 			js[0][0]= this.map.get(""+ a[lp1][0].charAt(scale));
 			js[0][1]= a[lp1][0].toString();
 			js[1][0]= this.map.get(""+ x[0].charAt(scale));
 			js[1][1]= x[0].toString();
-			for(int k= 0; k< 2; k++) {
+			
+			if(js[1][0].contains(js[0][0])) {
+				return true;
+			}
+			
+			for(int k= 0; k< 6; k++) {
 				quick4DString(js, 0, 1, k);
 			}
-			if(js[0][1].equalsIgnoreCase(a[lp1][0])) {//确定a[lp1]小
+			
+			if(!js[0][1].equalsIgnoreCase(a[lp1][0])) {//确定a[lp1]小
 				return true;
 			}//字字
+			
 		}else if(!this.map.containsKey(""+ a[lp1][0].charAt(scale))&& this.map.containsKey(""+ x[0].charAt(scale))) {
 			return true;//字符
 		}else if(a[lp1][0].toLowerCase().charAt(scale)< x[0].toLowerCase().charAt(scale)&& lp1< rp) {
@@ -191,15 +202,25 @@ public class QuickLuoyaoguang4DWithChinese{
 		}
 
 		if(this.map.containsKey(""+ a[rp][0].charAt(scale))&& this.map.containsKey(""+ x[0].charAt(scale))){
+			if(a[rp][0].charAt(scale)== x[0].charAt(scale)) {
+				return true;
+			}
+			
 			String[][] js= new String[2][2];
 			js[0][0]= this.map.get(""+ a[rp][0].charAt(scale));
 			js[0][1]= a[rp][0].toString();
 			js[1][0]= this.map.get(""+ x[0].charAt(scale));
 			js[1][1]= x[0].toString();
-			for(int k= 0; k< 2; k++) {
+			
+			if(js[0][0].contains(js[1][0])) {
+				return true;
+			}
+			
+			for(int k= 0; k< 6; k++) {
 				quick4DString(js, 0, 1, k);
 			}
-			if(js[0][1].equalsIgnoreCase(x[0])) {
+			
+			if(!js[0][1].equalsIgnoreCase(x[0])) {
 				return true;
 			}
 		}else if(this.map.containsKey(""+ a[rp][0].charAt(scale))&& !this.map.containsKey(""+ x[0].charAt(scale))) {

@@ -31,31 +31,37 @@ public class pinyin{
 				}
 			}
 		}
-//		String testValue[]= new String[4];
-//		testValue[0]= "胡";//lyg
-//		testValue[1]= "护";//lyg
-//		testValue[2]= "胡";//lyg
-//		testValue[3]= "护";//lyg
-		
-		
-		String testValue[]= new String[11];
-		testValue[0]= "罗瑶光a";//lyg
-		testValue[2]= "罗瑶光A";//lyl
-		testValue[1]= "罗瑶林a";//lyg
-		testValue[3]= "罗正兴";//lzx
-		testValue[6]= "罗正兴";//lzx
-		testValue[5]= "罗甜甜";//ltt
-		testValue[4]= "罗正A强";//lzq
-		testValue[7]= "罗瑶林A";//lyg
-		testValue[8]= "罗正A才";//lzc
-		testValue[9]= "罗C正A才";//lzc
-		testValue[10]= "罗正西";//lzx
-		new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,4, map);
-		for(int i=testValue.length-1;i>=0;i--) {
-			System.out.println(testValue[i]);
+			String testValue[]= new String[6];
+			testValue[0]= "罗瑶光b";//lyg
+			testValue[1]= "罗瑶林a";
+			testValue[2]= "罗瑶光A";//lyl
+			testValue[3]= "罗瑶1a";
+			testValue[4]= "罗a瑶1a";
+			testValue[5]= "罗A瑶1a";
+//					testValue[3]= "罗瑶林a";//lyg
+//					testValue[4]= "罗正兴";//lzx
+//					testValue[5]= "罗正兴";//lzx
+//					testValue[6]= "罗甜甜";//ltt
+//			//		
+
+//					String testValue[]= new String[11];
+//					testValue[0]= "罗瑶光a";//lyg
+//					testValue[2]= "罗瑶光A";//lyl
+//					testValue[1]= "罗瑶林a";//lyg
+//					testValue[3]= "罗瑶光b";//lzx
+//					testValue[6]= "罗正兴";//lzx
+//					testValue[5]= "罗甜甜";//ltt
+//					testValue[4]= "罗正A强";//lzq
+//					testValue[7]= "罗A周";//lyg
+//					testValue[8]= "罗正A才";//lzc
+//					testValue[9]= "罗C正A才";//lzc
+//					testValue[10]= "罗正西";//lzx
+			new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 5, map);
+			//		for(int i=testValue.length-1;i>=0;i--) {
+			//			System.out.println(testValue[i]);
+			//		}
+			for(int i= 0; i< testValue.length; i++) {
+				System.out.println(testValue[i]);
+			}
 		}
-//		for(int i= 0; i< testValue.length; i++) {
-//			System.out.println(testValue[i]);
-//		}
 	}
-}

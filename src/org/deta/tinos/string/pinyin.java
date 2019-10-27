@@ -31,13 +31,17 @@ public class pinyin{
 				}
 			}
 		}
-			String testValue[]= new String[6];
+			String testValue[]= new String[10];
 			testValue[0]= "罗瑶光b";//lyg
 			testValue[1]= "罗瑶林a";
 			testValue[2]= "罗瑶光A";//lyl
 			testValue[3]= "罗瑶1a";
 			testValue[4]= "罗a瑶1a";
 			testValue[5]= "罗A瑶1a";
+			testValue[6]= "罗瑶光b";//lzx
+			testValue[7]= "罗正兴";//lzx
+			testValue[8]= "罗甜甜";//ltt
+			testValue[9]= "罗正A强";//lzq
 //					testValue[3]= "罗瑶林a";//lyg
 //					testValue[4]= "罗正兴";//lzx
 //					testValue[5]= "罗正兴";//lzx

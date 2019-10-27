@@ -51,26 +51,15 @@ public class pinyin{
 			testValue[2]= "正好";
 			testValue[16]= "正2才";
 			testValue[17]= "a瑶1a5";
-//					testValue[3]= "罗瑶林a";//lyg
-//					testValue[4]= "罗正兴";//lzx
-//					testValue[5]= "罗正兴";//lzx
-//					testValue[6]= "罗甜甜";//ltt
-//			//		
 
-//					String testValue[]= new String[11];
-//					testValue[0]= "罗瑶光a";//lyg
-//					testValue[2]= "罗瑶光A";//lyl
-//					testValue[1]= "罗瑶林a";//lyg
-//					testValue[3]= "罗瑶光b";//lzx
-//					testValue[6]= "罗正兴";//lzx
-//					testValue[5]= "罗甜甜";//ltt
-//					testValue[4]= "罗正A强";//lzq
-//					testValue[7]= "罗A周";//lyg
-//					testValue[8]= "罗正A才";//lzc
-//					testValue[9]= "罗C正A才";//lzc
-//					testValue[10]= "罗正西";//lzx
-		//	new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,2, map);
-			new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,2, map);
+		
+//		String testValue[]= new String[3];
+//		testValue[0]= "正好";//lyg
+//		testValue[1]= "振强";
+//		testValue[2]= "正兴";//lyl
+
+			new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,5, map);
+		//	new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,1, map);
 			//		for(int i=testValue.length-1;i>=0;i--) {
 			//			System.out.println(testValue[i]);
 			//		}

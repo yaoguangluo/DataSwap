@@ -22,7 +22,7 @@ public class QuickLuoyaoguang4DWithChinese{
 			}
 		}
 		for(int i=0;i<a.length;i++) {
-			a[i]=js[i][0].toString();
+			a[i]=js[a.length-i-1][0].toString();
 		}
 	}
 
@@ -42,29 +42,27 @@ public class QuickLuoyaoguang4DWithChinese{
 
 	public void quick4DString(String[][] js, int lp, int rp, int scale) {
 		if(lp< rp){
-			int c= rp- lp; if(c< 27 ){ 
+			int c= rp- lp; if(c<44){ 
 				int j;
 				for(int i= 1+ lp; i<= lp+ c; i++){
 					j= i;
 					while(j>= 1+ lp){
 						if(js[j][0].length()> scale&& js[j- 1][0].length()> scale) {
 							//当前字符相等
-							if(js[j][0].charAt(scale)== js[j- 1][0].charAt(scale)) {
-								conditionSwap(js, scale, j, j- 1);
-							}else if(this.map.containsKey(""+ js[j][0].charAt(scale))&& this.map.containsKey(""+ js[j-1][0].charAt(scale))){
+							if(this.map.containsKey(""+ js[j][0].charAt(scale))&& this.map.containsKey(""+ js[j-1][0].charAt(scale))) {
 								conditionSwapChinese(js, scale, j, j- 1);//当前都是字
 							}else if(!this.map.containsKey(""+ js[j][0].charAt(scale))&& this.map.containsKey(""+ js[j-1][0].charAt(scale))) {
 								conditionSwap(js, scale, j, j- 1);//当前不都是字
-							}else{//都不是字
+							}else if(!this.map.containsKey(""+ js[j][0].charAt(scale))&& !this.map.containsKey(""+ js[j-1][0].charAt(scale))) {
 								if(js[j][0].toLowerCase().charAt(scale)
 										< js[j- 1][0].toLowerCase().charAt(scale)){
 									conditionSwap(js, scale, j, j- 1);
 								}else if(js[j][0].toLowerCase().charAt(scale)
 										== js[j- 1][0].toLowerCase().charAt(scale)) {
-									if(js[j][0].charAt(scale)< js[j- 1][0].charAt(scale)) {
-										conditionSwap(js, scale, j, j- 1);
+									if(js[j][0].charAt(scale)> js[j- 1][0].charAt(scale)) {
+										conditionSwap(js, scale, j, j- 1);//加入相等过滤
 									}
-								}		
+								}
 							}
 						}
 						j--;
@@ -85,15 +83,25 @@ public class QuickLuoyaoguang4DWithChinese{
 	}
 
 	private void conditionSwapChinese(String[][] a, int scale, int rp, int lp1) {
+		if(a[rp][0].charAt(scale)== a[lp1][0].charAt(scale)) {
+			return;
+		}
+		//tongzi
 		String[][] js= new String[2][2];
 		js[0][0]= this.map.get(""+ a[rp][0].charAt(scale));
 		js[0][1]= a[rp][0];
 		js[1][0]= this.map.get(""+ a[lp1][0].charAt(scale));
 		js[1][1]= a[lp1][0];
+		if(js[1][0].contains(js[0][0])) {
+			conditionSwap(a, scale, rp, lp1);
+			return;
+		}
+		//tongyin
 		for(int k= 0; k< 6; k++) {
 			quick4DString(js, 0, 1, k);
 		}
-		if(js[0][1].equalsIgnoreCase(a[rp][0])) {
+		//butongzi
+		if(!js[0][1].equalsIgnoreCase(a[rp][0])) {
 			conditionSwap(a, scale, rp, lp1);
 		}
 	}
@@ -111,12 +119,12 @@ public class QuickLuoyaoguang4DWithChinese{
 			a[lp1]= temp;
 		}
 	} 
-	
+
 	private int partitionString(String[][] a, int lp, int rp, int scale) {
 		String[] x= a[lp].clone();
-//		if(!(a[lp][0].length()<= scale|| a[rp][0].length()<= scale)){
-//			x= a[lp][0].toLowerCase().charAt(scale)< a[rp][0].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
-//		} 这个 过滤终端我稍后写。
+		//if(!(a[lp][0].length()<= scale|| a[rp][0].length()<= scale)){
+		//x= a[lp][0].toLowerCase().charAt(scale)< a[rp][0].toLowerCase().charAt(scale)? a[lp]: a[rp]; 
+		//} 这个 过滤终端我稍后写。
 		int lp1= lp;
 		boolean count= false;
 		while(lp1< rp){
@@ -132,7 +140,7 @@ public class QuickLuoyaoguang4DWithChinese{
 				a[lp1]= temp;
 			}
 		}
-			a[lp]= a[rp].clone(); a[rp]= x;
+		a[lp]= a[rp].clone(); a[rp]= x;
 		return rp;	
 	}
 
@@ -141,7 +149,7 @@ public class QuickLuoyaoguang4DWithChinese{
 		if(lp1>= a.length) {
 			return false;
 		}
-		
+
 		if(a[lp1][0].length()<= scale|| x[0].length()<= scale) {
 			return true;	
 		}
@@ -173,15 +181,15 @@ public class QuickLuoyaoguang4DWithChinese{
 		if(rp>= a.length){
 			return false;
 		}
-		
+
 		if(rp< 0) {
 			return false;
 		}
-		
+
 		if(a[rp][0].length()<= scale|| x[0].length()<= scale) {
 			return true;	
 		}
-		
+
 		if(this.map.containsKey(""+ a[rp][0].charAt(scale))&& this.map.containsKey(""+ x[0].charAt(scale))){
 			String[][] js= new String[2][2];
 			js[0][0]= this.map.get(""+ a[rp][0].charAt(scale));

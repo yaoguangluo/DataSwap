@@ -25,23 +25,32 @@ public class pinyin{
 			String[] words= cInputStringp.split("/")[0].split(" ");
 			for(int i=0; i<words.length; i++) {
 				if(!map.containsKey(""+ cInputStringc.charAt(i))) {
-					if(!cInputStringc.contains("字母")&&!cInputStringc.contains("标点")&&!cInputStringc.contains("数字")) {
+					if(!cInputStringc.contains("字母")&&!cInputStringc.contains("标点")
+							&&!cInputStringc.contains("数字")&&!cInputStringc.contains("数词")) {
 						map.put(""+ cInputStringc.charAt(i), words[i]);
 					}
 				}
 			}
 		}
-			String testValue[]= new String[10];
-			testValue[0]= "罗瑶光b";//lyg
-			testValue[1]= "罗瑶林a";
-			testValue[2]= "罗瑶光A";//lyl
-			testValue[3]= "罗瑶1a";
-			testValue[4]= "罗a瑶1a";
-			testValue[5]= "罗A瑶1a";
-			testValue[6]= "罗瑶光b";//lzx
-			testValue[7]= "罗正兴";//lzx
-			testValue[8]= "罗甜甜";//ltt
-			testValue[9]= "罗正A强";//lzq
+			String testValue[]= new String[18];
+			testValue[0]= "瑶光b";//lyg
+			testValue[1]= "瑶林a";
+			testValue[15]= "瑶光A";//lyl
+			testValue[3]= "瑶1a";
+			testValue[4]= "a瑶1a3";
+			testValue[5]= "A瑶1a";
+			testValue[6]= "瑶光b";//lzx
+			testValue[7]= "正兴";//lzx
+			testValue[8]= "甜甜";//ltt
+			testValue[9]= "正A强";//lzq
+			testValue[10]= "正才";
+			testValue[11]= "韵律";
+			testValue[12]= "振强";
+			testValue[13]= "振旺";
+			testValue[14]= "纪元";
+			testValue[2]= "正好";
+			testValue[16]= "正2才";
+			testValue[17]= "a瑶1a5";
 //					testValue[3]= "罗瑶林a";//lyg
 //					testValue[4]= "罗正兴";//lzx
 //					testValue[5]= "罗正兴";//lzx
@@ -60,7 +69,8 @@ public class pinyin{
 //					testValue[8]= "罗正A才";//lzc
 //					testValue[9]= "罗C正A才";//lzc
 //					testValue[10]= "罗正西";//lzx
-			new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 5, map);
+		//	new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,2, map);
+			new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,2, map);
 			//		for(int i=testValue.length-1;i>=0;i--) {
 			//			System.out.println(testValue[i]);
 			//		}

@@ -26,14 +26,14 @@ public class LYG4DWithChineseMixStringSort3D{
 		for(i= lp; i<= rp; i++) {
 			if(kernel[i][0].length()> point&& kernel[lp][0].length()> point) {
 				if(kernel[i][0].charAt(point)!= kernel[lp][0].charAt(point)){
-					rp1= i- 1;
-					processQS4DLYG4D(kernel, lp, rp1, scale, point+ 1);
+					rp1= i-1;
+					processKernel(kernel, lp, rp1, scale, point+1);
 					lp= i;
 				}
 			}
 		}
-		if(lp!= rp) {
-			processQS4DLYG4D(kernel, lp, i-1, scale, point+1);
+		if(lp!=rp) {
+			processKernel(kernel, lp, i-1, scale, point+1);
 		}
 	}
 
@@ -43,66 +43,71 @@ public class LYG4DWithChineseMixStringSort3D{
 		}
 		for(int i= lp; i<= rp; i++) {
 			Here:
-				for(int j= lp; j<= rp; j++) {
-					if(i==j) {
-						continue Here;
-					}
-					if(kernel[i][0].length()<= point|| kernel[j][0].length()<= point) {
-						if(kernel[i][0].length()< kernel[j][0].length()) {//长在上
-							boolean find= true;
-							for(int p= 0; p< scale; p++) {
-								if(kernel[i][0].length()> p&& kernel[j][0].length()> p) {
-									if(kernel[i][0].charAt(p)!= kernel[j][0].charAt(p)) {
-										find= false;
-									}
+			for(int j= lp; j<= rp; j++) {
+				if(i==j) {
+					continue Here;
+				}
+				//que
+				if(kernel[i][0].length()<= point|| kernel[j][0].length()<= point) {
+					if(kernel[i][0].length()< kernel[j][0].length()) {//长在上
+						boolean find= true;
+						for(int p= 0; p< scale; p++) {
+							//左右
+							if(kernel[i][0].length()> p&& kernel[j][0].length()> p) {
+								if(kernel[i][0].charAt(p)!= kernel[j][0].charAt(p)) {
+									find= false;
 								}
 							}
-							if(find) {
-								String[] temp= kernel[i].clone();
-								kernel[i]= kernel[j].clone();
-								kernel[j]= temp;
-							}
+//							else{
+//								if(!find) {
+//									if(kernel[i][0].length()< kernel[j][0].length()) {
+//										find= false;
+//									}
+//								}
+//							}
 						}
-					}else if(pinyin.containsKey(""+ kernel[i][0].charAt(point)) 
-							&& pinyin.containsKey(""+ kernel[j][0].charAt(point))){
-						String[] js= new String[2];
-						js[0]= this.pinyin.get(""+ kernel[i][0].charAt(point));
-						js[1]= this.pinyin.get(""+ kernel[j][0].charAt(point));
-						boolean change= processSortPinYin(js, 3);
-						if(change&& i< j) {
+						if(find) {
 							String[] temp= kernel[i].clone();
 							kernel[i]= kernel[j].clone();
 							kernel[j]= temp;
 						}
-					}else if(!pinyin.containsKey(""+ kernel[i][0].charAt(point)) 
-							&& pinyin.containsKey(""+ kernel[j][0].charAt(point))){
-						if(i< j) {
-							if(!(i== rp || j== rp)) {
-								String[] temp= kernel[i].clone();
-								kernel[i]= kernel[j].clone();
-								kernel[j]= temp;
-							}
+					}
+				}else if(pinyin.containsKey(""+ kernel[i][0].charAt(point)) && pinyin.containsKey(""+ kernel[j][0].charAt(point))){
+					String[] js= new String[2];
+					js[0]= this.pinyin.get(""+ kernel[i][0].charAt(point));
+					js[1]= this.pinyin.get(""+ kernel[j][0].charAt(point));
+					boolean change= processSortPinYin(js, 3);
+					if(change&& i< j) {
+						String[] temp= kernel[i].clone();
+						kernel[i]= kernel[j].clone();
+						kernel[j]= temp;
+					}
+				}else if(!pinyin.containsKey(""+ kernel[i][0].charAt(point)) && pinyin.containsKey(""+ kernel[j][0].charAt(point))){
+					if(i< j) {
+						if(!(i== rp || j== rp)) {
+							String[] temp= kernel[i].clone();
+							kernel[i]= kernel[j].clone();
+							kernel[j]= temp;
 						}
-					}else if(!pinyin.containsKey(""+ kernel[i][0].charAt(point)) 
-							&& !pinyin.containsKey(""+ kernel[j][0].charAt(point))){
-						if(kernel[i][0].toLowerCase().charAt(point)> kernel[j][0].toLowerCase().charAt(point)) {
+					}
+				}else if(!pinyin.containsKey(""+ kernel[i][0].charAt(point)) && !pinyin.containsKey(""+ kernel[j][0].charAt(point))){
+					if(kernel[i][0].toLowerCase().charAt(point)> kernel[j][0].toLowerCase().charAt(point)) {
+						if(i< j) {
+							String[] temp= kernel[i].clone();
+							kernel[i]= kernel[j].clone();
+							kernel[j]= temp;
+						}
+					}else if(kernel[i][0].toLowerCase().charAt(point)== kernel[j][0].toLowerCase().charAt(point)) {
+						if(kernel[i][0].charAt(point)> kernel[j][0].charAt(point)) {
 							if(i< j) {
 								String[] temp= kernel[i].clone();
 								kernel[i]= kernel[j].clone();
 								kernel[j]= temp;
 							}
-						}else if(kernel[i][0].toLowerCase().charAt(point)
-								== kernel[j][0].toLowerCase().charAt(point)) {
-							if(kernel[i][0].charAt(point)> kernel[j][0].charAt(point)) {
-								if(i< j) {
-									String[] temp= kernel[i].clone();
-									kernel[i]= kernel[j].clone();
-									kernel[j]= temp;
-								}
-							}
 						}
 					}
 				}
+			}
 		}
 	}
 
@@ -169,7 +174,7 @@ public class LYG4DWithChineseMixStringSort3D{
 
 	private boolean findSmallWithTwoChar(String x1, String x2, int scale, int point) {
 		if(x1.length()<= point|| x2.length()<= point) {
-			if(x1.length()< x2.length()) {//长在上
+			if(x1.length()< x2.length()) {//
 				boolean find= true;
 				for(int p= 0; p< scale; p++) {
 					if(x1.length()> p&& x2.length()> p) {

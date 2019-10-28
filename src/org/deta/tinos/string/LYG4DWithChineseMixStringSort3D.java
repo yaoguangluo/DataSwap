@@ -114,7 +114,7 @@ public class LYG4DWithChineseMixStringSort3D{
 	private void processQS4DLYG4D(String[][] kernel, int lp, int rp, int scale, int point) {
 		if(lp< rp){
 			int c= rp- lp; 
-			if(c< 7){	
+			if(c< 3){	
 				processSort(kernel, lp, rp, scale, point);
 				return;
 			}

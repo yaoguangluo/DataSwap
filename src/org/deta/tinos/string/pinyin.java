@@ -51,7 +51,7 @@ public class pinyin{
 			testValue[15]= "正好";
 			testValue[16]= "正2才7314";
 			testValue[17]= "a瑶1a5";
-			testValue[18]= "正3才";
+			testValue[18]= "正2才7";
 			testValue[19]= "韵2律";
 			testValue[20]= "振强3";
 			testValue[21]= "振1旺";
@@ -67,7 +67,7 @@ public class pinyin{
 //			testValue[0]= "Aa";//lyg
 //			testValue[1]= "Ab";//lyl
 //			testValue[2]= "AA";//lyl
-			new LYG4DWithChineseMixStringSort2D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,6, map);
+			new LYG4DWithChineseMixStringSort3D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,5, map);
 		//	new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,1, map);
 			//		for(int i=testValue.length-1;i>=0;i--) {
 			//			System.out.println(testValue[i]);

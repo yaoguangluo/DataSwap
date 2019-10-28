@@ -32,33 +32,42 @@ public class pinyin{
 				}
 			}
 		}
-			String testValue[]= new String[18];
-			testValue[0]= "瑶光b";//lyg
+			String testValue[]= new String[26];
+			testValue[0]= "瑶光c";//lyg
 			testValue[1]= "瑶林a";
-			testValue[15]= "瑶光A";//lyl
+			testValue[2]= "瑶光A";//lyl
 			testValue[3]= "瑶1a";
-			testValue[4]= "a瑶1a3";
+			testValue[4]= "b瑶1a3";
 			testValue[5]= "A瑶1a";
 			testValue[6]= "瑶光b";//lzx
-			testValue[7]= "正兴";//lzx
+			testValue[7]= "正2兴";//lzx
 			testValue[8]= "甜甜";//ltt
 			testValue[9]= "正A强";//lzq
-			testValue[10]= "正才";
+			testValue[10]= "正3才";
 			testValue[11]= "韵律";
 			testValue[12]= "振强";
 			testValue[13]= "振旺";
 			testValue[14]= "纪元";
-			testValue[2]= "正好";
+			testValue[15]= "正好";
 			testValue[16]= "正2才";
 			testValue[17]= "a瑶1a5";
+			testValue[18]= "正3才";
+			testValue[19]= "韵2律";
+			testValue[20]= "振强3";
+			testValue[21]= "振1旺";
+			testValue[22]= "纪2元";
+			testValue[23]= "正2好1";
+			testValue[24]= "正2才";
+			testValue[25]= "a瑶1a5";
 
-		
-//		String testValue[]= new String[3];
-//		testValue[0]= "正好";//lyg
-//		testValue[1]= "振强";
-//		testValue[2]= "正兴";//lyl
-
-			new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,5, map);
+//			String testValue[]= new String[3];
+//			testValue[0]= "a瑶1a5";//lyg
+//			testValue[1]= "b瑶1a3";//lyl
+//			testValue[2]= "a瑶1a5";//lyl
+//			testValue[0]= "Aa";//lyg
+//			testValue[1]= "Ab";//lyl
+//			testValue[2]= "AA";//lyl
+			new LYG4DWithChineseMixStringSort1D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,2, map);
 		//	new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,1, map);
 			//		for(int i=testValue.length-1;i>=0;i--) {
 			//			System.out.println(testValue[i]);

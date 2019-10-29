@@ -77,7 +77,7 @@ public class LYG4DWithChineseMixStringSort5D{
 				}else if(!(pinyin.containsKey(""+ kernel[i][0].charAt(point)) 
 						|| !pinyin.containsKey(""+ kernel[j][0].charAt(point)))){
 					if(i< j) {
-						if(!(i== rp || j== rp)) {
+						if(!(i== rp+1 || j== rp+1)) {
 							String[] temp= kernel[i].clone();
 							kernel[i]= kernel[j].clone();
 							kernel[j]= temp;

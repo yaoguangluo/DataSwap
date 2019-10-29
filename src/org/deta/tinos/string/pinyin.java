@@ -32,7 +32,14 @@ public class pinyin{
 				}
 			}
 		}
-			String testValue[]= new String[10000];
+//		String testValue[]= new String[5];
+////		testValue[0]= "光";//lyg
+////		testValue[1]= "2";
+////		testValue[2]= "1";//lyl
+////		testValue[3]= "瑶";
+////		testValue[4]= "瑶3瑶2";
+		
+			String testValue[]= new String[29];
 			testValue[0]= "瑶光c";//lyg
 			testValue[1]= "瑶林a";
 			testValue[2]= "瑶光A";//lyl
@@ -59,12 +66,18 @@ public class pinyin{
 			testValue[23]= "正2好1";
 			testValue[24]= "正2才5566";
 			testValue[25]= "a瑶1a5";
+			testValue[26]= "hello world";
+			testValue[27]= "hollo world";
+			testValue[28]= "hello werld";
+		
+		
+		
 			for(int i=26;i<10000;i++) {
-				testValue[i]= testValue[i%25];
+				//testValue[i]= testValue[i%25];
 			}
 			TimeCheck timeCheck=new TimeCheck();
 			timeCheck.begin();
-			new LYG4DWithChineseMixStringSort5D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,6, map);
+			new LYG4DWithChineseMixStringSort5D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,16, map);
 			timeCheck.end();;
 			timeCheck.duration();
 //			timeCheck.begin();

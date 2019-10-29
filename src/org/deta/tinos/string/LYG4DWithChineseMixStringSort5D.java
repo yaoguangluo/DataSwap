@@ -1,7 +1,7 @@
 package org.deta.tinos.string;
 import java.util.HashMap;
 import java.util.Map;
-public class LYG4DWithChineseMixStringSort4D{
+public class LYG4DWithChineseMixStringSort5D{
 	Map<String, Boolean> find= new HashMap<>();
 	Map<String, String> pinyin;
 	public void quick4DChineseStringArray(String[] a, int lp, int rp, int scale, Map<String, String> map) {
@@ -51,7 +51,7 @@ public class LYG4DWithChineseMixStringSort4D{
 					if(kernel[i][0].length()< kernel[j][0].length()) {
 						boolean find= true;
 						for(int p= 0; p< scale; p++) {
-							if(kernel[i][0].length()> p&& kernel[j][0].length()> p) {
+							if(!(kernel[i][0].length()<= p|| kernel[j][0].length()<= p)) {
 								if(kernel[i][0].charAt(p)!= kernel[j][0].charAt(p)) {
 									find= false;
 								}
@@ -69,7 +69,7 @@ public class LYG4DWithChineseMixStringSort4D{
 					js[0]= this.pinyin.get(""+ kernel[i][0].charAt(point));
 					js[1]= this.pinyin.get(""+ kernel[j][0].charAt(point));
 					boolean change= processSortPinYin(js, 3);
-					if(change&& i< j) {
+					if(!(!change|| i>= j)) {
 						String[] temp= kernel[i].clone();
 						kernel[i]= kernel[j].clone();
 						kernel[j]= temp;
@@ -125,7 +125,7 @@ public class LYG4DWithChineseMixStringSort4D{
 			if(kernel[i][0].length()< kernel[j][0].length()) {
 				boolean find= true;
 				for(int p= 0; p< scale; p++) {
-					if(kernel[i][0].length()> p&& kernel[j][0].length()> p) {
+					if(!(kernel[i][0].length()<= p|| kernel[j][0].length()<= p)) {
 						if(kernel[i][0].charAt(p)!= kernel[j][0].charAt(p)) {
 							find= false;
 						}
@@ -143,7 +143,7 @@ public class LYG4DWithChineseMixStringSort4D{
 			js[0]= this.pinyin.get(""+ kernel[i][0].charAt(point));
 			js[1]= this.pinyin.get(""+ kernel[j][0].charAt(point));
 			boolean change= processSortPinYin(js, 3);
-			if(change&& i< j) {
+			if(!(!change|| i>= j)) {
 				return true;
 			}
 			return false;
@@ -184,7 +184,7 @@ public class LYG4DWithChineseMixStringSort4D{
 			if(x1.length()< x2.length()) {
 				boolean find= true;
 				for(int p= 0; p< scale; p++) {
-					if(x1.length()> p&& x2.length()> p) {
+					if(!(x1.length()<= p|| x2.length()<= p)) {
 						if(x1.charAt(p)!= x2.charAt(p)) {
 							find= false;
 						}
@@ -196,8 +196,8 @@ public class LYG4DWithChineseMixStringSort4D{
 				return false;
 			}
 			return false;
-		}else if(pinyin.containsKey(""+ x1.charAt(point)) 
-				&& pinyin.containsKey(""+ x2.charAt(point))){
+		}else if(!(!pinyin.containsKey(""+ x1.charAt(point)) 
+				|| !pinyin.containsKey(""+ x2.charAt(point)))){
 			String[] js= new String[2];
 			js[0]= this.pinyin.get(""+ x1.charAt(point));
 			js[1]= this.pinyin.get(""+x2.charAt(point));
@@ -206,8 +206,8 @@ public class LYG4DWithChineseMixStringSort4D{
 				return true;
 			}
 			return false;
-		}else if(!pinyin.containsKey(""+ x1.charAt(point)) 
-				&& !pinyin.containsKey(""+ x2.charAt(point))){
+		}else if(!(pinyin.containsKey(""+ x1.charAt(point)) 
+				|| pinyin.containsKey(""+ x2.charAt(point)))){
 			if(x1.toLowerCase().charAt(point)> x2.toLowerCase().charAt(point)) {
 				return true;
 			}else if(x1.toLowerCase().charAt(point)== x2.toLowerCase().charAt(point)) {
@@ -217,15 +217,15 @@ public class LYG4DWithChineseMixStringSort4D{
 				return false;
 			}
 			return false;
-		}else if(!pinyin.containsKey(""+ x1.charAt(point)) 
-				&& pinyin.containsKey(""+ x2.charAt(point))){
+		}else if(!(pinyin.containsKey(""+ x1.charAt(point)) 
+				|| !pinyin.containsKey(""+ x2.charAt(point)))){
 				return true;
 		}
 		return false;
 	}
 
 	private int partition(String[][] a, int lp, int rp, int scale, int point) {
-		String[] x= !findSmall(a, scale, point, lp, rp, rp)? a[lp]: a[rp];
+		String[] x= findSmall(a, scale, point, lp, rp, rp)? a[rp]: a[lp];
 		int lp1= lp;
 		int count= 0;
 		int lastCount= 0;

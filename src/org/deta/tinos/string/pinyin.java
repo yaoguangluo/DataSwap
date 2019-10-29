@@ -59,19 +59,21 @@ public class pinyin{
 			testValue[23]= "正2好1";
 			testValue[24]= "正2才5566";
 			testValue[25]= "a瑶1a5";
-
-//			String testValue[]= new String[3];
-//			testValue[0]= "a瑶1a5";//lyg
-//			testValue[1]= "b瑶1a3";//lyl
-//			testValue[2]= "a瑶1a5";//lyl
-//			testValue[0]= "Aa";//lyg
-//			testValue[1]= "Ab";//lyl
-//			testValue[2]= "AA";//lyl
-			new LYG4DWithChineseMixStringSort3D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,5, map);
-		//	new QuickLuoyaoguang4DWithChinese().quick4DChineseStringArray(testValue, 0, testValue.length- 1,1, map);
-			//		for(int i=testValue.length-1;i>=0;i--) {
-			//			System.out.println(testValue[i]);
-			//		}
+			for(int i=26;i<10000;i++) {
+			//	testValue[i]= testValue[i%25];
+			}
+			TimeCheck timeCheck=new TimeCheck();
+			timeCheck.begin();
+			new LYG4DWithChineseMixStringSort4D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,6, map);
+			timeCheck.end();;
+			timeCheck.duration();
+//			timeCheck.begin();
+//			new LYG4DWithChineseMixStringSort2D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,5, map);
+//			timeCheck.end();;
+//			timeCheck.duration();
+//				for(int i=testValue.length-1;i>=0;i--) {
+//						System.out.println(testValue[i]);
+//					}
 			for(int i= 0; i< testValue.length; i++) {
 				System.out.println(testValue[i]);
 			}

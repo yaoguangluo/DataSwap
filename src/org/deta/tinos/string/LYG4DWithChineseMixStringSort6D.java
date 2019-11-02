@@ -28,7 +28,7 @@ public class LYG4DWithChineseMixStringSort6D{
 			}
 		}
 		if(leftPosition!= rightPosition) {
-			processKernel(kernel, leftPosition, i-1, scale, point+1);
+			processKernel(kernel, leftPosition, i- 1, scale, point+ 1);
 		}
 	}
 
@@ -40,7 +40,7 @@ public class LYG4DWithChineseMixStringSort6D{
 		for(int i= leftPosition; i<= rightPosition; i++) {
 			Here:
 				for(int j= i; j<= rightPosition; j++) {
-					if(i==j) {
+					if(i== j) {
 						continue Here;
 					}
 					if(kernel[i].length()<= point|| kernel[j].length()<= point) {
@@ -236,23 +236,23 @@ public class LYG4DWithChineseMixStringSort6D{
 			, int scale, int point) {
 		String x= findSmall(array, scale, point, leftPosition, rightPosition
 				, rightPosition)? array[rightPosition]: array[leftPosition];
-				int leftPosition1= leftPosition;
+				int leftPositionReflection= leftPosition;
 				int count= 0;
 				int lastCount= 0;
-				while(leftPosition1< rightPosition) {
-					while(!(findSmallWithTwoChar(array[leftPosition1]
-							, x, scale, point)|| leftPosition1>= rightPosition)) {
-						leftPosition1++;
+				while(leftPositionReflection< rightPosition) {
+					while(!(findSmallWithTwoChar(array[leftPositionReflection]
+							, x, scale, point)|| leftPositionReflection>= rightPosition)) {
+						leftPositionReflection++;
 						count++;
 					} 
 					while(findSmallWithTwoChar(array[rightPosition], x, scale, point)){
 						rightPosition--;
 						count++;
 					}
-					if(leftPosition1< rightPosition){
+					if(leftPositionReflection< rightPosition){
 						String temp= array[rightPosition].toString();;
-						array[rightPosition]= array[leftPosition1].toString();;
-						array[leftPosition1]= temp;
+						array[rightPosition]= array[leftPositionReflection].toString();;
+						array[leftPositionReflection]= temp;
 					}
 					if(count!= lastCount) {
 						lastCount= count;

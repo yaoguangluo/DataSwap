@@ -50,6 +50,7 @@ public class LYG4DWithChineseMixStringSort6D{
 								if(!(kernel[i].length()<= p|| kernel[j].length()<= p)) {
 									if(kernel[i].charAt(p)!= kernel[j].charAt(p)) {
 										find= false;
+										break;
 									}
 								}
 							}
@@ -194,6 +195,7 @@ public class LYG4DWithChineseMixStringSort6D{
 					if(!(x1.length()<= p|| x2.length()<= p)) {
 						if(x1.charAt(p)!= x2.charAt(p)) {
 							find= false;
+							break;
 						}
 					}
 				}

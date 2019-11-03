@@ -3,7 +3,9 @@
 ##### 国家知委最新补正：要求个人软著全名去掉公司名‘德塔’ 和 ‘Deta’ 关键字，
 ##### 作者在此申明。 罗瑶光 2090927
 
+##### 这个工程用于目前世界出现和流行的常见数据结构载体变量对象进行转换。比如 map, list, object, table, hash, tree, strings, array, json, xml, vector 等160种不同类型载体快速互换。
 ##### This project mainly for the metadata exchanges of array, list, map, xml, dhml, uml, xslt, json, hash, string, table, tree, forest, vector and other 155 fields etc.
+
 
 #### 声明：
 ###### 这个api 包 起源于作者在美国亚米公司设计缓存索引时 用到 gson的list对象进行 redis保存(我写详细点，我用的是List<String[]> 格式来做亚米搜索的索引推荐的隐藏属性，进行快速写入redis，因为考虑String[]需要初始化，所以后来思考替换掉。切记和现在VtoV中的 jsonArrayToList 不是同一个函数性质，别混淆) 出现冗余 不匹配的 问题，于是最早独立设计出gson to object 的 修正思想。但是只有一个10行代码的函数,这个api 包 的 发展来自于作者在洛杉矶走四方公司做数据交换时候，涉及到 xml 和 json的互换， 于是独立设计出第一版VtoV文件，当时包含5个函数：

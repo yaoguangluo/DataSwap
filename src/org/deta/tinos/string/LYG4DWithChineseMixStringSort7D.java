@@ -4,9 +4,11 @@ import java.util.Map;
 public class LYG4DWithChineseMixStringSort7D{
 	Map<String, Boolean> find= new HashMap<>();
 	Map<String, String> pinyin;
+	int range;
 	public void quick4DChineseStringArray(String[] strings, int leftPosition
-			, int rightPosition, int scale, Map<String, String> map) {
+			, int rightPosition, int scale, Map<String, String> map, int range) {
 		this.pinyin= map;
+		this.range= range;
 		processKernel(strings, leftPosition, rightPosition, scale, 0);
 	}
 
@@ -110,7 +112,7 @@ public class LYG4DWithChineseMixStringSort7D{
 			, int rightPosition, int scale, int point) {
 		if(leftPosition< rightPosition){
 			int c= rightPosition- leftPosition; 
-			if(c< 7){	
+			if(c< this.range){	
 				processSort(kernel, leftPosition, rightPosition, scale, point);
 				return;
 			}
@@ -220,37 +222,36 @@ public class LYG4DWithChineseMixStringSort7D{
 		return false;
 	}
 
-	private int partition(String[] array, int leftPosition, int rightPosition
-			, int scale, int point) {
-		String x= findSmall(array, scale, point, leftPosition, rightPosition
-				, rightPosition)? array[rightPosition]: array[leftPosition];
-				int leftPositionReflection= leftPosition;
-				int count= 0;
-				int lastCount= 0;
-				while(leftPositionReflection< rightPosition) {
-					while(!(findSmallWithTwoChar(array[leftPositionReflection]
-							, x, scale, point)|| leftPositionReflection>= rightPosition)) {
-						leftPositionReflection++;
-						count++;
-					} 
-					while(findSmallWithTwoChar(array[rightPosition], x, scale, point)){
-						rightPosition--;
-						count++;
-					}
-					if(leftPositionReflection< rightPosition){
-						String temp= array[rightPosition].toString();;
-						array[rightPosition]= array[leftPositionReflection].toString();;
-						array[leftPositionReflection]= temp;
-					}
-					if(count!= lastCount) {
-						lastCount= count;
-					}else {
-						rightPosition--;
-					}
-				}
-				array[leftPosition]= array[rightPosition].toString();
-				array[rightPosition]=x;
-				return rightPosition;
+	private int partition(String[] array, int leftPosition, int rightPosition, int scale, int point) {
+		String x= findSmall(array, scale, point, leftPosition, rightPosition, rightPosition)
+				? array[rightPosition]: array[leftPosition];
+		int leftPositionReflection= leftPosition;
+		int count= 0;
+		int lastCount= 0;
+		while(leftPositionReflection< rightPosition) {
+			while(!(findSmallWithTwoChar(array[leftPositionReflection]
+					, x, scale, point)|| leftPositionReflection>= rightPosition)) {
+				leftPositionReflection++;
+				count++;
+			} 
+			while(findSmallWithTwoChar(array[rightPosition], x, scale, point)){
+				rightPosition--;
+				count++;
+			}
+			if(leftPositionReflection< rightPosition){
+				String temp= array[rightPosition].toString();;
+				array[rightPosition]= array[leftPositionReflection].toString();;
+				array[leftPositionReflection]= temp;
+			}
+			if(count!= lastCount) {
+				lastCount= count;
+			}else {
+				rightPosition--;
+			}
+		}
+		array[leftPosition]= array[rightPosition].toString();
+		array[rightPosition]=x;
+		return rightPosition;
 	}
 
 	private boolean processSortPinYin(String[] kernel, int scale) {

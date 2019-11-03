@@ -77,7 +77,7 @@ public class pinyin{
 			}
 			TimeCheck timeCheck=new TimeCheck();
 			timeCheck.begin();
-			new LYG4DWithChineseMixStringSort7D().quick4DChineseStringArray(testValue, 0, testValue.length- 1,12, map);
+			new LYG4DWithChineseMixStringSort7D().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 12, map, 6);
 			timeCheck.end();;
 			timeCheck.duration();
 //			timeCheck.begin();
@@ -88,7 +88,7 @@ public class pinyin{
 //						System.out.println(testValue[i]);
 //					}
 			for(int i= 0; i< testValue.length; i++) {
-				System.out.println(testValue[i]);
+			//	System.out.println(testValue[i]);
 			}
 		}
 	}

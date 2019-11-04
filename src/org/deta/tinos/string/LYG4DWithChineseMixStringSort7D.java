@@ -250,7 +250,7 @@ public class LYG4DWithChineseMixStringSort7D{
 			}
 		}
 		array[leftPosition]= array[rightPosition].toString();
-		array[rightPosition]=x;
+		array[rightPosition]= x;
 		return rightPosition;
 	}
 

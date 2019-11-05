@@ -4,51 +4,53 @@ package org.deta.tinos.array;
 //实现：罗瑶光
 //时间：20140101~ 20191105
 public class LYG4DWithDoubleQuickSort4D{
-	public double[] sort(double[] a) {
-		quick2ds(a, 0, a.length- 1);
-		return a;
+	public double[] sort(double[] array) {
+		processDouble(array, 0, array.length- 1);
+		return array;
 	}
 
-	private void quick2ds(double[] a, int lp, int rp) {
-		if(lp< rp){
-			int c= rp- lp; if(c< 7){ 
+	private void processDouble(double[] array, int leftPoint, int rightPoint) {
+		if(leftPoint< rightPoint){
+			int c= rightPoint- leftPoint;
+			if(c< 7){ 
 				int j;
-				for(int i= 1+ lp; i<= lp+ c; i++){
-					j= i;while(j>= 1+ lp){
-						if(a[j]< a[j- 1]){
-							double temp= a[j];
-							a[j]= a[j- 1];
-							a[j- 1]= temp;
+				for(int i= 1+ leftPoint; i<= leftPoint+ c; i++){
+					j= i;
+					while(j>= 1+ leftPoint){
+						if(array[j]< array[j- 1]){
+							double temp= array[j];
+							array[j]= array[j- 1];
+							array[j- 1]= temp;
 						}
 						j--;
 					}
 				}	
 				return;
 			}
-			int pos= partition(a, lp, rp);
-			quick2ds(a, lp, pos- 1);
-			quick2ds(a, pos+ 1, rp);
+			int pos= partition(array, leftPoint, rightPoint);
+			processDouble(array, leftPoint, pos- 1);
+			processDouble(array, pos+ 1, rightPoint);
 		}
 	}
 
-	private int partition(double[] a, int lp, int rp) {
-		double x= a[lp]< a[rp]? a[lp]: a[rp];
-		int lp1= lp;
-		while(lp1< rp){
-			while(!(a[lp1]> x|| lp1>= rp)) {
-				lp1++;
+	private int partition(double[] array, int leftPoint, int rightPoint) {
+		double x= array[leftPoint]< array[rightPoint]? array[leftPoint]: array[rightPoint];
+		int leftPoint1= leftPoint;
+		while(leftPoint1< rightPoint){
+			while(!(array[leftPoint1]> x|| leftPoint1>= rightPoint)) {
+				leftPoint1++;
 			}
-			while(a[rp]> x){
-				rp--;
+			while(array[rightPoint]> x){
+				rightPoint--;
 			}
-			if(lp1< rp){
-				double temp= a[rp];
-				a[rp]= a[lp1];
-				a[lp1]= temp;
+			if(leftPoint1< rightPoint){
+				double temp= array[rightPoint];
+				array[rightPoint]= array[leftPoint1];
+				array[leftPoint1]= temp;
 			}
 		}
-		a[lp]= a[rp];
-		a[rp]= x;
-		return rp;
+		array[leftPoint]= array[rightPoint];
+		array[rightPoint]= x;
+		return rightPoint;
 	}
 }

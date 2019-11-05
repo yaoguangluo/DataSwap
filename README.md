@@ -58,6 +58,8 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### stringToSequencyArrayIncrement
 ###### stringToSequencyArrayDecrement 
 ###### An Algorithm of Sorting Mixed String Array with scale based on Theory of Yaoguang. Luo 4D Peak Filter Quicksort: quick4DStringArray
+###### LYG4DWithChineseMixStringSort7D: quick4DStringArray with Pictographic and Wedge Swap
+###### LYG4DWithMixObjectSort7D: quick4DStringArray where Mixed with Pictographic and Wedge Swap and It's Applications. 2019/11/04
 ##### ![实例](http://progressed.io/bar/100?title=completed)6 list 数据分析转换文件
 ###### listToJsonString
 ###### stringListToJsonString
@@ -193,4 +195,5 @@ https://github.com/yaoguangluo/data_format/blob/master/VtoV.java
 ###### 罗瑶光-莱布尼茨-斜率积-快速-变换 第1代
 ###### 函数研发总数进度 160+/155
 
-罗瑶光 20190812- 20190907
+罗瑶光 20190812- 20190907 为1.0 版本。
+20190907- 目前为第2.0版本。

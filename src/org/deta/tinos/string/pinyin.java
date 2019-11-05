@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.tinos.view.stable.StableData;
@@ -68,16 +69,22 @@ public class pinyin{
 			testValue[25]= "a瑶1a5";
 			testValue[26]= "hello world";
 			testValue[27]= "hollo worl";
-			testValue[28]= "hello werld";
-		
-		
-		
+			testValue[28]= "hello werld";	
 			for(int i=29;i<10000;i++) {
 				testValue[i]= testValue[i%25];
-			}
+			}	
+			Map<String, Object> input =new HashMap<>();
+			for(int i=0;i<10000;i++) {
+				if(input.containsKey(testValue[i])) {
+					input.put(testValue[i]+i, testValue[i]);//相同 key 进行区分。
+				}else {
+					input.put(testValue[i], testValue[i]);
+				}
+			}	
 			TimeCheck timeCheck=new TimeCheck();
 			timeCheck.begin();
-			new LYG4DWithChineseMixStringSort7D().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 12, map, 6);
+		//	new LYG4DWithChineseMixStringSort7D().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 12, map, 6);
+			List<Object> list= new LYG4DWithMixObjectSort7D().sortMapToList(input, 0, input.size()- 1, 12, map, 6);
 			timeCheck.end();;
 			timeCheck.duration();
 //			timeCheck.begin();
@@ -88,7 +95,7 @@ public class pinyin{
 //						System.out.println(testValue[i]);
 //					}
 			for(int i= 0; i< testValue.length; i++) {
-			//	System.out.println(testValue[i]);
+				System.out.println(list.get(i));
 			}
 		}
 	}

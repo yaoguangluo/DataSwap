@@ -84,7 +84,10 @@ public class pinyin{
 			TimeCheck timeCheck=new TimeCheck();
 			timeCheck.begin();
 		//	new LYG4DWithChineseMixStringSort7D().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 12, map, 6);
+			//List<Object> list= new LYG4DWithMixObjectSort7D().sortMapToList(input, 0, input.size()- 1, 12, map, 6);
 			List<Object> list= new LYG4DWithMixObjectSort7D().sortMapToList(input, 0, input.size()- 1, 12, map, 6);
+			
+			
 			timeCheck.end();;
 			timeCheck.duration();
 //			timeCheck.begin();

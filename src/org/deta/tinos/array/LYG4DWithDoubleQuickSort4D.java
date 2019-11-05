@@ -35,18 +35,18 @@ public class LYG4DWithDoubleQuickSort4D{
 
 	private int partition(double[] array, int leftPoint, int rightPoint) {
 		double x= array[leftPoint]< array[rightPoint]? array[leftPoint]: array[rightPoint];
-		int leftPoint1= leftPoint;
-		while(leftPoint1< rightPoint){
-			while(!(array[leftPoint1]> x|| leftPoint1>= rightPoint)) {
-				leftPoint1++;
+		int leftPointReflection= leftPoint;
+		while(leftPointReflection< rightPoint){
+			while(!(array[leftPointReflection]> x|| leftPointReflection>= rightPoint)) {
+				leftPointReflection++;
 			}
 			while(array[rightPoint]> x){
 				rightPoint--;
 			}
-			if(leftPoint1< rightPoint){
+			if(leftPointReflection< rightPoint){
 				double temp= array[rightPoint];
-				array[rightPoint]= array[leftPoint1];
-				array[leftPoint1]= temp;
+				array[rightPoint]= array[leftPointReflection];
+				array[leftPointReflection]= temp;
 			}
 		}
 		array[leftPoint]= array[rightPoint];

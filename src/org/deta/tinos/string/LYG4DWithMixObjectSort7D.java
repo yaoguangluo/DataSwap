@@ -3,7 +3,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import org.deta.tinos.array.LYG4DWithDoubleQuickSort4D;
 public class LYG4DWithMixObjectSort7D{
+	public List<Object> sortMapToListByDoubleKey(Map<Double, Object> objects, int leftPosition
+			, int rightPosition, int scale, Map<String, String> map, int range){
+		Iterator<Double> iterator= objects.keySet().iterator();
+		double[] doubles= new double[objects.size()];
+		int i= 0;
+		while(iterator.hasNext()) {
+			doubles[i++]= iterator.next();
+		}	
+		new LYG4DWithDoubleQuickSort4D().sort(doubles);
+		List<Object> lists= new ArrayList<>();
+		for(double set: doubles) {
+			lists.add(objects.get(set));
+		}
+		return lists;
+	}
+	
 	public List<Object> sortMapToList(Map<String, Object> objects, int leftPosition
 			, int rightPosition, int scale, Map<String, String> map, int range){
 		Iterator<String> iterator= objects.keySet().iterator();

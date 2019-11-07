@@ -14,7 +14,7 @@ public class LYG4DWithMixObjectSort7D{
 		while(iterator.hasNext()) {
 			doubles[i++]= iterator.next();
 		}	
-		new LYG4DWithDoubleQuickSort4D().sort(doubles);
+		new LYG4DWithDoubleQuickSort4D().sort(doubles, 7);
 		List<Object> lists= new ArrayList<>();
 		for(double set: doubles) {
 			lists.add(objects.get(set));

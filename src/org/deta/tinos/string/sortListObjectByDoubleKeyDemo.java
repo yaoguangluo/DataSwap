@@ -38,7 +38,7 @@ public class sortListObjectByDoubleKeyDemo{
 		while(iteratorMap.hasNext()) {
 			doubles[i++]= iteratorMap.next();
 		}	
-		new LYG4DWithDoubleQuickSort4D().sort(doubles);
+		new LYG4DWithDoubleQuickSort4D().sort(doubles, 7);
 		//排完后整理输出
 		List<Object[]> output= new ArrayList<>();
 		for(double set: doubles) {

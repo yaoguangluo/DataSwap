@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.List;
+//import java.util.List;
 import java.util.Map;
 
 import org.tinos.view.stable.StableData;
@@ -85,7 +85,8 @@ public class pinyin{
 			timeCheck.begin();
 		//	new LYG4DWithChineseMixStringSort7D().quick4DChineseStringArray(testValue, 0, testValue.length- 1, 12, map, 6);
 			//List<Object> list= new LYG4DWithMixObjectSort7D().sortMapToList(input, 0, input.size()- 1, 12, map, 6);
-			List<Object> list= new LYG4DWithMixObjectSort7D().sortMapToList(input, 0, input.size()- 1, 12, map, 6);
+			//List<Object> list= 
+			new LYG4DWithMixObjectSort7D().sortMapToList(input, 0, input.size()- 1, 12, map, 6);
 			timeCheck.end();;
 			timeCheck.duration();
 //			timeCheck.begin();

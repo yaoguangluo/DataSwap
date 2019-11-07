@@ -7,7 +7,7 @@ public class Demo extends Thread{
 	public static void main(String args[]) throws IOException, InterruptedException{
         //init array
         double []array=arrayInit(); 
-        double []array1= array.clone();
+//        double []array1= array.clone();
         double []array2= new double[8];
         array2[0]=array[0];
         array2[1]=array[1];
@@ -21,10 +21,10 @@ public class Demo extends Thread{
         System.out.println("罗瑶光小高峰过滤快速排序4代：");
         TimeCheck imeCheck2= new TimeCheck();
         imeCheck2.begin();
-        array2= new LYG4DWithDoubleQuickSort4D().sort(array);
+        array2= new LYG4DWithDoubleQuickSort4D().sort(array, 7);
         imeCheck2.end();
         imeCheck2.duration();
-       // print(array);
+        print(array);
 	}
 	
 	private static void print(double[] a) {
@@ -40,10 +40,11 @@ public class Demo extends Thread{
 	}
 
 	private static double[] arrayInit() {
-		double[] array=new double[9999999];
-		java.util.Random r= new java.util.Random(); 
-		for(int i=9999999,j=0;i>0;i--,j++){
-			array[j]= r.nextInt();
+		double[] array=new double[5119];
+	//	java.util.Random r= new java.util.Random(); 
+		for(int i=5119,j=0;i>0;i--,j++){
+			//array[j]= r.nextInt();
+			array[j]= j%8;
 			//System.out.println(array[j]);
 		}
 		// TODO Auto-generated method stub

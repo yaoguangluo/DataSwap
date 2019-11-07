@@ -4,7 +4,9 @@ package org.deta.tinos.array;
 //实现：罗瑶光
 //时间：20140101~ 20191105
 public class LYG4DWithDoubleQuickSort4D{
-	public double[] sort(double[] array) {
+	int range;
+	public double[] sort(double[] array, int range) {
+		this.range= range;
 		processDouble(array, 0, array.length- 1);
 		return array;
 	}
@@ -12,7 +14,7 @@ public class LYG4DWithDoubleQuickSort4D{
 	private void processDouble(double[] array, int leftPoint, int rightPoint) {
 		if(leftPoint< rightPoint){
 			int c= rightPoint- leftPoint;
-			if(c< 7){ 
+			if(c< this.range){ 
 				int j;
 				for(int i= 1+ leftPoint; i<= leftPoint+ c; i++){
 					j= i;
